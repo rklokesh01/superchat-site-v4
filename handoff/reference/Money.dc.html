@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif}
+button,input{font-family:inherit}
+h1,h2,h3,[style*="font-family:'PP Frama','Outfit',sans-serif"]{-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent;text-size-adjust:100%}
+html{overflow-x:clip}
+img,svg{max-width:none}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+</style>
+</helmet>
+<section data-screen-label="01 Money hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:110px">
+  <dc-import name="Nav" active="Money" current="/money" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="position:relative;max-width:1200px;margin:clamp(20px,4vw,44px) auto 0;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:clamp(36px,5vw,52px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;max-width:900px">
+      <span style="display:flex;align-items:center;gap:12px;max-width:100%;padding:6px 18px 6px 6px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.1);font-size:14px;font-weight:600;letter-spacing:0.06em;color:#022B1A"><span style="width:30px;height:30px;border-radius:50%;background:#00E385;border:1px solid rgba(2,43,26,0.10);flex:none"></span>MONEY · POWERED BY LULU EXCHANGE</span>
+      <h1 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(48px,7.4vw,104px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">More of your money reaches home.</h1>
+      <p style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:#2E5A46;max-width:38ch;text-wrap:pretty">Send at the Google rate, pay bills in one message and see where every dirham goes. All from one chat.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px">
+        <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="display:inline-flex;align-items:center;justify-content:space-between;gap:14px;height:56px;box-sizing:border-box;padding:0 8px 0 26px;border-radius:28px;font-size:17px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;transition:filter .2s,transform .15s;background:#00E385;color:#022B1A" style-hover="filter:brightness(1.06);color:#022B1A" style-active="transform:scale(.98)"><span>Send money now</span><span style="width:40px;height:40px;border-radius:50%;background:#022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:17px" fill="none" stroke="#00E385" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 H19 M13 6 L19 12 L13 18"></path></svg></span></a>
+        <a href="#rates" style="display:inline-flex;align-items:center;justify-content:space-between;gap:14px;height:56px;box-sizing:border-box;padding:0 8px 0 26px;border-radius:28px;font-size:17px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;transition:background .2s,transform .15s;background:#FFFFFF;color:#022B1A;box-shadow:inset 0 0 0 1px rgba(2,43,26,0.12)" style-hover="background:#F3F7F5;color:#022B1A" style-active="transform:scale(.98)"><span>See how much they get</span><span style="width:40px;height:40px;border-radius:50%;background:#EEF3F0;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:17px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5 V19 M6 13 L12 19 L18 13"></path></svg></span></a>
+      </div>
+    </div>
+
+    <div style="position:relative;padding:28px 18px 0;width:min(880px,100%);box-sizing:border-box">
+      <div style="position:relative;height:clamp(460px,118vw,560px);border-radius:clamp(30px,6vw,40px);background:#B0F5D8;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 24px 60px rgba(2,43,26,0.12);overflow:hidden">
+        <svg style="position:absolute;left:0;top:0;width:100%;height:230px" viewBox="0 0 500 230" preserveAspectRatio="none" fill="none">
+          <path data-mroute="1" d="M70 170 C150 40 330 20 430 90" stroke="#022B1A" stroke-width="3" stroke-dasharray="3 11" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+        </svg>
+        <div style="position:absolute;left:calc(14% - 14px);top:calc(170px / 230 * 230 - 44px);display:flex;flex-direction:column;align-items:center;gap:4px;z-index:2">
+          <span style="font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:#022B1A;color:#F7FDFB">Dubai</span>
+          <svg viewBox="0 0 24 30" style="width:24px"><path d="M12 29 C12 29 2 17 2 11 A10 10 0 0 1 22 11 C22 17 12 29 12 29Z" fill="#022B1A"></path><circle cx="12" cy="11" r="4" fill="#00E385"></circle></svg>
+        </div>
+        <div style="position:absolute;left:calc(86% - 14px);top:46px;display:flex;flex-direction:column;align-items:center;gap:4px;z-index:2">
+          <span style="font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:#F24E2A;color:#FFFFFF;border:1.5px solid #022B1A">Home</span>
+          <svg viewBox="0 0 24 30" style="width:24px"><path d="M12 29 C12 29 2 17 2 11 A10 10 0 0 1 22 11 C22 17 12 29 12 29Z" fill="#F24E2A" stroke="#022B1A" stroke-width="2"></path><circle cx="12" cy="11" r="4" fill="#FFFFFF"></circle></svg>
+        </div>
+        <svg data-mplane="1" style="position:absolute;left:0;top:0;transform:translate(calc(14vw * 0 + 50px), 140px) rotate(-30deg);width:46px;overflow:visible;z-index:3" viewBox="0 0 140 90" fill="none"><path d="M6 44 L132 6 L96 84 L70 58 L52 74 L52 52 Z" fill="#FFFFFF" stroke="#022B1A" stroke-width="6" stroke-linejoin="round"></path><path d="M52 52 L132 6" stroke="#022B1A" stroke-width="5"></path></svg>
+        <svg data-mfloat="0" style="position:absolute;left:8%;bottom:120px;width:70px;overflow:visible;z-index:3" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="42" fill="#F5C400" stroke="#022B1A" stroke-width="5"></circle><text x="50" y="58" text-anchor="middle" font-family="PP Frama, Outfit, sans-serif" font-weight="600" font-size="22" fill="#022B1A">AED</text></svg>
+        <svg data-mfloat="1" style="position:absolute;right:8%;bottom:170px;width:58px;overflow:visible;z-index:3" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="42" fill="#00E385" stroke="#022B1A" stroke-width="5"></circle><path d="M64 34 C64 26 36 26 36 38 C36 50 64 48 64 62 C64 74 36 74 36 66 M50 22 V78" stroke="#022B1A" stroke-width="6" stroke-linecap="round" fill="none"></path></svg>
+        <img src="assets/money-phone.png" alt="Superchat sending money" style="position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);z-index:2;display:block;width:min(340px,70%);height:auto">
+      </div>
+      <div data-mfloat="4" style="position:absolute;left:-6px;top:54%;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.14);font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#00E385;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:12px">✓</span>Delivered in 2 min</div>
+      <div data-mfloat="5" style="position:absolute;right:-6px;top:76%;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.14);font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#F5C400;border:2px solid #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:12px;color:#022B1A">⚡</span>Google rate locked</div>
+      <svg data-mfloat="3" style="position:absolute;right:-20px;top:-10px;width:100px;overflow:visible;z-index:4" viewBox="0 0 200 180" fill="none"><path d="M100 20 C150 20 180 50 180 85 C180 120 150 148 100 148 C88 148 77 146 67 142 L35 162 L44 130 C28 118 20 102 20 85 C20 50 50 20 100 20 Z" fill="#F5C400" stroke="#022B1A" stroke-width="6" stroke-linejoin="round"></path><path d="M68 80 Q79 68 90 80 M110 80 Q121 68 132 80" stroke="#022B1A" stroke-width="6" stroke-linecap="round"></path><path d="M80 100 Q100 124 120 100 Z" fill="#022B1A"></path></svg>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Money outcomes" style="background:#F7FDFB;padding:clamp(64px,10vw,100px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px">
+    <div style="border-radius:32px;background:#00E385;padding:32px;display:flex;flex-direction:column;gap:10px;min-height:190px;justify-content:flex-end">
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(40px,4.4vw,60px);font-weight:500;letter-spacing:-0.04em;line-height:1">Google rate</span>
+      <span style="font-size:17px;line-height:1.4">The rate you googled is the rate you get.</span>
+    </div>
+    <div style="border-radius:32px;background:#F5C400;padding:32px;display:flex;flex-direction:column;gap:10px;min-height:190px;justify-content:flex-end">
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(40px,4.4vw,60px);font-weight:500;letter-spacing:-0.04em;line-height:1">Minutes</span>
+      <span style="font-size:17px;line-height:1.4">Not working days. They know before they call to ask.</span>
+    </div>
+    <div style="border-radius:32px;background:#B0F5D8;padding:32px;display:flex;flex-direction:column;gap:10px;min-height:190px;justify-content:flex-end">
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(40px,4.4vw,60px);font-weight:500;letter-spacing:-0.04em;line-height:1">+$111</span>
+      <span style="font-size:17px;line-height:1.4">extra reaches home on every AED 10k you send.</span>
+    </div>
+  </div>
+</section>
+<section id="rates" data-screen-label="02b Rates" style="position:relative;background:#F7FDFB;padding:20px 24px 120px;overflow:hidden">
+  <svg style="position:absolute;left:-40px;top:120px;width:220px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#00E385" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:980px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:40px;text-align:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#B0F5D8">TRY IT</span>
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(44px,5.6vw,80px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance">See how much they get.</h2>
+      <p style="margin:0;font-size:19px;line-height:1.45;color:#2E5A46;max-width:34ch">Type an amount, pick a currency. What you see is what lands.</p>
+    </div>
+    <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:16px">
+      <div style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:24px;background:#00E385;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;transform:rotate(-1deg);text-align:left"><span style="width:48px;height:48px;border-radius:50%;background:#FFFFFF;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex:none">G</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:22px;font-weight:500;letter-spacing:-0.02em">Google rates</span><span style="font-size:14px;line-height:1.3">The rate you googled is the rate you get.</span></span></div>
+      <div style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:24px;background:#F5C400;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;transform:rotate(0.8deg);text-align:left"><span style="width:48px;height:48px;border-radius:50%;background:#FFFFFF;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex:none">0</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:22px;font-weight:500;letter-spacing:-0.02em">Zero fee</span><span style="font-size:14px;line-height:1.3">Every dirham goes toward them.</span></span></div>
+      <div style="display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:24px;background:#A9C4F7;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;transform:rotate(-0.6deg);text-align:left"><span style="width:48px;height:48px;border-radius:50%;background:#FFFFFF;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex:none">15</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:22px;font-weight:500;letter-spacing:-0.02em">AED 15 cashback</span><span style="font-size:14px;line-height:1.3">If it lands later than promised.</span></span></div>
+    </div>
+    <div style="position:relative;width:min(680px,100%);background:#FFFFFF;border:2px solid #022B1A;border-radius:36px;box-shadow:0 10px 0 #022B1A;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:20px;text-align:left">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#1B7236">YOU SEND</span>
+        <span style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#1B7236"><span data-live-dot="1" style="width:8px;height:8px;border-radius:50%;background:#00E385;box-shadow:0 0 8px #00E385"></span>Rates updated 25 Sep 2026</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:22px;background:#F7FDFB;border:2px solid #022B1A">
+        <span style="font-size:15px;font-weight:600;padding:6px 12px;border-radius:999px;background:#022B1A;color:#F7FDFB">AED</span>
+        <input type="number" min="0" value="{{ amount }}" onInput="{{ setAmount }}" style="font-family:'PP Frama','Outfit',sans-serif;flex:1;min-width:0;border:none;background:transparent;font-family:inherit;font-size:clamp(34px,4.4vw,48px);font-weight:500;letter-spacing:-0.03em;color:#022B1A;outline:none;text-align:right">
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ quick }}" as="q" hint-placeholder-count="4">
+          <button onClick="{{ q.pick }}" style="font-family:inherit;font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;border:2px solid #022B1A;background:{{ q.bg }};color:#022B1A;cursor:pointer">{{ q.label }}</button>
+        </sc-for>
+      </div>
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#1B7236">TO</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px">
+        <sc-for list="{{ countries }}" as="c" hint-placeholder-count="8">
+          <button onClick="{{ c.pick }}" style="display:flex;align-items:center;gap:10px;font-family:inherit;padding:10px 12px;border-radius:16px;border:2px solid #022B1A;background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;box-shadow:{{ c.shadow }};transform:{{ c.lift }};transition:transform .2s,box-shadow .2s,background .2s"><span style="width:22px;height:22px;border-radius:50%;background:{{ c.dot }};border:2px solid #022B1A;flex:none"></span><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1"><span style="font-size:15px;font-weight:600">{{ c.code }}</span><span style="font-size:11px;opacity:.75">{{ c.name }}</span></span></button>
+        </sc-for>
+      </div>
+      <div style="padding:24px;border-radius:26px;background:#022B1A;color:#F7FDFB;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px">
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#6FEBB6">{{ recipientLabel }}</span>
+          <span style="font-size:13px;font-weight:600;color:#B0F5D8">{{ rateLine }}</span>
+        </div>
+        <span style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span data-tween="{{ targetNum }}" data-dec="{{ targetDec }}" style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(44px,6vw,72px);font-weight:500;letter-spacing:-0.04em;line-height:1">{{ theyGetNum }}</span><span style="font-size:24px;font-weight:500;color:#00E385">{{ code }}</span></span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:13px"><span style="font-weight:600">Superchat, Google rate, AED 0 fee</span><span style="font-weight:600;color:#00E385">{{ scLine }}</span></div>
+            <div style="height:14px;border-radius:999px;background:#0B4A2F;overflow:hidden"><div style="height:100%;width:100%;border-radius:999px;background:#00E385"></div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:13px;color:#B0F5D8"><span>Typical exchange house</span><span>{{ exLine }}</span></div>
+            <div style="height:14px;border-radius:999px;background:#0B4A2F;overflow:hidden"><div style="height:100%;width:{{ exWidth }};border-radius:999px;background:#6B8F80;transition:width .5s"></div></div>
+          </div>
+        </div>
+        <span style="align-self:flex-start;font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#F5C400;color:#022B1A">{{ extraLine }}</span>
+      </div>
+      <span style="font-size:12px;color:#2E5A46;text-align:center">Mid market rates as of 25 Sep 2026, for illustration. Live rates refresh every 60 seconds in the app.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Money products" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+    <h2 style="align-self:center;text-align:center;font-family:'PP Frama','Outfit',sans-serif;margin:0 0 24px;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:15ch;text-wrap:balance">Three ways it pays you back.</h2>
+    <sc-for list="{{ products }}" as="p" hint-placeholder-count="3">
+      <div id="{{ p.id }}" style="border-radius:32px;background:{{ p.bg }};border:2px solid #022B1A;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:40px;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#FFFFFF;border:1.5px solid #022B1A">{{ p.tag }}</span>
+          <h3 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(32px,3.4vw,48px);line-height:1.02;letter-spacing:-0.03em;color:{{ p.title }};text-wrap:balance">{{ p.head }}</h3>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ p.points }}" as="pt" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:12px;font-size:17px;line-height:1.4"><span style="width:24px;height:24px;border-radius:50%;background:#00E385;border:2px solid #022B1A;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">✓</span>{{ pt }}</div>
+            </sc-for>
+          </div>
+          <a href="{{ p.href }}" style="align-self:flex-start;display:flex;align-items:center;gap:8px;margin-top:6px;font-size:16px;font-weight:600;padding:12px 20px;border-radius:999px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 3px 0 #022B1A;color:#022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 1px 0 #022B1A;color:#022B1A">{{ p.cta }} →</a>
+        </div>
+        <div style="background:#FFFFFF;border:2px solid #022B1A;border-radius:28px;box-shadow:0 6px 0 #022B1A;padding:22px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1.5px solid #D6EDE3">
+            <span style="width:34px;height:34px;border-radius:50%;background:#00E385;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" style="width:14px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#022B1A"></path></svg></span>
+            <span style="display:flex;flex-direction:column"><span style="font-size:15px;font-weight:600">Superchat</span><span style="font-size:12px;color:#1B7236">Always on</span></span>
+          </div>
+          <div style="align-self:flex-end;max-width:85%;background:#D9F8EA;border:1.5px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">{{ p.q }}</div>
+          <div style="align-self:flex-start;max-width:88%;background:#022B1A;color:#F7FDFB;border-radius:18px 18px 18px 4px;padding:12px 16px;font-size:16px;line-height:1.4">{{ p.a }}</div>
+          <div style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:8px 12px;border-radius:14px;background:#F7FDFB;border:1.5px solid #022B1A"><span style="width:10px;height:10px;border-radius:50%;background:{{ p.dot }};border:1.5px solid #022B1A"></span>{{ p.result }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="04 How it works" style="background:#022B1A;color:#F7FDFB;padding:clamp(72px,12vw,120px) clamp(18px,5vw,24px);position:relative;overflow:hidden">
+  <svg style="position:absolute;right:-40px;top:60px;width:260px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#00E385" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#00E385;color:#022B1A">HOW IT WORKS</span>
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance;color:#F7FDFB">Money home in three steps.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:28px;background:#0B4A2F;border:2px solid #1B7236">
+          <span style="font-family:'PP Frama','Outfit',sans-serif;width:64px;height:64px;border-radius:50%;background:{{ s.color }};border:2px solid #F7FDFB;box-shadow:0 4px 0 #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600;color:#022B1A">{{ s.n }}</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:26px;font-weight:500;letter-spacing:-0.02em">{{ s.t }}</span>
+          <span style="font-size:17px;line-height:1.45;color:#B0F5D8">{{ s.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 Money voices" style="background:#F7FDFB;padding:clamp(72px,12vw,120px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <h2 style="align-self:center;text-align:center;font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance">Sent. Delivered. Done.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
+      <sc-for list="{{ voices }}" as="v" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:24px;padding:32px;border-radius:32px;background:{{ v.bg }};border:2px solid #022B1A;box-shadow:0 6px 0 #022B1A;transform:rotate({{ v.rot }})">
+          <span style="font-size:clamp(22px,2vw,26px);font-weight:500;line-height:1.2;letter-spacing:-0.02em;flex:1">“{{ v.q }}”</span>
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:600">{{ v.n }}</span><span style="font-size:14px;color:#2E5A46">{{ v.r }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05b From the Money blog" style="background:#F7FDFB;padding:0 clamp(18px,5vw,24px) clamp(48px,7vw,80px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">From the Money blog</h2>
+      <a href="Money%20Blog.dc.html" style="font-size:16px;font-weight:600;color:#1B7236" style-hover="color:#022B1A">All articles →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+        <a href="{{ p.href }}" style="display:flex;flex-direction:column;border-radius:28px;border:2px solid #022B1A;overflow:hidden;background:#FFFFFF;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A">
+          <span style="display:flex;align-items:flex-end;height:140px;padding:20px;background:{{ p.color }};color:{{ p.ink }};border-bottom:2px solid #022B1A"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:60px;font-weight:500;letter-spacing:-0.05em;line-height:0.9">{{ p.kicker }}</span></span>
+          <span style="display:flex;flex-direction:column;gap:10px;padding:20px 22px 24px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em;color:#1B7236">{{ p.catUp }}</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">{{ p.title }}</span></span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 Money FAQ" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <h2 style="align-self:center;text-align:center;font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Good questions.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div style="border-radius:24px;border:2px solid #022B1A;background:{{ f.bg }};overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;border:none;background:transparent;font-family:inherit;font-size:clamp(18px,1.8vw,21px);font-weight:500;color:#022B1A;text-align:left;cursor:pointer">
+            <span style="flex:1">{{ f.q }}</span>
+            <span style="width:36px;height:36px;border-radius:50%;border:2px solid #022B1A;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transform:{{ f.rot }};transition:transform .4s cubic-bezier(.2,.8,.2,1)">+</span>
+          </button>
+          <div aria-hidden="{{ f.closed }}" style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)"><div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.5;color:#2E5A46;max-width:60ch;opacity:{{ f.fop }};transform:{{ f.fty }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)">{{ f.a }}</p></div></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+<img src="./shopping-muzx72gh-l9bl.webp" alt="shopping" width="239" height="319" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 239px; aspect-ratio: 239 / 319"><img src="./shopping-muzx74c1-f8ig.webp" alt="shopping" width="239" height="319" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 239px; aspect-ratio: 239 / 319"><img src="./shopping-muzx75yl-e7cd.webp" alt="shopping" width="239" height="319" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 239px; aspect-ratio: 239 / 319"><img src="./download-muzx77vr-xsqc.webp" alt="download" width="351" height="288" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 351px; aspect-ratio: 351 / 288"></x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { amount: 1000, cc: 'INR', faq: 0, posts: [] };
+  C = [
+    { code: 'INR', name: 'India', rate: 26.17, dot: '#F5C400' },
+    { code: 'PKR', name: 'Pakistan', rate: 75.44, dot: '#00E385' },
+    { code: 'PHP', name: 'Philippines', rate: 17.04, dot: '#3071E8' },
+    { code: 'EGP', name: 'Egypt', rate: 14.09, dot: '#F24E2A' },
+    { code: 'LKR', name: 'Sri Lanka', rate: 85.82, dot: '#F5C400' },
+    { code: 'NPR', name: 'Nepal', rate: 41.87, dot: '#F24E2A' },
+    { code: 'USD', name: 'US dollar', rate: 0.2723, dot: '#3071E8' },
+    { code: 'GBP', name: 'UK pound', rate: 0.2017, dot: '#A9C4F7' }
+  ];
+  componentDidMount() {
+    import(new URL('blog-money.js', location.href).href).then(m => this.setState({ posts: m.POSTS.slice(0, 3) }));
+    const loop = (t) => {
+      this.raf = requestAnimationFrame(loop);
+      const route = document.querySelector('[data-mroute]'), plane = document.querySelector('[data-mplane]');
+      if (route && plane && route.getTotalLength) {
+        const L = route.getTotalLength(), q = (t % 4200) / 4200, e = q < 0.5 ? 2 * q * q : 1 - Math.pow(-2 * q + 2, 2) / 2;
+        const p = route.getPointAtLength(e * L), p2 = route.getPointAtLength(Math.min(L, e * L + 2));
+        const svg = route.ownerSVGElement, bw = svg.clientWidth / 500, bh = svg.clientHeight / 230;
+        const ang = Math.atan2((p2.y - p.y) * bh, (p2.x - p.x) * bw) * 180 / Math.PI;
+        plane.style.transform = `translate(${p.x * bw - 23}px, ${p.y * bh - 15}px) rotate(${ang + 16}deg)`;
+        plane.style.opacity = q < 0.06 ? q / 0.06 : q > 0.92 ? (1 - q) / 0.08 : 1;
+      }
+      document.querySelectorAll('[data-tween]').forEach(el => {
+        const target = +el.dataset.tween || 0, dec = +el.dataset.dec || 0;
+        if (el._v == null) { el._v = target; return; }
+        el._v = el._v + (target - el._v) * 0.14;
+        if (Math.abs(target - el._v) < Math.pow(10, -dec) / 2) el._v = target;
+        const txt = el._v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+        if (el.textContent !== txt) el.textContent = txt;
+      });
+      const ld = document.querySelector('[data-live-dot]'); if (ld) ld.style.opacity = 0.4 + 0.6 * Math.abs(Math.sin(t / 600));
+      document.querySelectorAll('[data-mfloat]').forEach(el => {
+        const i = +el.dataset.mfloat;
+        el.style.transform = `translateY(${Math.sin(t / 900 + i * 1.3) * 8}px) rotate(${Math.sin(t / 1300 + i) * 4}deg)`;
+      });
+    };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const amt = Math.max(0, +this.state.amount || 0), c = this.C.find(x => x.code === this.state.cc);
+    const fmt = (n, d = 0) => n.toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
+    return {
+      posts: this.state.posts.map(p => ({ ...p, catUp: p.cat.toUpperCase(), href: 'Money%20Article.dc.html?p=' + p.slug })),
+      amount: this.state.amount,
+      setAmount: (e) => this.setState({ amount: e.target.value }),
+      quick: [500, 1000, 2500, 5000].map(v => ({ label: `AED ${fmt(v)}`, bg: +this.state.amount === v ? '#B0F5D8' : '#FFFFFF', pick: () => this.setState({ amount: v }) })),
+      countries: this.C.map(x => { const on = x.code === this.state.cc; return { ...x, bg: on ? '#022B1A' : '#FFFFFF', fg: on ? '#F7FDFB' : '#022B1A', shadow: on ? '0 5px 0 #00E385' : '0 3px 0 #022B1A', lift: on ? 'translateY(-3px)' : 'none', pick: () => this.setState({ cc: x.code }) }; }),
+      recipientLabel: `THEY GET IN ${c.name.toUpperCase()}`, code: c.code, theyGetNum: fmt(amt * c.rate, c.rate < 1 ? 2 : 0), targetNum: amt * c.rate, targetDec: c.rate < 1 ? 2 : 0,
+      scLine: `${fmt(amt * c.rate, c.rate < 1 ? 2 : 0)} ${c.code}`, exLine: `${fmt(amt * c.rate * 0.9608, c.rate < 1 ? 2 : 0)} ${c.code}`, exWidth: '96%',
+      theyGet: `${fmt(amt * c.rate, c.rate < 1 ? 2 : 0)} ${c.code}`,
+      rateLine: `1 AED = ${c.rate < 1 ? c.rate.toFixed(4) : c.rate.toFixed(2)} ${c.code}`,
+      extraLine: `+ AED ${fmt(amt * 0.0408)} more reaches home`,
+      products: [
+        { id: 'send', href: 'Money%20Send%20Money.dc.html', cta: 'Explore Send money', tag: 'SEND MONEY', head: 'Your family gets more. You wait less.', title: '#1B7236', bg: '#D9F8EA', dot: '#00E385',
+          points: ['The Google rate, locked when you send', 'Bank, mobile wallet or cash pickup', 'Delivery time shown before you pay'],
+          q: 'Send 1,000 AED to Sameer in Egypt', a: 'Done at the Google rate. Sameer gets it in minutes, I’ll tell you when it lands.', result: 'Delivered in 2 min' },
+        { id: 'wallet', href: 'Money%20Wallet.dc.html', cta: 'Explore Wallet', tag: 'WALLET', head: 'Bills paid before you remember them.', title: '#7F6000', bg: '#FFF3C9', dot: '#F5C400',
+          points: ['A nudge before anything is due', 'Pay straight from the reminder', 'Every receipt and refund tracked'],
+          q: 'Pay Etisalat 200 AED', a: 'Paid. Receipt saved, and I’ll remind you three days before the next one.', result: 'Zero late fees this year' },
+        { id: 'expenses', href: 'Money%20Expenses.dc.html', cta: 'Explore Expenses', tag: 'EXPENSES AND SAVINGS', head: 'Know where every dirham goes.', title: '#10306A', bg: '#E2ECFD', dot: '#3071E8',
+          points: ['Spending sorted into clear categories', 'Duplicate payments flagged instantly', 'Cheaper deals suggested for your bills'],
+          q: 'Compare my DEWA bills to last month', a: 'You paid 412 AED, 9% less than last month. I also spotted a duplicate payment of 45 AED.', result: 'Duplicate payment refunded' }
+      ],
+      steps: [
+        { n: 1, t: 'Download and verify', d: 'Get the app and verify once with your Emirates ID. It takes about two minutes.', color: '#00E385' },
+        { n: 2, t: 'Add your recipient', d: 'Bank account, mobile wallet or cash pickup. Saved for next time.', color: '#F5C400' },
+        { n: 3, t: 'Send and track', d: 'See the delivery time before you send, then watch it land.', color: '#A9C4F7' }
+      ],
+      voices: [
+        { q: 'Checked the Google rate before sending and it came out the same. Been using another app for 3 years, never seen that.', n: 'Joan', r: 'Dubai, sends to the Philippines', bg: '#FFFFFF', rot: '-1deg' },
+        { q: 'Sent to my mother in Cairo at 11pm on a Friday. She had it before I slept.', n: 'Ahmed', r: 'Dubai, sends to Egypt', bg: '#FFF3C9', rot: '1deg' },
+        { q: 'Used to spend an hour at the exchange in Al Nahda. Did this one from the office in a minute.', n: 'Mohammed', r: 'Sharjah, sends to Pakistan', bg: '#D9F8EA', rot: '-0.5deg' }
+      ],
+      faqs: [
+        { q: 'What exchange rate do I get?', a: 'Whatever rate you see on Google, we match it. That’s higher than the banks and exchange houses, so more of your money reaches home.' },
+        { q: 'How long does a transfer take?', a: 'Most transfers land in minutes. You see the expected delivery time before you send, and if it arrives later than we said, we credit you AED 15.' },
+        { q: 'What do I need to sign up?', a: 'Just the app and your Emirates ID. Verification takes about two minutes.' },
+        { q: 'Which payout methods are available?', a: 'Bank account, mobile wallet or cash pickup, so your recipient doesn’t need a bank account.' },
+        { q: 'Who processes my transfer?', a: 'Lulu International Exchange LLC, one of the UAE’s most established exchange houses. Real people on support, 24 hours a day.' }
+      ].map((f, i) => ({ ...f, open: this.state.faq === i, closed: !(this.state.faq === i), rows: (this.state.faq === i) ? '1fr' : '0fr', fop: (this.state.faq === i) ? 1 : 0, fty: (this.state.faq === i) ? 'none' : 'translateY(-6px)', rot: this.state.faq === i ? 'rotate(45deg)' : 'none', bg: this.state.faq === i ? '#FFFFFF' : '#F7FDFB', toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

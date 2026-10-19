@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip;scroll-padding-top:110px}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+</style>
+</helmet>
+<section data-screen-label="01 Legal header" style="position:relative;background:#F7FDFB;overflow:hidden">
+  <dc-import name="Nav" current="{{ route }}" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:1200px;margin:24px auto 0;padding:0 24px clamp(40px,6vw,64px);display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#D9F8EA;color:#1B7236">LEGAL</span>
+      <div role="tablist" aria-label="Legal documents" style="display:flex;gap:4px;padding:4px;border-radius:999px;background:#FFFFFF;border:2px solid #022B1A">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+          <a href="{{ t.href }}" role="tab" aria-selected="{{ t.on }}" style="font-size:15px;font-weight:600;padding:9px 18px;border-radius:999px;background:{{ t.bg }};color:{{ t.ink }}" style-hover="color:{{ t.hov }}">{{ t.name }}</a>
+        </sc-for>
+      </div>
+    </div>
+    <h1 style="margin:0;font-weight:500;font-size:clamp(48px,7vw,96px);line-height:0.98;letter-spacing:-0.04em">{{ doc.title }}</h1>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:15px;color:#2E5A46">
+      <span style="display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#25D366"></span>Last updated {{ doc.updated }}</span>
+      <span>{{ readTime }} min read</span>
+      <span>Super Chat AI Technology Limited · DIFC No. 13217</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px;margin-top:12px">
+      <sc-for list="{{ summary }}" as="s" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:22px;border-radius:26px;background:{{ s.bg }};border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A">
+          <span style="width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">{{ s.n }}</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em;line-height:1.15">{{ s.t }}</span>
+          <span style="font-size:15px;line-height:1.45">{{ s.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <span style="font-size:13px;color:#2E5A46">The plain-language summary above is for convenience. The full text below is what applies.</span>
+  </div>
+</section>
+
+<section data-screen-label="02 Legal body" style="background:#FFFFFF;border-top:2px solid #022B1A;padding:clamp(48px,7vw,80px) 24px clamp(64px,10vw,110px)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:{{ cols }};gap:clamp(32px,5vw,72px);align-items:start">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Contents" style="position:sticky;top:110px;display:flex;flex-direction:column;gap:2px;max-height:calc(100vh - 140px);overflow-y:auto;padding-right:6px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;color:#2E5A46;padding:0 12px 10px">CONTENTS</span>
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="12">
+          <a href="#{{ s.id }}" onClick="{{ s.go }}" style="display:grid;grid-template-columns:26px minmax(0,1fr);gap:6px;padding:8px 12px;border-radius:12px;font-size:14px;line-height:1.35;background:{{ s.navBg }};color:{{ s.navInk }};font-weight:{{ s.navW }}" style-hover="background:#F1FCF7;color:#022B1A"><span style="color:#6B8F80;font-variant-numeric:tabular-nums">{{ s.n }}</span><span>{{ s.t }}</span></a>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <article style="min-width:0;max-width:720px;display:flex;flex-direction:column;gap:clamp(40px,5vw,56px)">
+      <p style="margin:0;font-size:19px;line-height:1.6;color:#022B1A;text-wrap:pretty">{{ doc.intro }}</p>
+      <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+        <sc-if value="{{ s.isContact }}" hint-placeholder-val="{{ false }}">
+        <section id="{{ s.id }}" data-legal-sec="{{ s.id }}" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:clamp(28px,4vw,40px);border-radius:30px;background:#D9F8EA;border:2px solid #022B1A;box-shadow:0 6px 0 #022B1A">
+          <span style="width:52px;height:52px;border-radius:50%;background:#25D366;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:24px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM3 7l9 7 9-7"></path></svg></span>
+          <h2 style="margin:0;font-weight:500;font-size:clamp(28px,3vw,38px);line-height:1.05;letter-spacing:-0.03em">{{ s.t }}</h2>
+          <span style="font-size:17px;line-height:1.5;color:#1E4535;max-width:40ch">{{ s.lead }}</span>
+          <a href="{{ s.mailHref }}" style="font-size:16px;font-weight:600;padding:13px 22px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 4px 0 #25D366;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #25D366;color:#F7FDFB">{{ s.mail }} →</a>
+        </section>
+        </sc-if>
+        <sc-if value="{{ s.notContact }}" hint-placeholder-val="{{ true }}">
+        <section id="{{ s.id }}" data-legal-sec="{{ s.id }}" style="display:flex;flex-direction:column;gap:16px;padding:{{ s.pad }};border:{{ s.bd }};border-top:{{ s.bt }};border-radius:{{ s.rad }};background:{{ s.bg }}">
+          <div style="display:flex;align-items:baseline;gap:14px">
+            <span style="flex:none;min-width:38px;height:30px;padding:0 8px;box-sizing:border-box;border-radius:999px;background:#D9F8EA;border:1.5px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;transform:translateY(-4px)">{{ s.n }}</span>
+            <h2 style="margin:0;font-weight:500;font-size:clamp(26px,2.6vw,34px);line-height:1.1;letter-spacing:-0.025em;text-wrap:balance">{{ s.t }}</h2>
+          </div>
+          <sc-for list="{{ s.blocks }}" as="b" hint-placeholder-count="2">
+            <sc-if value="{{ b.isH }}" hint-placeholder-val="{{ false }}"><h3 style="margin:10px 0 0;font-weight:500;font-size:20px;line-height:1.25;letter-spacing:-0.01em">{{ b.h }}</h3></sc-if>
+            <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}"><p style="margin:0;font-size:17px;line-height:1.65;color:#1E4535;text-wrap:pretty">{{ b.p }}</p></sc-if>
+            <sc-if value="{{ b.isUl }}" hint-placeholder-val="{{ false }}">
+              <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+                <sc-for list="{{ b.ul }}" as="li" hint-placeholder-count="3">
+                  <li style="display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;font-size:17px;line-height:1.5;color:#1E4535"><span style="width:8px;height:8px;margin:8px 0 0 4px;border-radius:50%;background:#25D366;border:1.5px solid #022B1A"></span><span>{{ li }}</span></li>
+                </sc-for>
+              </ul>
+            </sc-if>
+            <sc-if value="{{ b.isDl }}" hint-placeholder-val="{{ false }}">
+              <dl style="margin:0;display:flex;flex-direction:column;border-radius:20px;border:1.5px solid #CFE3DA;overflow:hidden">
+                <sc-for list="{{ b.dl }}" as="d" hint-placeholder-count="3">
+                  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:4px 20px;padding:14px 18px;background:{{ d.bg }}">
+                    <dt style="font-size:16px;font-weight:600;line-height:1.4">{{ d.k }}</dt>
+                    <dd style="margin:0;font-size:16px;line-height:1.55;color:#1E4535;grid-column:span 2">{{ d.v }}</dd>
+                  </div>
+                </sc-for>
+              </dl>
+            </sc-if>
+            <sc-if value="{{ b.isCards }}" hint-placeholder-val="{{ false }}">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:10px">
+                <sc-for list="{{ b.cardList }}" as="k" hint-placeholder-count="3">
+                  <div style="display:flex;flex-direction:column;gap:8px;padding:18px;border-radius:20px;background:#FFFFFF;border:1.5px solid #022B1A">
+                    <span style="font-size:16px;font-weight:600">{{ k.t }}</span>
+                    <span style="font-size:14px;line-height:1.5;color:#1E4535">{{ k.d }}</span>
+                    <a href="{{ k.href }}" target="_blank" rel="noopener" style="margin-top:auto;font-size:14px;font-weight:600;color:#1B7236;text-decoration:underline;text-underline-offset:3px">{{ k.lt }} ↗</a>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.isNote }}" hint-placeholder-val="{{ false }}"><div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:16px 18px;border-radius:18px;background:#022B1A;color:#F7FDFB;font-size:15px;line-height:1.55"><span style="width:26px;height:26px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:13px" fill="none" stroke="#022B1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 16.5v.5"></path></svg></span><span>{{ b.note }}</span></div></sc-if>
+            <sc-if value="{{ b.isMail }}" hint-placeholder-val="{{ false }}"><a href="{{ b.mailHref }}" style="align-self:flex-start;display:flex;align-items:center;gap:10px;font-size:16px;font-weight:600;padding:12px 18px 12px 12px;border-radius:999px;background:#F7FDFB;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A"><span style="width:28px;height:28px;border-radius:50%;background:#25D366;border:1.5px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:14px" fill="none" stroke="#022B1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM3 7l9 7 9-7"></path></svg></span>{{ b.mail }}</a></sc-if>
+          </sc-for>
+        </section>
+        </sc-if>
+      </sc-for>
+    </article>
+  </div>
+</section>
+
+<section data-screen-label="03 Legal help" style="background:#F7FDFB;padding:clamp(56px,8vw,88px) 24px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px">
+    <a href="Security.dc.html" style="display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:28px;background:#D9F8EA;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 3px 0 #022B1A;color:#022B1A">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#1B7236">SECURITY</span>
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.025em;line-height:1.1">How we keep your data safe →</span>
+    </a>
+    <a href="Contact.dc.html" style="display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 3px 0 #022B1A;color:#022B1A">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#1B7236">QUESTIONS?</span>
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.025em;line-height:1.1">Talk to a real person →</span>
+    </a>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { docs: null, active: null, wide: typeof window === 'undefined' ? true : window.innerWidth >= 960 };
+  componentDidMount() {
+    import(new URL('legal-content.js', location.href).href).then(m => this.setState({ docs: m.DOCS }, () => this.watch()));
+    this.onResize = () => { const w = window.innerWidth >= 960; if (w !== this.state.wide) this.setState({ wide: w }); };
+    window.addEventListener('resize', this.onResize);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); this.io && this.io.disconnect(); }
+  watch() {
+    requestAnimationFrame(() => {
+      this.io && this.io.disconnect();
+      this.io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) this.setState({ active: e.target.dataset.legalSec }); }); }, { rootMargin: '-20% 0px -70% 0px' });
+      document.querySelectorAll('[data-legal-sec]').forEach(el => this.io.observe(el));
+    });
+  }
+  renderVals() {
+    const key = new URLSearchParams(location.search).get('doc') === 'terms' ? 'terms' : 'privacy';
+    const D = this.state.docs, doc = D ? D[key] : { title: key === 'terms' ? 'Terms of Use' : 'Privacy Policy', updated: '', intro: '', summary: [], sections: [] };
+    if (typeof document !== 'undefined' && D && document.title !== doc.title + ' · Superchat') document.title = doc.title + ' · Superchat';
+    const words = doc.sections.reduce((a, s) => a + JSON.stringify(s.b).split(' ').length, 0);
+    const TINT = ['#D9F8EA', '#FFF3C9', '#E2ECFD'];
+    return {
+      route: key === 'terms' ? '/terms-of-use' : '/privacy-policy',
+      doc, wide: this.state.wide, cols: this.state.wide ? '260px minmax(0,1fr)' : 'minmax(0,1fr)',
+      readTime: Math.max(1, Math.round(words / 230)),
+      tabs: [['privacy', 'Privacy Policy'], ['terms', 'Terms of Use']].map(([k, name]) => { const on = k === key; return { name, on, href: 'Legal.dc.html?doc=' + k, bg: on ? '#022B1A' : 'transparent', ink: on ? '#F7FDFB' : '#022B1A', hov: on ? '#F7FDFB' : '#1B7236' }; }),
+      summary: doc.summary.map(([t, d], i) => ({ t, d, n: i + 1, bg: TINT[i % 3] })),
+      sections: doc.sections.map((s, i) => { const on = this.state.active === s.id; return {
+        id: s.id, t: s.t, n: String(i + 1).padStart(2, '0'),
+        isContact: s.id === 'contact', notContact: s.id !== 'contact',
+        lead: (s.b.find(b => b.p) || {}).p || '', mail: (s.b.find(b => b.mail) || {}).mail || '', mailHref: 'mailto:' + ((s.b.find(b => b.mail) || {}).mail || ''),
+        pad: s.panel ? 'clamp(22px,3vw,32px)' : '28px 0 0', bt: s.panel ? '2px solid #022B1A' : '1.5px dashed #CFE3DA', rad: s.panel ? '28px' : '0', bg: s.panel ? '#F1FCF7' : 'transparent', bd: s.panel ? '2px solid #022B1A' : 'none',
+        navBg: on ? '#D9F8EA' : 'transparent', navInk: on ? '#022B1A' : '#2E5A46', navW: on ? 600 : 400,
+        go: (e) => { e.preventDefault(); const el = document.getElementById(s.id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); history.replaceState(null, '', '#' + s.id); },
+        blocks: s.b.map(b => ({ ...b, isH: !!b.h, isP: !!b.p, isUl: !!b.ul, isDl: !!b.dl, isMail: !!b.mail, isCards: !!b.cards, isNote: !!b.note, cardList: (b.cards || []).map(([t, d, lt, href]) => ({ t, d, lt, href })), mailHref: b.mail ? 'mailto:' + b.mail : '', dl: (b.dl || []).map(([k, v], j) => ({ k, v, bg: j % 2 ? '#FFFFFF' : '#F7FDFB' })) }))
+      }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

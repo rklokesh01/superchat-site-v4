@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand fonts (Regular only was supplied). Plain @font-face keeps the literal family
+   names the templates' inline styles use ('PP Frama', 'PP Frama Text'). */
+@font-face { font-family: 'PP Frama'; src: url('/fonts/PPFrama-Regular.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'PP Frama Text'; src: url('/fonts/PPFramaText-Regular.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+
+/* Shared base from every template <helmet> */
+h1, h2, h3 { font-family: 'PP Frama', 'Outfit', system-ui, sans-serif; }
+button, input { font-family: inherit; }
+/* Faux weight: headings and display text get a same-colour outer stroke */
+h1, h2, h3, .pf, [style*="font-family:'PP Frama','Outfit',sans-serif"] { -webkit-text-stroke: 0.022em currentColor; paint-order: stroke fill; }
+html { background: #F7FDFB; scrollbar-color: rgba(2, 43, 26, 0.28) #F7FDFB; overflow-x: clip; }
+body { margin: 0; background: #F7FDFB; color: #022B1A; font-family: 'PP Frama Text', 'Outfit', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; -webkit-tap-highlight-color: transparent; text-size-adjust: 100%; }
+img, svg { max-width: none; }
+a { color: #022B1A; text-decoration: none; }
+
+:focus-visible { outline: 3px solid #00E385; outline-offset: 3px; border-radius: 12px; }
+
+/* Nav: desktop bar ≥ 1120px, hamburger + full-screen overlay below */
+.only-desk, .only-mob { display: contents; }
+@media (max-width: 1119.98px) { .only-desk { display: none; } }
+@media (min-width: 1120px) { .only-mob { display: none; } }
+
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 2000; padding: 10px 16px; border-radius: 999px; background: #022B1A; color: #F7FDFB; }
+.skip-link:focus { top: 12px; color: #F7FDFB; }
+/* Lenis: no overflow rule for .lenis-stopped — the scrollbar must stay visible while the intro
+   or a menu blocks scrolling, otherwise the page shifts sideways when it returns. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }

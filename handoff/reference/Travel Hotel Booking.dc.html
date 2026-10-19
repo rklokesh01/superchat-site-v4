@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#3071E8}
+</style>
+</helmet>
+<section data-screen-label="01 Hotel booking hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:clamp(64px,10vw,100px)">
+  <dc-import name="Nav" active="Travel" current="/travel/hotel-booking" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:1200px;margin:24px auto 0;padding:0 24px;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;font-size:14px;color:#2E5A46"><a href="Travel.dc.html" style="color:#2E5A46" style-hover="color:#022B1A">Travel</a><span>/</span><span style="color:#022B1A;font-weight:600" aria-current="page">Hotel booking</span></nav>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:56px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <span style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px 6px 6px;border-radius:999px;background:#022B1A;color:#A9C4F7"><span style="width:20px;height:20px;border-radius:50%;background:#F5C400;border:2px solid #A9C4F7"></span>HOTEL BOOKING</span>
+        <h1 style="margin:0;font-weight:500;font-size:clamp(46px,6.2vw,88px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">The right room, without the tabs.</h1>
+        <p style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:#2E5A46;max-width:36ch;text-wrap:pretty">Say the area, the budget and what you can’t do without. Superchat reads the reviews, flags free cancellation and holds the room.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#3071E8;color:#FFFFFF;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#FFFFFF">Find my room</a>
+          <a href="#filter" style="font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#FFFFFF;color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A">Try the filters</a>
+        </div>
+      </div>
+      <div style="position:relative;padding:12px">
+        <div style="background:#FFF3C9;border:2px solid #022B1A;border-radius:36px;box-shadow:0 8px 0 #022B1A;padding:clamp(18px,3vw,28px)">
+          <div style="background:#FFFFFF;border:2px solid #022B1A;border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1.5px solid #D6EDE3">
+              <span style="width:34px;height:34px;border-radius:50%;background:#3071E8;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" style="width:14px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#FFFFFF"></path></svg></span>
+              <span style="display:flex;flex-direction:column"><span style="font-size:15px;font-weight:600">Superchat</span><span style="font-size:12px;color:#3071E8">Always on</span></span>
+            </div>
+            <div style="align-self:flex-end;max-width:85%;background:#E2ECFD;border:1.5px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">Istanbul, 4 nights near Galata. Under 500, quiet, free cancellation.</div>
+            <div style="align-self:flex-start;width:min(320px,94%);border:2px solid #022B1A;border-radius:20px;overflow:hidden">
+              <div style="height:120px;background:#A9C4F7;border-bottom:2px solid #022B1A">
+                <image-slot id="hotel-hero-room" shape="rect" placeholder="Hotel room photo"></image-slot>
+              </div>
+              <div style="padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-size:14px">
+                <div style="display:flex;justify-content:space-between;gap:8px"><span style="font-size:16px;font-weight:600">Pera Courtyard Hotel</span><span style="font-weight:600">★ 4.6</span></div>
+                <div style="display:flex;justify-content:space-between"><span style="color:#2E5A46">Walk to Galata</span><span style="font-weight:600">6 min</span></div>
+                <div style="display:flex;justify-content:space-between"><span style="color:#2E5A46">4 nights</span><span style="font-weight:600;color:#10306A">AED 460 a night</span></div>
+                <div style="display:flex;justify-content:space-between"><span style="color:#2E5A46">Cancel free until</span><span style="font-weight:600">Mon 6 Oct</span></div>
+              </div>
+              <div style="padding:0 16px 14px"><span style="display:block;text-align:center;font-size:15px;font-weight:600;padding:11px;border-radius:999px;background:#3071E8;color:#FFFFFF;border:2px solid #022B1A">Hold this room</span></div>
+            </div>
+          </div>
+        </div>
+        <div data-sfloat="0" style="position:absolute;right:-4px;top:-8px;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 4px 0 #3071E8;font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#F5C400;border:2px solid #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:12px;color:#022B1A">★</span>212 reviews read</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="filter" data-screen-label="02 Hotel filter demo" style="background:#F7FDFB;padding:clamp(24px,4vw,40px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#A9C4F7">TRY IT</span>
+        <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance">Say what you can’t live without.</h2>
+      </div>
+      <p style="margin:0;font-size:19px;line-height:1.45;color:#2E5A46;max-width:34ch">Six hotels near Galata, Istanbul. Add what matters and see what’s left.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <sc-for list="{{ needs }}" as="n" hint-placeholder-count="5">
+        <button onClick="{{ n.toggle }}" style="display:flex;align-items:center;gap:8px;padding:10px 18px 10px 10px;border-radius:999px;border:2px solid #022B1A;background:{{ n.bg }};color:{{ n.fg }};box-shadow:{{ n.shadow }};font-size:16px;font-weight:500;cursor:pointer;transition:background .2s,box-shadow .2s"><span style="width:24px;height:24px;border-radius:50%;background:{{ n.dot }};border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#022B1A">{{ n.mark }}</span>{{ n.name }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:20px;align-items:start">
+      <div style="border-radius:32px;background:#E2ECFD;border:2px solid #022B1A;padding:clamp(22px,3.5vw,36px);display:flex;flex-direction:column;gap:14px">
+        <div style="align-self:flex-end;max-width:90%;background:#FFFFFF;border:2px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">{{ ask }}</div>
+        <div style="align-self:flex-start;max-width:92%;background:#022B1A;color:#F7FDFB;border-radius:18px 18px 18px 4px;padding:14px 16px;font-size:16px;line-height:1.45">{{ reply }}</div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-top:10px"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:56px;font-weight:500;letter-spacing:-0.04em;line-height:1">{{ count }}</span><span style="font-size:15px;font-weight:600;color:#10306A">of 6 hotels match</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ hotels }}" as="h" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px;border-radius:24px;border:2px solid #022B1A;background:{{ h.bg }};color:{{ h.fg }};box-shadow:{{ h.shadow }}">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:18px;font-weight:600">{{ h.name }}</span><span style="font-size:14px;opacity:.85">★ {{ h.rating }} · {{ h.walk }} to Galata</span></span>
+              <span style="display:flex;flex-direction:column;align-items:flex-end;flex:none"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:26px;font-weight:500;letter-spacing:-0.03em;line-height:1">{{ h.price }}</span><span style="font-size:12px;opacity:.85">AED a night</span></span>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <sc-for list="{{ h.tags }}" as="tg" hint-placeholder-count="3">
+                <span style="font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:{{ h.tagBg }};color:#022B1A;border:1.5px solid #022B1A">{{ tg }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ none }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:22px;border-radius:24px;border:2px dashed #022B1A;font-size:16px;line-height:1.45;color:#2E5A46">Nothing ticks every box. Superchat would suggest dropping one, or widening the area.</div>
+        </sc-if>
+        <span style="font-size:12px;color:#2E5A46;text-align:center">Sample hotels and prices, for illustration.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Hotel capabilities" style="background:#E2ECFD;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,5vw,48px)">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:15ch;text-wrap:balance">Just say it. It knows where you’ll sleep well.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:20px">
+      <sc-for list="{{ caps }}" as="c" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A">
+          <span style="align-self:flex-start;max-width:100%;background:#E2ECFD;border:1.5px solid #022B1A;border-radius:18px 18px 4px 18px;padding:10px 14px;font-size:15px;line-height:1.35">“{{ c.say }}”</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:24px;font-weight:500;letter-spacing:-0.02em">{{ c.t }}</span>
+          <span style="font-size:16px;line-height:1.45;color:#2E5A46">{{ c.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Hotel trust" style="position:relative;background:#022B1A;color:#F7FDFB;padding:clamp(72px,12vw,120px) clamp(18px,5vw,24px);overflow:hidden">
+  <svg style="position:absolute;right:-40px;top:60px;width:260px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#F5C400" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(32px,5vw,56px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#F5C400;color:#022B1A">BOOK WITHOUT WORRY</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance;color:#F7FDFB">Plans change. Your room can too.</h2>
+      <p style="margin:0;font-size:18px;line-height:1.5;color:#A9C4F7;max-width:40ch">Free cancellation is flagged on every option, and Superchat reminds you before the deadline passes.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px">
+      <sc-for list="{{ trust }}" as="t" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:24px;background:#0B4A2F;border:2px solid #1B7236">
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em">{{ t.t }}</span>
+          <span style="font-size:15px;line-height:1.45;color:#B0F5D8">{{ t.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 Hotel FAQ" style="background:#F7FDFB;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px) clamp(48px,7vw,80px)">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Good questions.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div style="border-radius:24px;border:2px solid #022B1A;background:{{ f.bg }};overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;border:none;background:transparent;font-size:clamp(18px,1.8vw,21px);font-weight:500;color:#022B1A;text-align:left;cursor:pointer">
+            <span style="flex:1">{{ f.q }}</span>
+            <span style="width:36px;height:36px;border-radius:50%;border:2px solid #022B1A;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transform:{{ f.rot }};transition:transform .4s cubic-bezier(.2,.8,.2,1)">+</span>
+          </button>
+          <div aria-hidden="{{ f.closed }}" style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)"><div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.5;color:#2E5A46;max-width:60ch;opacity:{{ f.fop }};transform:{{ f.fty }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)">{{ f.a }}</p></div></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 More in Travel" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,48px);line-height:1;letter-spacing:-0.035em">More in Travel</h2>
+      <a href="Travel.dc.html" style="font-size:16px;font-weight:600;color:#3071E8" style-hover="color:#022B1A">All of Travel →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
+      <a href="Travel%20Flight%20Booking.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#E2ECFD;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">FLIGHT BOOKING</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Found, compared, booked in one chat →</span></a>
+      <a href="Travel%20Trip%20Planner.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#A9C4F7;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">TRIP PLANNER</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Every day planned, every table booked →</span></a>
+      <a href="Travel%20Blog.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#022B1A;border:2px solid #022B1A;color:#F7FDFB;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #3071E8;color:#F7FDFB"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#A9C4F7">TRAVEL BLOG</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Guides to travelling lighter →</span></a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { on: ['cancel'], faq: 0 };
+  N = [
+    { id: 'cancel', name: 'Free cancellation' }, { id: 'quiet', name: 'Quiet room' }, { id: 'breakfast', name: 'Breakfast' }, { id: 'metro', name: 'Near the metro' }, { id: 'pool', name: 'Pool' }
+  ];
+  H = [
+    { name: 'Pera Courtyard Hotel', rating: '4.6', walk: '6 min', price: 460, has: ['cancel', 'quiet', 'breakfast', 'metro'] },
+    { name: 'Karaköy Port Rooms', rating: '4.3', walk: '9 min', price: 390, has: ['cancel', 'metro'] },
+    { name: 'Galata Hill House', rating: '4.8', walk: '2 min', price: 540, has: ['quiet', 'breakfast'] },
+    { name: 'Bosphorus View Suites', rating: '4.5', walk: '14 min', price: 620, has: ['cancel', 'breakfast', 'pool'] },
+    { name: 'Tünel Studio Stay', rating: '4.1', walk: '4 min', price: 310, has: ['metro'] },
+    { name: 'Cihangir Garden Hotel', rating: '4.4', walk: '11 min', price: 480, has: ['cancel', 'quiet', 'pool'] }
+  ];
+  componentDidMount() {
+    const loop = (t) => { this.raf = requestAnimationFrame(loop); document.querySelectorAll('[data-sfloat]').forEach(el => { const i = +el.dataset.sfloat; el.style.transform = `translateY(${Math.sin(t / 900 + i) * 6}px) rotate(${Math.sin(t / 1300 + i) * 3}deg)`; }); };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const on = this.state.on, label = id => this.N.find(n => n.id === id).name;
+    const list = this.H.filter(h => on.every(id => h.has.includes(id))).sort((a, b) => a.price - b.price);
+    const top = list[0], wants = on.map(id => label(id).toLowerCase());
+    return {
+      needs: this.N.map(n => { const a = on.includes(n.id); return { name: n.name, bg: a ? '#022B1A' : '#FFFFFF', fg: a ? '#F7FDFB' : '#022B1A', dot: a ? '#F5C400' : '#E2ECFD', mark: a ? '✓' : '+', shadow: a ? '0 4px 0 #3071E8' : '0 3px 0 #022B1A', toggle: () => this.setState(s => ({ on: s.on.includes(n.id) ? s.on.filter(x => x !== n.id) : [...s.on, n.id] })) }; }),
+      ask: wants.length ? `Istanbul, near Galata. Must have: ${wants.join(', ')}.` : 'Istanbul, near Galata. Anything decent.',
+      reply: top ? `${top.name} ticks every box at ${top.price} a night, ${top.walk} from Galata. Want me to hold it?` : 'Nothing has all of that. Drop one and I’ll find you something good.',
+      count: list.length, none: !list.length,
+      hotels: list.map((h, i) => ({ ...h, tags: h.has.map(label), bg: i === 0 ? '#3071E8' : '#FFFFFF', fg: i === 0 ? '#FFFFFF' : '#022B1A', shadow: i === 0 ? '0 6px 0 #022B1A' : 'none', tagBg: i === 0 ? '#FFF3C9' : '#E2ECFD' })),
+      caps: [
+        { say: 'Somewhere quiet, I’m a light sleeper', t: 'Reviews read for you', d: 'It reads what guests actually say about noise, beds and staff, and sums it up in a line.' },
+        { say: 'Near the metro, under 500', t: 'Location that works', d: 'Walking times to where you’re going, not just a pin on a map.' },
+        { say: 'Two rooms next to each other', t: 'Families and groups', d: 'Connecting or side-by-side rooms requested when you book.' },
+        { say: 'Can we check in at 10am?', t: 'Requests passed on', d: 'Early check-in, late checkout and cots asked for in advance.' },
+        { say: 'Add one more night', t: 'Extend in one message', d: 'Stay longer at the same rate when the room is free.' },
+        { say: 'Cancel the Istanbul hotel', t: 'Cancel just as fast', d: 'See the refund first, then cancel without calling the hotel.' }
+      ],
+      trust: [
+        { t: 'Free cancel, flagged', d: 'Every option shows whether, and until when, you can cancel for free.' },
+        { t: 'Deadline reminders', d: 'A nudge the day before free cancellation ends.' },
+        { t: 'Full price up front', d: 'City tax and fees included in the nightly price.' },
+        { t: 'People on support', d: 'Real people, 24 hours a day, right inside the chat.' }
+      ],
+      faqs: [
+        { q: 'Which hotels can I book?', a: 'Superchat searches hotels and apartments from major booking partners, then shows the few that fit what you asked for.' },
+        { q: 'Do I pay now or at the hotel?', a: 'Both options are shown where available. You’ll see which before you confirm.' },
+        { q: 'How do I know the reviews are real?', a: 'Summaries come from verified guest reviews on partner sites, and you can ask to see the original reviews.' },
+        { q: 'Can I book for someone else?', a: 'Yes. Give the guest’s name and the hotel will have it on arrival.' }
+      ].map((f, i) => ({ ...f, open: this.state.faq === i, closed: !(this.state.faq === i), rows: (this.state.faq === i) ? '1fr' : '0fr', fop: (this.state.faq === i) ? 1 : 0, fty: (this.state.faq === i) ? 'none' : 'translateY(-6px)', rot: this.state.faq === i ? 'rotate(45deg)' : 'none', bg: this.state.faq === i ? '#FFFFFF' : '#F7FDFB', toggle: () => this.setState(st => ({ faq: st.faq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

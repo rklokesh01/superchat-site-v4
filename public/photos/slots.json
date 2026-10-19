@@ -1,0 +1,186 @@
+{
+  "s2-owner": {
+    "file": "/photos/s2-owner.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-retail": {
+    "file": "/photos/s3-retail.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-automotive": {
+    "file": "/photos/s3-automotive.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-hospitality": {
+    "file": "/photos/s3-hospitality.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-healthcare": {
+    "file": "/photos/s3-healthcare.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-real-estate": {
+    "file": "/photos/s3-real-estate.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-education": {
+    "file": "/photos/s3-education.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-fitness": {
+    "file": "/photos/s3-fitness.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-send-money": {
+    "file": "/photos/s3-send-money.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-flights": {
+    "file": "/photos/s3-flights.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-hotels": {
+    "file": "/photos/s3-hotels.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-appointments": {
+    "file": "/photos/s3-appointments.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": -16.9495466170658
+    }
+  },
+  "s3-meetings": {
+    "file": "/photos/s3-meetings.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-restaurants": {
+    "file": "/photos/s3-restaurants.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "s3-car-rental": {
+    "file": "/photos/s3-car-rental.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "wa-scrap-photo": {
+    "file": "/photos/wa-scrap-photo.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "shopping-hero-photo": {
+    "file": "/photos/shopping-hero-photo.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "shopping-cover-spot-a-fake-discount": {
+    "file": "/photos/shopping-cover-spot-a-fake-discount.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "shopping-cover-when-to-buy-electronics": {
+    "file": "/photos/shopping-cover-when-to-buy-electronics.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "shopping-cover-search-with-a-photo": {
+    "file": "/photos/shopping-cover-search-with-a-photo.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "everyday-cover-never-pay-a-late-fee-again": {
+    "file": "/photos/everyday-cover-never-pay-a-late-fee-again.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "everyday-cover-renewals-calendar-uae": {
+    "file": "/photos/everyday-cover-renewals-calendar-uae.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "everyday-cover-ask-better-questions": {
+    "file": "/photos/everyday-cover-ask-better-questions.webp",
+    "crop": {
+      "s": 1,
+      "x": 0,
+      "y": 0
+    }
+  }
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+</style>
+</helmet>
+<section data-screen-label="01 Send money hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:clamp(64px,10vw,100px)">
+  <dc-import name="Nav" active="Money" current="/money/send-money" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:1200px;margin:24px auto 0;padding:0 24px;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;font-size:14px;color:#2E5A46"><a href="Money.dc.html" style="color:#2E5A46" style-hover="color:#022B1A">Money</a><span>/</span><span style="color:#022B1A;font-weight:600" aria-current="page">Send money</span></nav>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:56px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <span style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px 6px 6px;border-radius:999px;background:#022B1A;color:#B0F5D8"><span style="width:20px;height:20px;border-radius:50%;background:#00E385;border:2px solid #B0F5D8"></span>SEND MONEY</span>
+        <h1 style="margin:0;font-weight:500;font-size:clamp(46px,6.2vw,88px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">Type who. Type how much. It’s home.</h1>
+        <p style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:#2E5A46;max-width:36ch;text-wrap:pretty">Transfers at the Google rate with zero fee, to a bank, a mobile wallet or cash pickup. You see when it lands before you pay.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#00E385;color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A">Send your first transfer</a>
+          <a href="Money.dc.html#rates" style="font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#FFFFFF;color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A">Check today’s rate</a>
+        </div>
+      </div>
+      <div style="position:relative;padding:12px">
+        <div style="background:#B0F5D8;border:2px solid #022B1A;border-radius:36px;box-shadow:0 8px 0 #022B1A;padding:clamp(18px,3vw,28px);display:flex;flex-direction:column;gap:14px">
+          <div style="background:#FFFFFF;border:2px solid #022B1A;border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1.5px solid #D6EDE3">
+              <span style="width:34px;height:34px;border-radius:50%;background:#00E385;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" style="width:14px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#022B1A"></path></svg></span>
+              <span style="display:flex;flex-direction:column"><span style="font-size:15px;font-weight:600">Superchat</span><span style="font-size:12px;color:#1B7236">Always on</span></span>
+            </div>
+            <div style="align-self:flex-end;max-width:85%;background:#D9F8EA;border:1.5px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">Send 2,000 AED to Amma, same as last month</div>
+            <div style="align-self:flex-start;width:min(300px,92%);border:2px solid #022B1A;border-radius:20px;overflow:hidden">
+              <div style="padding:14px 16px;background:#022B1A;color:#F7FDFB;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em;color:#6FEBB6">AMMA GETS</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:34px;font-weight:500;letter-spacing:-0.03em;line-height:1">52,340 <span style="font-size:18px;color:#00E385">INR</span></span></div>
+              <div style="padding:12px 16px;display:flex;flex-direction:column;gap:8px;font-size:14px">
+                <div style="display:flex;justify-content:space-between"><span style="color:#2E5A46">Rate</span><span style="font-weight:600">1 AED = 26.17 INR</span></div>
+                <div style="display:flex;justify-content:space-between"><span style="color:#2E5A46">Fee</span><span style="font-weight:600">AED 0</span></div>
+                <div style="display:flex;justify-content:space-between"><span style="color:#2E5A46">To</span><span style="font-weight:600">SBI ···· 4471</span></div>
+                <div style="display:flex;justify-content:space-between"><span style="color:#2E5A46">Arrives</span><span style="font-weight:600;color:#1B7236">In about 2 min</span></div>
+              </div>
+              <div style="padding:0 16px 14px"><span style="display:block;text-align:center;font-size:15px;font-weight:600;padding:11px;border-radius:999px;background:#00E385;border:2px solid #022B1A">Confirm with Face ID</span></div>
+            </div>
+          </div>
+        </div>
+        <div data-sfloat="0" style="position:absolute;right:-4px;top:-8px;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 4px 0 #00E385;font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#F5C400;border:2px solid #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:12px;color:#022B1A">⚡</span>Google rate locked</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="payout" data-screen-label="02 Payout methods" style="background:#F7FDFB;padding:clamp(24px,4vw,40px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#B0F5D8">WHERE IT LANDS</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance">Three ways home. Pick theirs.</h2>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <sc-for list="{{ methods }}" as="m" hint-placeholder-count="3">
+        <button onClick="{{ m.pick }}" style="display:flex;align-items:center;gap:10px;padding:12px 20px 12px 12px;border-radius:999px;border:2px solid #022B1A;background:{{ m.bg }};color:{{ m.fg }};box-shadow:{{ m.shadow }};transform:{{ m.lift }};font-size:17px;font-weight:500;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s"><span style="width:30px;height:30px;border-radius:50%;background:{{ m.dot }};border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:15px" fill="none"><path d="{{ m.icon }}" stroke="#022B1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>{{ m.name }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:20px;align-items:stretch">
+      <div style="border-radius:32px;background:{{ sel.bg }};border:2px solid #022B1A;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:18px;transition:background .3s">
+        <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(48px,6vw,80px);font-weight:500;letter-spacing:-0.04em;line-height:1">{{ sel.time }}</span>
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.08em">TYPICAL DELIVERY</span>
+        <p style="margin:0;font-size:18px;line-height:1.45;max-width:34ch">{{ sel.best }}</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto">
+          <sc-for list="{{ sel.points }}" as="pt" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:12px;font-size:16px;line-height:1.4"><span style="width:24px;height:24px;border-radius:50%;background:#FFFFFF;border:2px solid #022B1A;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">✓</span>{{ pt }}</div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="border-radius:32px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 6px 0 #022B1A;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#1B7236;margin-bottom:14px">WHAT YOU’LL SEE IN CHAT</span>
+        <sc-for list="{{ sel.track }}" as="t" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:14px;align-items:start">
+            <span style="display:flex;flex-direction:column;align-items:center;align-self:stretch"><span style="width:22px;height:22px;border-radius:50%;background:{{ t.dot }};border:2px solid #022B1A;flex:none"></span><span style="flex:1;width:2px;min-height:24px;background:{{ t.line }};margin:4px 0"></span></span>
+            <span style="display:flex;flex-direction:column;gap:2px;padding-bottom:18px"><span style="font-size:17px;font-weight:600">{{ t.t }}</span><span style="font-size:15px;color:#2E5A46">{{ t.d }}</span></span>
+            <span style="font-size:14px;font-weight:600;color:#1B7236;padding-top:2px">{{ t.at }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Send money capabilities" style="background:#D9F8EA;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,5vw,48px)">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:15ch;text-wrap:balance">Just say it. It knows what you mean.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:20px">
+      <sc-for list="{{ caps }}" as="c" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A">
+          <span style="align-self:flex-start;max-width:100%;background:#D9F8EA;border:1.5px solid #022B1A;border-radius:18px 18px 4px 18px;padding:10px 14px;font-size:15px;line-height:1.35">“{{ c.say }}”</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:24px;font-weight:500;letter-spacing:-0.02em">{{ c.t }}</span>
+          <span style="font-size:16px;line-height:1.45;color:#2E5A46">{{ c.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Trust" style="position:relative;background:#022B1A;color:#F7FDFB;padding:clamp(72px,12vw,120px) clamp(18px,5vw,24px);overflow:hidden">
+  <svg style="position:absolute;right:-40px;top:60px;width:260px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#00E385" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(32px,5vw,56px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#00E385;color:#022B1A">SAFE BY DESIGN</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance;color:#F7FDFB">Your money, in trusted hands.</h2>
+      <p style="margin:0;font-size:18px;line-height:1.5;color:#B0F5D8;max-width:40ch">Every transfer is processed by Lulu International Exchange LLC, one of the UAE’s most established exchange houses.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px">
+      <sc-for list="{{ trust }}" as="t" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:24px;background:#0B4A2F;border:2px solid #1B7236">
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em">{{ t.t }}</span>
+          <span style="font-size:15px;line-height:1.45;color:#B0F5D8">{{ t.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 Send money FAQ" style="background:#F7FDFB;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px) clamp(48px,7vw,80px)">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Good questions.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div style="border-radius:24px;border:2px solid #022B1A;background:{{ f.bg }};overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;border:none;background:transparent;font-size:clamp(18px,1.8vw,21px);font-weight:500;color:#022B1A;text-align:left;cursor:pointer">
+            <span style="flex:1">{{ f.q }}</span>
+            <span style="width:36px;height:36px;border-radius:50%;border:2px solid #022B1A;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transform:{{ f.rot }};transition:transform .4s cubic-bezier(.2,.8,.2,1)">+</span>
+          </button>
+          <div aria-hidden="{{ f.closed }}" style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)"><div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.5;color:#2E5A46;max-width:60ch;opacity:{{ f.fop }};transform:{{ f.fty }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)">{{ f.a }}</p></div></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 More in Money" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,48px);line-height:1;letter-spacing:-0.035em">More in Money</h2>
+      <a href="Money.dc.html" style="font-size:16px;font-weight:600;color:#1B7236" style-hover="color:#022B1A">All of Money →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
+      <a href="Money%20Wallet.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#FFF3C9;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">WALLET</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Bills paid before you remember them →</span></a>
+      <a href="Money%20Expenses.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#E2ECFD;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">EXPENSES</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Know where every dirham goes →</span></a>
+      <a href="Money%20Blog.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#022B1A;border:2px solid #022B1A;color:#F7FDFB;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #00E385;color:#F7FDFB"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#6FEBB6">MONEY BLOG</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Guides to sending smarter →</span></a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { m: 0, faq: 0 };
+  M = [
+    { name: 'Mobile wallet', dot: '#F5C400', bg: '#FFF3C9', time: 'Seconds', icon: 'M7 3 H17 V21 H7 Z M11 18 H13',
+      best: 'Best for family who pay for things on their phone. Ready to spend the moment it lands.',
+      points: ['GCash, Maya, JazzCash, Easypaisa and more', 'Just their mobile number', 'Works 24/7, weekends included'],
+      track: [['Rate locked', 'Google rate held for your transfer', '0:00'], ['Sent', 'Paid from your card or account', '0:05'], ['Landed', 'In their wallet, ready to spend', '0:40'], ['Told them', 'They get a message it’s arrived', '0:41']] },
+    { name: 'Bank account', dot: '#00E385', bg: '#D9F8EA', time: 'Minutes', icon: 'M3 10 L12 4 L21 10 M5 10 V18 M10 10 V18 M14 10 V18 M19 10 V18 M3 20 H21',
+      best: 'Best for bigger amounts and savings. Straight into the account they already use.',
+      points: ['Major banks across 8 countries', 'Account number or IBAN, saved after the first time', 'Delivery time shown before you pay'],
+      track: [['Rate locked', 'Google rate held for your transfer', '0:00'], ['Sent', 'Paid from your card or account', '0:05'], ['With their bank', 'Received and being credited', '1:10'], ['Landed', 'In their account', '2:00']] },
+    { name: 'Cash pickup', dot: '#F24E2A', bg: '#FFE7DE', time: 'Same day', icon: 'M3 7 H21 V17 H3 Z M12 14 A2 2 0 1 0 12 10 A2 2 0 0 0 12 14',
+      best: 'For anyone without a bank account or wallet. They collect with ID at an agent nearby.',
+      points: ['Thousands of pickup points', 'A reference code sent to them by SMS', 'You’re told the moment it’s collected'],
+      track: [['Rate locked', 'Google rate held for your transfer', '0:00'], ['Ready to collect', 'Reference code sent to them', '0:10'], ['Collected', 'Picked up with their ID', 'Same day'], ['Told you', 'Confirmation in your chat', 'Same day']] }
+  ];
+  componentDidMount() {
+    const loop = (t) => { this.raf = requestAnimationFrame(loop); document.querySelectorAll('[data-sfloat]').forEach(el => { const i = +el.dataset.sfloat; el.style.transform = `translateY(${Math.sin(t / 900 + i) * 6}px) rotate(${Math.sin(t / 1300 + i) * 3}deg)`; }); };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const s = this.M[this.state.m];
+    return {
+      methods: this.M.map((m, i) => { const on = i === this.state.m; return { ...m, bg: on ? '#022B1A' : '#FFFFFF', fg: on ? '#F7FDFB' : '#022B1A', shadow: on ? '0 5px 0 #00E385' : '0 3px 0 #022B1A', lift: on ? 'translateY(-3px)' : 'none', pick: () => this.setState({ m: i }) }; }),
+      sel: { ...s, track: s.track.map(([t, d, at], i) => ({ t, d, at, dot: i === s.track.length - 1 ? '#00E385' : '#FFFFFF', line: i === s.track.length - 1 ? 'transparent' : '#022B1A' })) },
+      caps: [
+        { say: 'Send Amma 2,000 on the 1st of every month', t: 'Scheduled transfers', d: 'Set it once. It goes out on time at the rate of the day, and you’re told when it lands.' },
+        { say: 'Tell me when INR goes above 26.3', t: 'Rate alerts', d: 'Wait for a better rate without watching the charts. You get a nudge the moment it hits.' },
+        { say: 'Send the same as last time', t: 'Saved recipients', d: 'Names, accounts and amounts remembered, so repeat transfers take one message.' },
+        { say: 'Split 3,000 between Amma and Ravi', t: 'Split in one go', d: 'Send to several people at once, each to the payout method they prefer.' },
+        { say: 'Where’s my transfer to Joan?', t: 'Live tracking', d: 'Ask any time. You’ll see exactly where it is and when it will arrive.' },
+        { say: 'Send me the receipt', t: 'Receipts on request', d: 'Every transfer has a receipt you can forward to family or keep for your records.' }
+      ],
+      trust: [
+        { t: 'Rate locked on send', d: 'The rate you confirm is the rate they get. No surprises on arrival.' },
+        { t: 'AED 15 if it’s late', d: 'If a transfer lands later than the time we showed you, we credit you.' },
+        { t: 'Face ID to confirm', d: 'Nothing leaves your account without your confirmation.' },
+        { t: 'People on support', d: 'Real people, 24 hours a day, right inside the chat.' }
+      ],
+      faqs: [
+        { q: 'Which countries can I send to?', a: 'India, Pakistan, the Philippines, Egypt, Sri Lanka, Nepal, the US and the UK, with more on the way.' },
+        { q: 'Is there a limit on how much I can send?', a: 'Limits depend on your verification level and the destination. You’ll see yours in the app before you send.' },
+        { q: 'Can I cancel a transfer?', a: 'Yes, as long as it hasn’t been paid out yet. Just ask in the chat and it’s cancelled and refunded.' },
+        { q: 'Does my recipient need the app?', a: 'No. They receive to their bank, wallet or at a cash pickup point, and get a message when it arrives.' }
+      ].map((f, i) => ({ ...f, open: this.state.faq === i, closed: !(this.state.faq === i), rows: (this.state.faq === i) ? '1fr' : '0fr', fop: (this.state.faq === i) ? 1 : 0, fty: (this.state.faq === i) ? 'none' : 'translateY(-6px)', rot: this.state.faq === i ? 'rotate(45deg)' : 'none', bg: this.state.faq === i ? '#FFFFFF' : '#F7FDFB', toggle: () => this.setState(st => ({ faq: st.faq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

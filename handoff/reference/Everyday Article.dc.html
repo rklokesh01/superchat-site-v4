@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#10306A}
+</style>
+</helmet>
+<section data-screen-label="01 Article header" style="position:relative;background:#F7FDFB;overflow:hidden">
+  <dc-import name="Nav" active="Everyday" current="/everyday/blog" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:820px;margin:24px auto 0;padding:0 24px clamp(32px,5vw,48px);display:flex;flex-direction:column;gap:22px">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;color:#2E5A46"><a href="Everyday.dc.html" style="color:#2E5A46" style-hover="color:#022B1A">Everyday</a><span>/</span><a href="Everyday%20Blog.dc.html" style="color:#2E5A46" style-hover="color:#022B1A">Blog</a><span>/</span><span style="color:#022B1A;font-weight:600" aria-current="page">{{ post.cat }}</span></nav>
+    <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#10306A">{{ post.catUp }} · {{ post.read }} READ</span>
+    <h1 style="margin:0;font-weight:500;font-size:clamp(40px,5.4vw,72px);line-height:1.02;letter-spacing:-0.035em;text-wrap:balance">{{ post.title }}</h1>
+    <p style="margin:0;font-size:clamp(19px,1.8vw,22px);line-height:1.45;color:#2E5A46;text-wrap:pretty">{{ post.dek }}</p>
+    <div style="display:flex;align-items:center;gap:12px;padding-top:8px">
+      <span style="width:40px;height:40px;border-radius:50%;background:#A9C4F7;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" style="width:15px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#022B1A"></path></svg></span>
+      <span style="display:flex;flex-direction:column"><span style="font-size:15px;font-weight:600">Superchat Everyday team</span><span style="font-size:14px;color:#2E5A46">{{ post.date }}</span></span>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(18px,5vw,24px)">
+    <div style="position:relative;aspect-ratio:21/9;min-height:220px;border-radius:28px;overflow:hidden;background:#E2ECFD"><image-slot id="everyday-cover-{{ post.slug }}" shape="rect" placeholder="Article cover photo"></image-slot></div>
+  </div>
+</section>
+
+<article data-screen-label="02 Article body" style="background:#F7FDFB;padding:clamp(48px,7vw,72px) 24px clamp(64px,10vw,96px)">
+  <div style="max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:22px">
+    <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="6">
+      <sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}"><p style="margin:0;font-size:19px;line-height:1.65;text-wrap:pretty">{{ b.x }}</p></sc-if>
+      <sc-if value="{{ b.isH }}" hint-placeholder-val="{{ false }}"><h2 style="margin:18px 0 0;font-weight:500;font-size:clamp(28px,3vw,36px);line-height:1.1;letter-spacing:-0.025em">{{ b.x }}</h2></sc-if>
+      <sc-if value="{{ b.isUl }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:12px;padding:4px 0">
+          <sc-for list="{{ b.items }}" as="li" hint-placeholder-count="3">
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:19px;line-height:1.5"><span style="width:24px;height:24px;margin-top:3px;border-radius:50%;background:#A9C4F7;border:2px solid #022B1A;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">✓</span>{{ li }}</div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ b.isCallout }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin:10px 0;padding:24px 26px;border-radius:28px;background:#E2ECFD;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A">
+          <span style="flex:1 1 280px;font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em;line-height:1.25">{{ b.x }}</span>
+          <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="font-size:16px;font-weight:600;padding:12px 20px;border-radius:999px;background:#A9C4F7;border:2px solid #022B1A;color:#022B1A" style-hover="background:#C3D6FA;color:#022B1A">Try Superchat</a>
+        </div>
+      </sc-if>
+    </sc-for>
+    <a href="Everyday%20Blog.dc.html" style="align-self:flex-start;margin-top:24px;font-size:16px;font-weight:600;color:#10306A" style-hover="color:#022B1A">← All Everyday articles</a>
+  </div>
+</article>
+
+<section data-screen-label="03 Related articles" style="background:#E2ECFD;padding:clamp(64px,10vw,100px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,48px);line-height:1;letter-spacing:-0.035em">Keep reading</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
+      <sc-for list="{{ related }}" as="p" hint-placeholder-count="3">
+        <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:12px;padding:26px;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.08em;color:#10306A">{{ p.catUp }} · {{ p.read }}</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:24px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">{{ p.title }}</span>
+          <span style="font-size:15px;font-weight:600;color:#10306A;margin-top:auto">Read →</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { posts: [] };
+  componentDidMount() {
+    import(new URL('blog-everyday.js', location.href).href).then(m => this.setState({ posts: m.POSTS }));
+  }
+  renderVals() {
+    const all = this.state.posts, slug = new URLSearchParams(location.search).get('p');
+    const p = all.find(x => x.slug === slug) || all[0];
+    if (!p) return { post: {}, blocks: [], related: [] };
+    const map = x => ({ ...x, catUp: x.cat.toUpperCase(), read: x.read.toUpperCase(), href: 'Everyday%20Article.dc.html?p=' + x.slug });
+    const rel = [...all.filter(x => x !== p && x.cat === p.cat), ...all.filter(x => x !== p && x.cat !== p.cat)].slice(0, 3);
+    if (typeof document !== 'undefined' && document.title !== p.title) document.title = p.title + ' · Superchat';
+    return {
+      post: map(p),
+      blocks: p.body.map(b => ({ x: b.x, items: Array.isArray(b.x) ? b.x : [], isP: b.t === 'p', isH: b.t === 'h2', isUl: b.t === 'ul', isCallout: b.t === 'callout' })),
+      related: rel.map(map)
+    };
+  }
+}
+</script>
+</body>
+</html>

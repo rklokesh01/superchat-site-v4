@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif}
+button,input{font-family:inherit}
+h1,h2,h3,[style*="font-family:'PP Frama','Outfit',sans-serif"]{-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent;text-size-adjust:100%}
+html{overflow-x:clip}
+img,svg{max-width:none}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#7F6000}
+</style>
+</helmet>
+<section data-screen-label="01 Shopping hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:110px">
+  <dc-import name="Nav" active="Shopping" current="/shopping" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="position:relative;max-width:1200px;margin:clamp(20px,4vw,44px) auto 0;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:clamp(36px,5vw,52px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;max-width:900px">
+      <span style="display:flex;align-items:center;gap:12px;max-width:100%;padding:6px 18px 6px 6px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.1);font-size:14px;font-weight:600;letter-spacing:0.06em;color:#022B1A"><span style="width:30px;height:30px;border-radius:50%;background:#F5C400;border:1px solid rgba(2,43,26,0.10);flex:none"></span>SHOPPING · FIND, COMPARE, ORDER</span>
+      <h1 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(48px,7.4vw,104px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">Pay less for everything you buy.</h1>
+      <p style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:#2E5A46;max-width:38ch;text-wrap:pretty">Find anything with a photo, compare every store and reorder your usual in one message. Superchat does the shopping around.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px">
+        <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="display:inline-flex;align-items:center;justify-content:space-between;gap:14px;height:56px;box-sizing:border-box;padding:0 8px 0 26px;border-radius:28px;font-size:17px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;transition:filter .2s,transform .15s;background:#F5C400;color:#022B1A" style-hover="filter:brightness(1.06);color:#022B1A" style-active="transform:scale(.98)"><span>Start shopping</span><span style="width:40px;height:40px;border-radius:50%;background:#022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:17px" fill="none" stroke="#F5C400" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 H19 M13 6 L19 12 L13 18"></path></svg></span></a>
+        <a href="#compare" style="display:inline-flex;align-items:center;justify-content:space-between;gap:14px;height:56px;box-sizing:border-box;padding:0 8px 0 26px;border-radius:28px;font-size:17px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;transition:background .2s,transform .15s;background:#FFFFFF;color:#022B1A;box-shadow:inset 0 0 0 1px rgba(2,43,26,0.12)" style-hover="background:#F3F7F5;color:#022B1A" style-active="transform:scale(.98)"><span>See what you’d save</span><span style="width:40px;height:40px;border-radius:50%;background:#EEF3F0;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:17px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5 V19 M6 13 L12 19 L18 13"></path></svg></span></a>
+      </div>
+    </div>
+    <div style="position:relative;padding:28px 18px 0;width:min(880px,100%);box-sizing:border-box">
+      <div style="position:relative;height:clamp(500px,120vw,560px);border-radius:clamp(30px,6vw,40px);background:#FFF3C9;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 24px 60px rgba(2,43,26,0.12);overflow:hidden;display:flex;justify-content:center;align-items:flex-end">
+        <svg style="position:absolute;left:-30px;top:40px;width:200px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#F5C400" stroke-width="6" stroke-linecap="round"></path></svg>
+        <div style="position:relative;width:min(300px,78%);height:calc(100% - 44px);background:#022B1A;border-radius:40px 40px 0 0;padding:10px 10px 0;box-sizing:border-box;display:flex">
+          <div style="flex:1;background:#F7FDFB;border-radius:32px 32px 0 0;overflow:hidden;display:flex;flex-direction:column">
+            <div style="display:flex;justify-content:center;padding-top:8px"><span style="width:84px;height:22px;border-radius:999px;background:#022B1A"></span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 14px 12px;border-bottom:1.5px solid #D6EDE3">
+              <span style="width:32px;height:32px;border-radius:50%;background:#F5C400;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 100 100" style="width:13px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#022B1A"></path></svg></span>
+              <span style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:600">Superchat</span><span style="font-size:11px;color:#7F6000">Comparing 6 stores</span></span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:12px">
+              <div style="align-self:flex-end;width:62%;aspect-ratio:4/3;border-radius:16px 16px 4px 16px;overflow:hidden;border:1.5px solid #022B1A;background:#FFF3C9"><image-slot id="shopping-hero-photo" shape="rect" placeholder="Product photo"></image-slot></div>
+              <div style="align-self:flex-end;max-width:88%;background:#FFF3C9;border:1.5px solid #022B1A;border-radius:16px 16px 4px 16px;padding:9px 12px;font-size:13px;line-height:1.35">Find these cheaper, size 43</div>
+              <div style="align-self:flex-start;width:90%;background:#FFFFFF;border:2px solid #022B1A;border-radius:16px;overflow:hidden">
+                <div style="background:#F5C400;padding:8px 12px;font-size:11px;font-weight:600;letter-spacing:0.08em;border-bottom:2px solid #022B1A">BEST PRICE FOUND</div>
+                <div style="padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:13px">
+                  <div style="display:flex;justify-content:space-between"><span>QuickShop</span><span style="font-weight:600">AED 389</span></div>
+                  <div style="display:flex;justify-content:space-between;color:#2E5A46"><span>Tech Bazaar</span><span>AED 425</span></div>
+                  <div style="display:flex;justify-content:space-between;color:#2E5A46"><span>MegaMart</span><span>AED 460</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-hfloat="0" style="position:absolute;left:-6px;top:34%;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.14);font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#F5C400;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:12px">✓</span>Matched from your photo</div>
+      <div data-hfloat="1" style="position:absolute;right:-6px;top:66%;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.14);font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#00E385;border:2px solid #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:12px;color:#022B1A">↓</span>AED 71 saved</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Shopping outcomes" style="background:#F7FDFB;padding:clamp(48px,8vw,80px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px">
+    <div style="border-radius:32px;background:#F5C400;padding:32px;display:flex;flex-direction:column;gap:10px;min-height:190px;justify-content:flex-end">
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(40px,4.4vw,60px);font-weight:500;letter-spacing:-0.04em;line-height:1">1 photo</span>
+      <span style="font-size:17px;line-height:1.4">is all it takes to find the thing you saw.</span>
+    </div>
+    <div style="border-radius:32px;background:#D9F8EA;padding:32px;display:flex;flex-direction:column;gap:10px;min-height:190px;justify-content:flex-end">
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(40px,4.4vw,60px);font-weight:500;letter-spacing:-0.04em;line-height:1">Every store</span>
+      <span style="font-size:17px;line-height:1.4">compared at once, delivery included.</span>
+    </div>
+    <div style="border-radius:32px;background:#E2ECFD;padding:32px;display:flex;flex-direction:column;gap:10px;min-height:190px;justify-content:flex-end">
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(40px,4.4vw,60px);font-weight:500;letter-spacing:-0.04em;line-height:1">The usual</span>
+      <span style="font-size:17px;line-height:1.4">reordered in one message, delivered tonight.</span>
+    </div>
+  </div>
+</section>
+
+<section id="compare" data-screen-label="03 Find it cheaper" style="position:relative;background:#F7FDFB;padding:20px 24px 120px;overflow:hidden">
+  <div style="position:relative;max-width:980px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#FFF3C9">TRY IT</span>
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(44px,5.6vw,80px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance">See what you’d save.</h2>
+      <p style="margin:0;font-size:19px;line-height:1.45;color:#2E5A46;max-width:34ch">Pick something you’d buy anyway. Superchat checks every store for the same item.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+        <button onClick="{{ it.pick }}" style="padding:12px 20px;border-radius:999px;border:2px solid #022B1A;background:{{ it.bg }};color:{{ it.fg }};box-shadow:{{ it.shadow }};transform:{{ it.lift }};font-size:16px;font-weight:500;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s">{{ it.name }}</button>
+      </sc-for>
+    </div>
+    <div style="width:min(680px,100%);background:#FFFFFF;border:2px solid #022B1A;border-radius:36px;box-shadow:0 10px 0 #022B1A;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:16px;text-align:left">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#7F6000">SAME ITEM, 4 STORES</span><span style="font-size:13px;font-weight:600;color:#2E5A46">Delivery included</span></div>
+      <sc-for list="{{ stores }}" as="s" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;gap:12px;font-size:16px"><span style="font-weight:600">{{ s.name }}</span><span style="font-weight:600">{{ s.priceTxt }}</span></div>
+          <div style="height:14px;border-radius:999px;background:#F3F7F5;overflow:hidden"><div style="height:100%;width:{{ s.w }};border-radius:999px;background:{{ s.bar }};transition:width .5s"></div></div>
+        </div>
+      </sc-for>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;padding:18px 20px;border-radius:22px;background:#022B1A;color:#F7FDFB">
+        <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em;color:#F5C400">YOU SAVE</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(36px,5vw,52px);font-weight:500;letter-spacing:-0.04em;line-height:1">{{ saveTxt }}</span></span>
+        <span style="font-size:15px;line-height:1.4;color:#FFF3C9;max-width:28ch">{{ saveLine }}</span>
+      </div>
+      <span style="font-size:12px;color:#2E5A46;text-align:center">Sample stores and prices, for illustration.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Shopping products" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+    <h2 style="align-self:center;text-align:center;font-family:'PP Frama','Outfit',sans-serif;margin:0 0 24px;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:15ch;text-wrap:balance">Three ways to shop smarter.</h2>
+    <sc-for list="{{ products }}" as="p" hint-placeholder-count="3">
+      <div style="border-radius:32px;background:{{ p.bg }};border:2px solid #022B1A;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:40px;align-items:center">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#FFFFFF;border:1.5px solid #022B1A">{{ p.tag }}</span>
+          <h3 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(32px,3.4vw,48px);line-height:1.02;letter-spacing:-0.03em;text-wrap:balance">{{ p.head }}</h3>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ p.points }}" as="pt" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:12px;font-size:17px;line-height:1.4"><span style="width:24px;height:24px;border-radius:50%;background:#F5C400;border:2px solid #022B1A;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">✓</span>{{ pt }}</div>
+            </sc-for>
+          </div>
+          <a href="{{ p.href }}" style="align-self:flex-start;display:flex;align-items:center;gap:8px;margin-top:6px;font-size:16px;font-weight:600;padding:12px 20px;border-radius:999px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 3px 0 #022B1A;color:#022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 1px 0 #022B1A;color:#022B1A">{{ p.cta }} →</a>
+        </div>
+        <div style="background:#FFFFFF;border:2px solid #022B1A;border-radius:28px;box-shadow:0 6px 0 #022B1A;padding:22px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1.5px solid #D6EDE3">
+            <span style="width:34px;height:34px;border-radius:50%;background:#F5C400;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" style="width:14px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#022B1A"></path></svg></span>
+            <span style="display:flex;flex-direction:column"><span style="font-size:15px;font-weight:600">Superchat</span><span style="font-size:12px;color:#7F6000">Always on</span></span>
+          </div>
+          <div style="align-self:flex-end;max-width:85%;background:#FFF3C9;border:1.5px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">{{ p.q }}</div>
+          <div style="align-self:flex-start;max-width:88%;background:#022B1A;color:#F7FDFB;border-radius:18px 18px 18px 4px;padding:12px 16px;font-size:16px;line-height:1.4">{{ p.a }}</div>
+          <div style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:8px 12px;border-radius:14px;background:#F7FDFB;border:1.5px solid #022B1A"><span style="width:10px;height:10px;border-radius:50%;background:#F5C400;border:1.5px solid #022B1A"></span>{{ p.result }}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="05 How it works" style="background:#022B1A;color:#F7FDFB;padding:clamp(72px,12vw,120px) clamp(18px,5vw,24px);position:relative;overflow:hidden">
+  <svg style="position:absolute;right:-40px;top:60px;width:260px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#F5C400" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#F5C400;color:#022B1A">HOW IT WORKS</span>
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance;color:#F7FDFB">From “I want that” to your door.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:28px;background:#0B4A2F;border:2px solid #1B7236">
+          <span style="font-family:'PP Frama','Outfit',sans-serif;width:64px;height:64px;border-radius:50%;background:{{ s.color }};border:2px solid #F7FDFB;box-shadow:0 4px 0 #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600;color:#022B1A">{{ s.n }}</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:26px;font-weight:500;letter-spacing:-0.02em">{{ s.t }}</span>
+          <span style="font-size:17px;line-height:1.45;color:#B0F5D8">{{ s.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 Shopping voices" style="background:#F7FDFB;padding:clamp(72px,12vw,120px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <h2 style="align-self:center;text-align:center;font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance">Found it. Paid less. Done.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
+      <sc-for list="{{ voices }}" as="v" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:24px;padding:32px;border-radius:32px;background:{{ v.bg }};border:2px solid #022B1A;box-shadow:0 6px 0 #022B1A;transform:rotate({{ v.rot }})">
+          <span style="font-size:clamp(22px,2vw,26px);font-weight:500;line-height:1.2;letter-spacing:-0.02em;flex:1">“{{ v.q }}”</span>
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:600">{{ v.n }}</span><span style="font-size:14px;color:#2E5A46">{{ v.r }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="07 From the Shopping blog" style="background:#F7FDFB;padding:0 clamp(18px,5vw,24px) clamp(48px,7vw,80px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">From the Shopping blog</h2>
+      <a href="Shopping%20Blog.dc.html" style="font-size:16px;font-weight:600;color:#7F6000" style-hover="color:#022B1A">All articles →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+        <a href="{{ p.href }}" style="display:flex;flex-direction:column;border-radius:28px;border:2px solid #022B1A;overflow:hidden;background:#FFFFFF;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A">
+          <span style="display:block;position:relative;height:160px;background:#FFF3C9;border-bottom:2px solid #022B1A"><image-slot id="shopping-cover-{{ p.slug }}" shape="rect" placeholder="Cover photo"></image-slot></span>
+          <span style="display:flex;flex-direction:column;gap:10px;padding:20px 22px 24px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em;color:#7F6000">{{ p.catUp }}</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">{{ p.title }}</span></span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="08 Shopping FAQ" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <h2 style="align-self:center;text-align:center;font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Good questions.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div style="border-radius:24px;border:2px solid #022B1A;background:{{ f.bg }};overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;border:none;background:transparent;font-family:inherit;font-size:clamp(18px,1.8vw,21px);font-weight:500;color:#022B1A;text-align:left;cursor:pointer">
+            <span style="flex:1">{{ f.q }}</span>
+            <span style="width:36px;height:36px;border-radius:50%;border:2px solid #022B1A;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transform:{{ f.rot }};transition:transform .4s cubic-bezier(.2,.8,.2,1)">+</span>
+          </button>
+          <div aria-hidden="{{ f.closed }}" style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)"><div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.5;color:#2E5A46;max-width:60ch;opacity:{{ f.fop }};transform:{{ f.fty }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)">{{ f.a }}</p></div></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { it: 0, faq: 0, posts: [] };
+  I = [
+    { name: 'Wireless earbuds', prices: [['QuickShop', 589], ['Tech Bazaar', 629], ['MegaMart', 679], ['Value Store', 699]] },
+    { name: 'Running shoes', prices: [['QuickShop', 389], ['Tech Bazaar', 425], ['MegaMart', 460], ['Value Store', 475]] },
+    { name: 'Air fryer', prices: [['Tech Bazaar', 299], ['QuickShop', 329], ['Value Store', 349], ['MegaMart', 379]] },
+    { name: 'Kids’ car seat', prices: [['Value Store', 640], ['MegaMart', 695], ['QuickShop', 720], ['Tech Bazaar', 790]] }
+  ];
+  componentDidMount() {
+    import(new URL('blog-shopping.js', location.href).href).then(m => this.setState({ posts: m.POSTS.slice(0, 3) }));
+    const loop = (t) => { this.raf = requestAnimationFrame(loop); document.querySelectorAll('[data-hfloat]').forEach(el => { const i = +el.dataset.hfloat; el.style.transform = `translateY(${Math.sin(t / 900 + i * 1.3) * 8}px) rotate(${Math.sin(t / 1300 + i) * 3}deg)`; }); };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const it = this.I[this.state.it], max = Math.max(...it.prices.map(p => p[1])), min = it.prices[0][1];
+    return {
+      posts: this.state.posts.map(p => ({ ...p, catUp: p.cat.toUpperCase(), href: 'Shopping%20Article.dc.html?p=' + p.slug })),
+      items: this.I.map((x, i) => { const on = i === this.state.it; return { name: x.name, bg: on ? '#022B1A' : '#FFFFFF', fg: on ? '#F7FDFB' : '#022B1A', shadow: on ? '0 5px 0 #F5C400' : '0 3px 0 #022B1A', lift: on ? 'translateY(-3px)' : 'none', pick: () => this.setState({ it: i }) }; }),
+      stores: it.prices.map(([name, p], i) => ({ name: i === 0 ? name + ' · best price' : name, priceTxt: 'AED ' + p.toLocaleString('en-US'), w: Math.round(p / max * 100) + '%', bar: i === 0 ? '#F5C400' : '#C9D6D0' })),
+      saveTxt: 'AED ' + (max - min).toLocaleString('en-US'),
+      saveLine: `versus the most expensive store, for the same ${it.name.toLowerCase()}.`,
+      products: [
+        { href: 'Shopping%20Product%20Search.dc.html', cta: 'Explore Product search', tag: 'PRODUCT SEARCH', head: 'Find anything with text or a photo.', bg: '#FFF3C9',
+          points: ['Snap it, describe it or scan the barcode', 'Exact matches and look-alikes', 'Stock checked online and nearby'],
+          q: '[photo] Find this lamp under 300', a: 'Found a near-identical rattan lamp for AED 229, delivered tomorrow.', result: 'Matched from a photo' },
+        { href: 'Shopping%20AI%20Shopping.dc.html', cta: 'Explore AI shopping', tag: 'AI SHOPPING', head: 'Always the better deal.', bg: '#D9F8EA',
+          points: ['Every store compared, delivery included', 'Price alerts and real-discount checks', 'Coupons and card offers applied'],
+          q: 'Tell me when the TV drops under 2,500', a: 'It just dropped to 2,449 at Tech Bazaar. Want it?', result: 'AED 450 saved' },
+        { href: 'Shopping%20AI%20Ordering.dc.html', cta: 'Explore AI ordering', tag: 'AI ORDERING', head: 'Order from your favourite stores.', bg: '#E2ECFD',
+          points: ['Your usual basket, remembered', 'Swaps approved by you', 'Live delivery tracking in chat'],
+          q: 'The usual groceries, tonight', a: '18 items from MegaMart, AED 312, delivered 7 to 8pm. Confirm?', result: 'Ordered in one message' }
+      ],
+      steps: [
+        { n: 1, t: 'Say or snap it', d: 'Describe what you want, send a photo or scan a barcode.', color: '#F5C400' },
+        { n: 2, t: 'See the best options', d: 'Every store compared on the total price, delivery included.', color: '#00E385' },
+        { n: 3, t: 'Order and track', d: 'Confirm in one tap and follow the delivery in your chat.', color: '#A9C4F7' }
+      ],
+      voices: [
+        { q: 'Sent a photo of a chair from a café. Had the same one at home two days later, for less than I expected.', n: 'Mariam', r: 'Jumeirah', bg: '#FFFFFF', rot: '-1deg' },
+        { q: 'It told me to wait a week on the TV. Saved 400 dirhams.', n: 'Arjun', r: 'Dubai Silicon Oasis', bg: '#FFF3C9', rot: '1deg' },
+        { q: 'Thursday groceries just happen now. I only add the extras.', n: 'Hannah', r: 'Abu Dhabi', bg: '#D9F8EA', rot: '-0.5deg' }
+      ],
+      faqs: [
+        { q: 'Which stores does Superchat compare?', a: 'Major UAE retailers, marketplaces and supermarkets, with more being added all the time.' },
+        { q: 'Does it cost extra to buy through Superchat?', a: 'No. You pay the store’s price and delivery. Superchat doesn’t add anything on top.' },
+        { q: 'Can I search with a photo?', a: 'Yes. Send a photo or screenshot and Superchat finds the exact product or the closest match.' },
+        { q: 'Will it buy things without asking?', a: 'Never. You see the item, the total and the delivery time, and confirm before anything is ordered.' }
+      ].map((f, i) => ({ ...f, open: this.state.faq === i, closed: !(this.state.faq === i), rows: (this.state.faq === i) ? '1fr' : '0fr', fop: (this.state.faq === i) ? 1 : 0, fty: (this.state.faq === i) ? 'none' : 'translateY(-6px)', rot: this.state.faq === i ? 'rotate(45deg)' : 'none', bg: this.state.faq === i ? '#FFFFFF' : '#F7FDFB', toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

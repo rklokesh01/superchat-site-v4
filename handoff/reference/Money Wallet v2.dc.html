@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+</style>
+</helmet>
+<section data-screen-label="01 Wallet hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:clamp(64px,10vw,110px)">
+  <dc-import name="Nav" active="Money" current="/money/wallet" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:1200px;margin:24px auto 0;padding:0 24px;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;font-size:14px;color:#2E5A46"><a href="Money.dc.html" style="color:#2E5A46" style-hover="color:#022B1A">Money</a><span>/</span><span style="color:#022B1A;font-weight:600" aria-current="page">Wallet</span></nav>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(40px,6vw,72px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <span style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px 6px 6px;border-radius:999px;background:#022B1A;color:#FFF3C9"><span style="width:20px;height:20px;border-radius:50%;background:#F5C400;border:2px solid #FFF3C9"></span>WALLET</span>
+        <h1 style="margin:0;font-weight:500;font-size:clamp(46px,6.2vw,88px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">Every currency. <span style="color:#1B7236">One wallet.</span></h1>
+        <p style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:#2E5A46;max-width:38ch;text-wrap:pretty">Hold dirhams, dollars, euros and rupees side by side. Switch between them at the real rate, just by sending a message.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#F5C400;color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A">Open your wallet</a>
+          <a href="#card" style="font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#FFFFFF;color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A">Meet the card</a>
+        </div>
+      </div>
+      <div style="position:relative;padding:12px 12px 0;display:flex;flex-direction:column">
+        <div style="background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;border-radius:36px;box-shadow:0 8px 0 #1B7236;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#B0F5D8">TOTAL BALANCE</span>
+            <span style="font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;background:#0B4A2F;color:#B0F5D8">Shown in {{ cur }}</span>
+          </div>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(44px,5.4vw,68px);font-weight:500;letter-spacing:-0.04em;line-height:1">{{ total }}</span>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <sc-for list="{{ wallets }}" as="w" hint-placeholder-count="5">
+              <button onClick="{{ w.pick }}" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 14px 10px 10px;border-radius:20px;border:2px solid {{ w.bd }};background:{{ w.bg }};color:{{ w.ink }};text-align:left;cursor:pointer;transition:background .25s,color .25s">
+                <span style="width:40px;height:40px;border-radius:50%;background:{{ w.tint }};border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#022B1A">{{ w.sym }}</span>
+                <span style="display:flex;flex-direction:column;min-width:0"><span style="font-size:16px;font-weight:600">{{ w.code }}</span><span style="font-size:13px;opacity:.75">{{ w.name }}</span></span>
+                <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:20px;font-weight:500;letter-spacing:-0.02em">{{ w.amt }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="position:relative;z-index:2;align-self:flex-end;margin:-22px -6px 0 0;max-width:250px;display:flex;flex-direction:column;gap:6px;transform:rotate(3deg)">
+          <span style="align-self:flex-end;background:#D9F8EA;border:2px solid #022B1A;border-radius:18px 18px 4px 18px;padding:10px 14px;font-size:15px;line-height:1.35;box-shadow:0 4px 0 #022B1A">move 1,000 AED to dollars</span>
+          <span style="align-self:flex-start;background:#FFFFFF;border:2px solid #022B1A;border-radius:18px 18px 18px 4px;padding:10px 14px;font-size:15px;line-height:1.35;box-shadow:0 4px 0 #022B1A">Done. $272.26 at 3.673, no fee.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="card" data-screen-label="02 Superchat card" style="position:relative;background:#E2ECFD;color:#022B1A;padding:clamp(72px,11vw,120px) clamp(18px,5vw,24px);overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(48px,6vw,80px);align-items:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:28px">
+      <div onPointerDown="{{ cDown }}" onPointerMove="{{ cMove }}" onPointerUp="{{ cUp }}" onPointerCancel="{{ cUp }}" onPointerLeave="{{ cLeave }}" style="position:relative;width:min(520px,100%);aspect-ratio:642/370;perspective:1400px;cursor:{{ cCursor }};touch-action:pan-y;user-select:none">
+        <div style="position:absolute;left:10%;right:10%;bottom:-34px;height:30px;border-radius:50%;background:rgba(2,43,26,.35);filter:blur(18px);pointer-events:none"></div>
+        <div style="position:absolute;inset:0;transform-style:preserve-3d;transform:{{ cTf }};transition:{{ cTr }}">
+          <div style="position:absolute;inset:0;border-radius:2.5%/4.3%;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.08)">
+            <img src="assets/card-front.png" alt="Superchat card, front" draggable="false" style="display:block;width:100%;height:100%;pointer-events:none"></img>
+            <div style="position:absolute;inset:0;background:{{ cShine }};mix-blend-mode:soft-light;pointer-events:none"></div>
+          </div>
+          <div style="position:absolute;inset:0;border-radius:2.5%/4.3%;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);box-shadow:0 0 0 1px rgba(255,255,255,.08)">
+            <img src="assets/card-back.svg" alt="Superchat card, back" draggable="false" style="display:block;width:100%;height:100%;pointer-events:none"></img>
+            <div style="position:absolute;inset:0;background:{{ cShineB }};mix-blend-mode:soft-light;pointer-events:none"></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:20px">
+        <span style="font-size:14px;color:#2E5A46">Drag to turn it over</span>
+        <button onClick="{{ cFlip }}" style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;border:2px solid #022B1A;background:transparent;color:#022B1A;cursor:pointer" style-hover="background:#022B1A;color:#E2ECFD"><svg viewBox="0 0 24 24" style="width:16px" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"></path></svg>{{ cFlipLabel }}</button>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#E2ECFD">SUPERCHAT CARD</span>
+        <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:12ch;text-wrap:balance;color:#022B1A">Your wallet, in your pocket.</h2>
+        <p style="margin:0;font-size:18px;line-height:1.5;color:#2E5A46;max-width:38ch">Spend from any currency you hold. The card picks the right balance, so you never pay a conversion fee you didn't need to.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px">
+        <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:24px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A"><span style="width:44px;height:44px;border-radius:50%;background:#25D366;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:20px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"></path></svg></span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600">Ready in seconds</span><span style="font-size:15px;line-height:1.4;color:#2E5A46">A virtual card the moment you ask.</span></span></div>
+        <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:24px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A"><span style="width:44px;height:44px;border-radius:50%;background:#F5C400;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:20px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"></path></svg></span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600">Pays like a local</span><span style="font-size:15px;line-height:1.4;color:#2E5A46">Euros from euros, dollars from dollars.</span></span></div>
+        <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:24px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A"><span style="width:44px;height:44px;border-radius:50%;background:#A9C4F7;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:20px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 7l16 10M20 7L4 17"></path></svg></span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600">Freeze by message</span><span style="font-size:15px;line-height:1.4;color:#2E5A46">Type “freeze my card”. Done.</span></span></div>
+        <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:24px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A"><span style="width:44px;height:44px;border-radius:50%;background:#FFB4A2;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:20px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h10v20H7zM11 18h2"></path></svg></span><span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:600">Apple Pay and Google Pay</span><span style="font-size:15px;line-height:1.4;color:#2E5A46">Tap to pay anywhere.</span></span></div>
+      </div>
+      <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="align-self:flex-start;font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#25D366;color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A">Get your card</a>
+    </div>
+  </div>
+</section>
+
+<section id="bills" data-screen-label="03 This month's bills" style="background:#F7FDFB;padding:clamp(24px,4vw,40px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:clamp(32px,5vw,56px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#FFF3C9">BILLS · TRY IT</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:12ch;text-wrap:balance">Bills paid before you remember them.</h2>
+      <p style="margin:0;font-size:18px;line-height:1.5;color:#2E5A46;max-width:36ch">Pay what’s due, switch on autopay for the rest. This is what October looks like once it’s set up.</p>
+      <div style="display:flex;flex-direction:column;gap:6px;padding:24px;border-radius:28px;background:#022B1A;color:#F7FDFB;margin-top:8px">
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#FFF3C9">{{ leftLabel }}</span>
+        <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(44px,5vw,64px);font-weight:500;letter-spacing:-0.04em;line-height:1">{{ leftAmt }}</span>
+        <div style="height:12px;border-radius:999px;background:#0B4A2F;overflow:hidden;margin-top:12px"><div style="height:100%;width:{{ paidPct }};border-radius:999px;background:#F5C400;transition:width .5s"></div></div>
+        <span style="font-size:14px;color:#B0F5D8">{{ paidLine }}</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ bills }}" as="b" hint-placeholder-count="5">
+        <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 18px;border-radius:24px;background:{{ b.bg }};border:2px solid #022B1A;transition:background .3s">
+          <span style="width:44px;height:44px;border-radius:14px;background:{{ b.tint }};border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">{{ b.mono }}</span>
+          <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:17px;font-weight:600">{{ b.name }}</span><span style="font-size:14px;color:#2E5A46">{{ b.sub }}</span></span>
+          <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+            <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:20px;font-weight:500;letter-spacing:-0.02em">{{ b.amt }}</span>
+            <sc-if value="{{ b.unpaid }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ b.pay }}" style="font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:2px solid #022B1A;background:#F5C400;color:#022B1A;box-shadow:0 3px 0 #022B1A;cursor:pointer">Pay</button>
+            </sc-if>
+            <sc-if value="{{ b.paid }}" hint-placeholder-val="{{ false }}">
+              <span style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;padding:8px 12px;border-radius:999px;background:#00E385;border:2px solid #022B1A">✓ Paid</span>
+            </sc-if>
+          </span>
+        </div>
+      </sc-for>
+      <button onClick="{{ reset }}" style="align-self:flex-start;font-size:14px;font-weight:500;padding:6px 2px;border:none;background:transparent;color:#2E5A46;cursor:pointer;text-decoration:underline;text-underline-offset:3px">Reset demo</button>
+    </div>
+  </div>
+</section>
+
+<section ref="{{ billRef }}" data-screen-label="04 Billers" style="background:#D9F8EA;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,5vw,48px)">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:15ch;text-wrap:balance">Everything you pay, in one chat.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;overflow:hidden">
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:#022B1A;color:#F7FDFB">
+            <span style="width:36px;height:36px;border-radius:50%;background:{{ g.tint }};border:2px solid #F7FDFB;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:16px" fill="none" stroke="#022B1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="{{ g.icon }}"></path></svg></span>
+            <span style="display:flex;flex-direction:column;min-width:0"><span style="font-size:16px;font-weight:600">{{ g.t }}</span><span style="font-size:12px;color:{{ g.subC }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ g.sub }}</span></span>
+          </div>
+          <div style="flex:1;min-height:200px;display:flex;flex-direction:column;gap:8px;padding:16px 12px 18px;background:#EFEAE2;background-image:radial-gradient(rgba(2,43,26,.07) 1px,transparent 1.5px);background-size:14px 14px">
+            <span style="align-self:center;font-size:11px;font-weight:600;padding:4px 10px;border-radius:8px;background:#FFFFFF;color:#2E5A46">TODAY</span>
+            <sc-if value="{{ g.showMe }}" hint-placeholder-val="{{ true }}"><div style="align-self:flex-end;max-width:88%;display:flex;flex-direction:column;gap:2px;padding:7px 10px 5px;border-radius:12px 12px 4px 12px;background:#D9FDD3;box-shadow:0 1px 0 rgba(2,43,26,.15)"><span style="font-size:15px;line-height:1.35">{{ g.say }}</span><span style="align-self:flex-end;display:flex;align-items:center;gap:3px;font-size:11px;color:#5B7A6C">{{ g.t1 }}<svg viewBox="0 0 18 12" style="width:15px" fill="none" stroke="#34B7F1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6.5l3 3 6-7M7 9.5l1 1 6-8"></path></svg></span></div></sc-if>
+            <sc-if value="{{ g.typing }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-start;display:flex;gap:4px;padding:12px 14px;border-radius:12px 12px 12px 4px;background:#FFFFFF;box-shadow:0 1px 0 rgba(2,43,26,.15)"><sc-for list="{{ g.dots }}" as="d" hint-placeholder-count="3"><span style="width:7px;height:7px;border-radius:50%;background:#5B7A6C;opacity:{{ d.o }};transform:translateY({{ d.y }});transition:opacity .2s,transform .2s"></span></sc-for></div></sc-if>
+            <sc-if value="{{ g.showReply }}" hint-placeholder-val="{{ true }}">
+            <div style="align-self:flex-start;max-width:88%;display:flex;flex-direction:column;gap:2px;padding:7px 10px 5px;border-radius:12px 12px 12px 4px;background:#FFFFFF;box-shadow:0 1px 0 rgba(2,43,26,.15)"><span style="font-size:15px;line-height:1.35">{{ g.reply }}</span><span style="align-self:flex-end;font-size:11px;color:#5B7A6C">{{ g.t2 }}</span></div></sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 How Wallet works" style="position:relative;background:#022B1A;color:#F7FDFB;padding:clamp(72px,12vw,120px) clamp(18px,5vw,24px);overflow:hidden">
+  <svg style="position:absolute;right:-40px;top:60px;width:260px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#F5C400" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#F5C400;color:#022B1A">HOW IT WORKS</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance;color:#F7FDFB">Set it up once. Forget about it.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:28px;background:#0B4A2F;border:2px solid #1B7236">
+          <span style="font-family:'PP Frama','Outfit',sans-serif;width:64px;height:64px;border-radius:50%;background:{{ s.color }};border:2px solid #F7FDFB;box-shadow:0 4px 0 #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600;color:#022B1A">{{ s.n }}</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:26px;font-weight:500;letter-spacing:-0.02em">{{ s.t }}</span>
+          <span style="font-size:17px;line-height:1.45;color:#B0F5D8">{{ s.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 Wallet FAQ" style="background:#F7FDFB;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px) clamp(48px,7vw,80px)">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Good questions.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div style="border-radius:24px;border:2px solid #022B1A;background:{{ f.bg }};overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;border:none;background:transparent;font-size:clamp(18px,1.8vw,21px);font-weight:500;color:#022B1A;text-align:left;cursor:pointer">
+            <span style="flex:1">{{ f.q }}</span>
+            <span style="width:36px;height:36px;border-radius:50%;border:2px solid #022B1A;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transform:{{ f.rot }};transition:transform .4s cubic-bezier(.2,.8,.2,1)">+</span>
+          </button>
+          <div aria-hidden="{{ f.closed }}" style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)"><div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.5;color:#2E5A46;max-width:60ch;opacity:{{ f.fop }};transform:{{ f.fty }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)">{{ f.a }}</p></div></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="07 More in Money" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,48px);line-height:1;letter-spacing:-0.035em">More in Money</h2>
+      <a href="Money.dc.html" style="font-size:16px;font-weight:600;color:#1B7236" style-hover="color:#022B1A">All of Money →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
+      <a href="Money%20Send%20Money.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#D9F8EA;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">SEND MONEY</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Google rate, home in minutes →</span></a>
+      <a href="Money%20Expenses.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#E2ECFD;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">EXPENSES</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Know where every dirham goes →</span></a>
+      <a href="Money%20Blog.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#022B1A;border:2px solid #022B1A;color:#F7FDFB;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #00E385;color:#F7FDFB"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#6FEBB6">MONEY BLOG</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Never pay a late fee again →</span></a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { paid: { salik: true }, faq: 0, cur: 'AED', rx: 0, ry: -18, base: 0, drag: false, hov: false, px: .5, py: .5 };
+  RATES = { AED: 1, USD: 0.2723, EUR: 0.2338, GBP: 0.2041, INR: 22.86 };
+  W = [
+    { code: 'AED', name: 'UAE dirham', sym: 'د.إ', tint: '#25D366', bal: 8420.5 },
+    { code: 'USD', name: 'US dollar', sym: '$', tint: '#F5C400', bal: 1250 },
+    { code: 'EUR', name: 'Euro', sym: '€', tint: '#A9C4F7', bal: 640 },
+    { code: 'GBP', name: 'British pound', sym: '£', tint: '#FFB4A2', bal: 310 },
+    { code: 'INR', name: 'Indian rupee', sym: '₹', tint: '#B0F5D8', bal: 42000 }
+  ];
+  billRef = React.createRef();
+  componentDidMount() {
+    this.io = new IntersectionObserver(([e]) => { this.billVis = e.isIntersecting; });
+    this.watch();
+    this.tm = setInterval(() => { if (this.billVis) this.setState(s => ({ tick: (s.tick || 0) + 1 })); }, 250);
+  }
+  watch() { if (!this.watched && this.billRef.current) { this.io.observe(this.billRef.current); this.watched = true; } }
+  componentDidUpdate() { this.watch(); }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); clearInterval(this.tm); this.io && this.io.disconnect(); }
+  cardHandlers() {
+    const S = this.state, el = (e) => e.currentTarget.getBoundingClientRect();
+    return {
+      cDown: (e) => { e.currentTarget.setPointerCapture?.(e.pointerId); this.d0 = { x: e.clientX, y: e.clientY, ry: S.ry, moved: false }; this.setState({ drag: true }); },
+      cMove: (e) => { const r = el(e), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        if (this.state.drag && this.d0) { const dx = e.clientX - this.d0.x, dy = e.clientY - this.d0.y; this.setState({ ry: this.d0.ry + dx * 0.6, rx: Math.max(-20, Math.min(20, -dy * 0.15)), px, py }); }
+        else this.setState({ hov: true, px, py, rx: (0.5 - py) * 14, ry: this.state.base + (px - 0.5) * 22 }); },
+      cUp: () => { if (!this.state.drag) return; const base = Math.round(this.state.ry / 180) * 180; this.d0 = null; this.setState({ drag: false, base, ry: base, rx: 0 }); },
+      cLeave: () => { if (this.state.drag) return; this.setState({ hov: false, rx: 0, ry: this.state.base - 18, px: .5, py: .5 }); },
+      cFlip: () => { const base = this.state.base + 180; this.setState({ base, ry: base - 18, rx: 0 }); }
+    };
+  }
+  B = [
+    { id: 'dewa', name: 'DEWA', mono: 'DW', tint: '#B0F5D8', due: 'Due 3 Oct', amt: 412.5 },
+    { id: 'du', name: 'du Home', mono: 'du', tint: '#E2ECFD', due: 'Due 6 Oct', amt: 389 },
+    { id: 'etis', name: 'e& Mobile', mono: 'e&', tint: '#FFE7DE', due: 'Due 11 Oct', amt: 200 },
+    { id: 'salik', name: 'Salik', mono: 'SK', tint: '#FFF3C9', due: 'Auto top-up', amt: 100 },
+    { id: 'nol', name: 'Nol card', mono: 'NL', tint: '#A9C4F7', due: 'Balance AED 12', amt: 50 }
+  ];
+  renderVals() {
+    const f = (n) => 'AED ' + n.toLocaleString('en-US', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
+    const total = this.B.reduce((a, b) => a + b.amt, 0), paid = this.B.reduce((a, b) => a + (this.state.paid[b.id] ? b.amt : 0), 0), n = this.B.filter(b => this.state.paid[b.id]).length;
+    const S = this.state, fm = (n, c) => { const sym = { AED: 'AED ', USD: '$', EUR: '€', GBP: '£', INR: '₹' }[c]; return sym + n.toLocaleString('en-US', { maximumFractionDigits: c === 'INR' ? 0 : 2, minimumFractionDigits: c === 'INR' ? 0 : 2 }); };
+    const totAED = this.W.reduce((a, w) => a + w.bal / this.RATES[w.code], 0), back = Math.abs(Math.round(S.base / 180)) % 2 === 1;
+    const shine = (x, y) => `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(255,255,255,${S.hov || S.drag ? .55 : .25}), rgba(255,255,255,0) 55%)`;
+    return {
+      ...this.cardHandlers(), billRef: this.billRef,
+      cur: S.cur, total: fm(totAED * this.RATES[S.cur], S.cur),
+      wallets: this.W.map(w => { const on = w.code === S.cur; return { ...w, amt: fm(w.bal, w.code), bg: on ? '#F7FDFB' : '#0B4A2F', ink: on ? '#022B1A' : '#F7FDFB', bd: on ? '#F7FDFB' : '#0B4A2F', pick: () => this.setState({ cur: w.code }) }; }),
+      cTf: `rotateX(${S.rx}deg) rotateY(${S.ry}deg)`, cTr: S.drag ? 'none' : S.hov ? 'transform .2s ease-out' : 'transform .8s cubic-bezier(.2,.8,.2,1)',
+      cCursor: S.drag ? 'grabbing' : 'grab', cShine: shine(S.px, S.py), cShineB: shine(1 - S.px, S.py), cFlipLabel: back ? 'Show front' : 'Show back',
+      leftLabel: paid >= total ? 'ALL PAID FOR OCTOBER' : 'STILL DUE IN OCTOBER',
+      leftAmt: f(total - paid), paidPct: Math.round(paid / total * 100) + '%',
+      paidLine: `${n} of ${this.B.length} paid · no late fees`,
+      reset: () => this.setState({ paid: { salik: true } }),
+      bills: this.B.map(b => { const p = !!this.state.paid[b.id]; return { ...b, amt: f(b.amt), sub: p ? 'Receipt saved' : b.due, paid: p, unpaid: !p, bg: p ? '#F1FCF7' : '#FFFFFF', pay: () => this.setState(s => ({ paid: { ...s.paid, [b.id]: true } })) }; }),
+      groups: [
+        { t: 'Utilities', list: 'DEWA · SEWA · ADDC · Empower', say: 'Pay my DEWA bill', reply: 'Paid AED 412.50. Receipt saved ✓', t1: '9:41', t2: '9:41', tint: '#25D366', icon: 'M13 2L4 14h7l-1 8 9-12h-7z' },
+        { t: 'Phone and internet', list: 'e& · du · Virgin Mobile', say: 'Recharge my du number with 50', reply: 'Done. 050 ••• 2231 topped up with AED 50.', t1: '12:15', t2: '12:15', tint: '#A9C4F7', icon: 'M7 2h10v20H7zM11 18h2' },
+        { t: 'Getting around', list: 'Salik · Nol · Darb', say: 'Top up Salik when it drops below 50', reply: 'Got it. I’ll add AED 100 each time.', t1: '17:02', t2: '17:03', tint: '#F5C400', icon: 'M5 17h14M6 17l1.5-6h9L18 17M8 17v2M16 17v2' },
+        { t: 'Balances', list: 'Cards · Accounts · Wallet', say: 'How much is left on my Nol card?', reply: 'AED 12 left. Want me to add 50?', t1: '20:30', t2: '20:30', tint: '#FFB4A2', icon: 'M3 6h18v12H3zM3 10h18' }
+      ].map((g, i) => { const t = ((S.tick || 0) - i * 5 + 400) % 40, me = t >= 3, typ = t >= 7 && t < 15, rep = t >= 15;
+        return { ...g, showMe: me, typing: typ, showReply: rep, sub: typ ? 'Superchat is typing…' : g.list, subC: typ ? '#25D366' : '#B0F5D8',
+          dots: [0, 1, 2].map(k => { const on = (S.tick || 0) % 3 === k; return { o: on ? 1 : .35, y: on ? '-3px' : '0px' }; }) }; }),
+      steps: [
+        { n: 1, t: 'Tell it what you pay', d: 'List your bills once, or forward a bill and it adds the account for you.', color: '#F5C400' },
+        { n: 2, t: 'Get a nudge', d: 'Three days before anything is due, a message arrives with the amount and a pay button.', color: '#00E385' },
+        { n: 3, t: 'Reply “pay”', d: 'It’s paid from your saved card, and the receipt is filed away for you.', color: '#A9C4F7' }
+      ],
+      faqs: [
+        { q: 'Which currencies can I hold?', a: 'AED, USD, EUR, GBP and INR today, with more on the way. Convert between them any time at the mid-market rate.' },
+        { q: 'Is there a fee for the Superchat card?', a: 'No. The virtual card is free, and you only convert currency when you choose to.' },
+        { q: 'Which cards can I pay with?', a: 'Any Visa or Mastercard debit or credit card issued in the UAE. You confirm each payment with Face ID.' },
+        { q: 'Is autopay safe?', a: 'Autopay only pays billers you’ve approved, up to a limit you set. Anything above it waits for your confirmation.' },
+        { q: 'Where are my receipts?', a: 'Every payment’s receipt is saved in the chat. Ask for any of them and it’s sent straight back to you.' },
+        { q: 'Is there a charge for paying bills?', a: 'No. Paying bills through Superchat costs the same as paying the biller directly.' }
+      ].map((q, i) => ({ ...q, open: this.state.faq === i, closed: !(this.state.faq === i), rows: (this.state.faq === i) ? '1fr' : '0fr', fop: (this.state.faq === i) ? 1 : 0, fty: (this.state.faq === i) ? 'none' : 'translateY(-6px)', rot: this.state.faq === i ? 'rotate(45deg)' : 'none', bg: this.state.faq === i ? '#FFFFFF' : '#F7FDFB', toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

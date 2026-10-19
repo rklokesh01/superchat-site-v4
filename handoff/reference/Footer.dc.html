@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif}
+button,input{font-family:inherit}
+h1,h2,h3,[style*="font-family:'PP Frama','Outfit',sans-serif"]{-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+body{margin:0;background:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent;text-size-adjust:100%}
+html{overflow-x:clip}
+img,svg{max-width:none}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+</style>
+</helmet>
+<section data-screen-label="07 CTA + Footer" style="position:relative;background:#022B1A;color:#F7FDFB;padding:clamp(96px,12vw,140px) clamp(18px,5vw,24px) 0;overflow:hidden">
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center">
+    <svg data-ffloat="1" data-phase="0" style="position:absolute;left:2%;top:10px;width:clamp(110px,14vw,190px);overflow:visible" viewBox="0 0 200 180" fill="none"><path d="M100 20 C150 20 180 50 180 85 C180 120 150 148 100 148 C88 148 77 146 67 142 L35 162 L44 130 C28 118 20 102 20 85 C20 50 50 20 100 20 Z" fill="#F5C400" stroke="#F7FDFB" stroke-width="5" stroke-linejoin="round"></path><path d="M68 80 Q79 68 90 80 M110 80 Q121 68 132 80" stroke="#022B1A" stroke-width="6" stroke-linecap="round"></path><path d="M80 100 Q100 124 120 100 Z" fill="#022B1A" stroke="#022B1A" stroke-width="5" stroke-linejoin="round"></path></svg>
+    <svg data-ffloat="1" data-phase="1.7" style="position:absolute;right:3%;top:150px;width:clamp(110px,14vw,180px);overflow:visible" viewBox="0 0 200 200" fill="none"><path d="M100 8 C110 58 136 88 192 100 C136 112 110 142 100 192 C90 142 64 112 8 100 C64 88 90 58 100 8 Z" fill="#3071E8" stroke="#F7FDFB" stroke-width="5" stroke-linejoin="round"></path><path d="M76 94 Q85 84 94 94" stroke="#022B1A" stroke-width="5" stroke-linecap="round"></path><circle cx="116" cy="91" r="6" fill="#022B1A"></circle><path d="M84 112 Q100 128 116 112" stroke="#022B1A" stroke-width="5" stroke-linecap="round"></path></svg>
+    <svg data-ffloat="1" data-phase="3" style="position:absolute;right:16%;top:-30px;width:40px;overflow:visible" viewBox="0 0 60 90" fill="none"><path d="M34 3 L6 50 H28 L20 87 L54 34 H32 Z" fill="#F24E2A" stroke="#F7FDFB" stroke-width="4" stroke-linejoin="round"></path></svg>
+    <svg data-ffloat="1" data-phase="2.2" style="position:absolute;left:14%;top:230px;width:30px" viewBox="0 0 40 40"><path d="M20 2 Q22 18 38 20 Q22 22 20 38 Q18 22 2 20 Q18 18 20 2Z" fill="#F5C400" stroke="#F7FDFB" stroke-width="2.5" stroke-linejoin="round"></path></svg>
+    <svg style="position:absolute;left:-60px;top:260px;width:300px;opacity:.9" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#00E385" stroke-width="6" stroke-linecap="round"></path></svg>
+    <svg style="position:absolute;right:-50px;top:40px;width:220px;opacity:.9" viewBox="0 0 220 100" fill="none"><path d="M6 80 Q30 20 70 50 T140 50 T214 20" stroke="#00E385" stroke-width="6" stroke-linecap="round"></path></svg>
+    <h2 style="font-family:'PP Frama','Outfit',sans-serif;position:relative;margin:0;font-weight:500;font-size:clamp(52px,7vw,104px);line-height:1;letter-spacing:-0.035em;max-width:12ch;text-wrap:balance;color:#F7FDFB">Tell it what you need. Done.</h2>
+    <p style="margin:0;font-size:clamp(18px,1.7vw,22px);line-height:1.45;color:#B0F5D8;max-width:34ch">Built in the UAE. Trusted by 40,000+ people across Dubai, London and New York.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+      <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="display:flex;align-items:center;gap:12px;padding:12px 24px 12px 18px;border-radius:16px;background:#F7FDFB;color:#022B1A;border:2px solid #F7FDFB;box-shadow:0 4px 0 #00E385;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #00E385;color:#022B1A"><svg viewBox="0 0 24 24" style="width:28px;height:28px;flex:none"><path fill="#022B1A" d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"></path></svg><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1"><span style="font-size:12px;font-weight:500">Download on the</span><span style="font-size:21px;font-weight:600;letter-spacing:-0.02em">App Store</span></span></a>
+      <a href="https://play.google.com/store/apps/details?id=com.superxpense&amp;hl=en" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:12px 24px 12px 18px;border-radius:16px;background:#F7FDFB;color:#022B1A;border:2px solid #F7FDFB;box-shadow:0 4px 0 #00E385;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #00E385;color:#022B1A"><svg viewBox="0 0 24 24" style="width:28px;height:28px;flex:none"><path d="M3.6 2.2 L13.4 12 L3.6 21.8 C3.2 21.6 3 21.2 3 20.7 V3.3 C3 2.8 3.2 2.4 3.6 2.2Z" fill="#00C3FF"></path><path d="M16.8 8.6 L13.4 12 L3.6 2.2 C3.9 2 4.4 2 4.9 2.3 Z" fill="#00E385"></path><path d="M16.8 15.4 L4.9 21.7 C4.4 22 3.9 22 3.6 21.8 L13.4 12Z" fill="#F24E2A"></path><path d="M20.3 10.6 C21.2 11.1 21.2 12.9 20.3 13.4 L16.8 15.4 L13.4 12 L16.8 8.6Z" fill="#F5C400"></path></svg><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1"><span style="font-size:12px;font-weight:500">Get it on</span><span style="font-size:21px;font-weight:600;letter-spacing:-0.02em">Google Play</span></span></a>
+    </div>
+  </div>
+  <footer style="position:relative;max-width:1200px;margin:clamp(96px,14vw,160px) auto 0;padding-top:clamp(40px,7vw,56px);border-top:1.5px solid #0B4A2F;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px">
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:320px">
+        <p style="margin:0;font-size:15px;line-height:1.5;color:#B0F5D8">Actually completes tasks for you, from booking flights and replying to messages to managing your calendar and payments.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:40px">
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:130px;flex:1 1 130px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#6FEBB6">EXPLORE</span><a href="Money.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Money</a><a href="Travel.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Travel</a><a href="Bookings.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Bookings</a><a href="Shopping.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Shopping</a><a href="Everyday.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Everyday</a></div>
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:130px;flex:1 1 130px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#6FEBB6">POPULAR</span><a href="Money%20Send%20Money.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Send money</a><a href="Money%20Wallet.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Wallet</a><a href="Travel%20Flight%20Booking.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Flight booking</a><a href="WhatsApp%20v2.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Superchat on WhatsApp</a></div>
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:130px;flex:1 1 130px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#6FEBB6">COMPANY</span><a href="Security.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Security</a><a href="Blog.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Blog</a><a href="Contact.dc.html" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Contact</a></div>
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:130px;flex:1 1 130px"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#6FEBB6">LEGAL</span><a href="Legal.dc.html?doc=privacy" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Privacy Policy</a><a href="Legal.dc.html?doc=terms" style="font-size:15px;color:#F7FDFB" style-hover="color:#00E385">Terms of Use</a></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:24px;border-top:1.5px solid #0B4A2F;font-size:13px;color:#6FEBB6">
+      <span style="max-width:60ch;color:#B0F5D8">Super Chat AI Technology Limited, a private company incorporated in the DIFC with registered No. 13217</span>
+      <div style="display:flex;gap:20px">
+        <a href="https://www.linkedin.com/company/superchatai0/" target="_blank" rel="noopener" style="color:#F7FDFB;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 6px;box-sizing:border-box" style-hover="color:#00E385">LinkedIn</a>
+        <a href="https://www.instagram.com/getsuperchat/" target="_blank" rel="noopener" style="color:#F7FDFB;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 6px;box-sizing:border-box" style-hover="color:#00E385">Instagram</a>
+        <a href="https://x.com/asksuperchat" target="_blank" rel="noopener" style="color:#F7FDFB;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 6px;box-sizing:border-box" style-hover="color:#00E385">X</a>
+        <a href="https://www.youtube.com/@asksuperchat" target="_blank" rel="noopener" style="color:#F7FDFB;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 6px;box-sizing:border-box" style-hover="color:#00E385">YouTube</a>
+      </div>
+    </div>
+  </footer>
+  <div data-fword="1" style="position:relative;max-width:1400px;margin:0 auto;height:clamp(280px,30vw,420px);overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab">
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:linear-gradient(135deg,#0B4A2F 0%,#022B1A 100%);color:#F7FDFB;font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(28px,4.2vw,56px);font-weight:500;letter-spacing:-0.03em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform"><svg viewBox="0 0 24 24" style="width:1.1em;flex:none" fill="none" stroke="#00E385" stroke-width="1.8" stroke-linejoin="round"><path d="M13.5 3 L6 13 H12 L10.5 21 L18 11 H12 Z"></path></svg>Superchat<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;left:1.1em;width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#0B4A2F"></path></svg></div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:radial-gradient(120% 140% at 20% 20%,#E8FFB0 0%,#9BF58A 45%,#00E385 100%);color:#022B1A;font-family:inherit;font-size:clamp(15px,1.43vw,21px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform"><svg viewBox="0 0 24 24" style="width:1.2em;flex:none" fill="none" stroke="#022B1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 L10 17 L19 7"></path></svg>Flight booked<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;right:1.1em;transform:scaleX(-1);width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#00E385"></path></svg></div>
+    <div data-fb="1" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.3em;height:3.4em;min-width:3.4em;justify-content:center;border-radius:0.9em;background:#FFFFFF;color:#022B1A;font-family:inherit;font-size:clamp(17px,1.56vw,23px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">LOL</div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:linear-gradient(135deg,#F7FDFB 0%,#B0F5D8 45%,#00E385 100%);color:#022B1A;font-family:inherit;font-size:clamp(15px,1.43vw,21px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform"><svg viewBox="0 0 24 24" style="width:1.4em;flex:none" fill="none" stroke="#022B1A" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="6" width="17" height="12" rx="2.5"></rect><path d="M4 7 L12 13 L20 7"></path></svg>+20 new messages<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;left:1.1em;width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#B0F5D8"></path></svg></div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:radial-gradient(120% 160% at 10% 90%,#FFB3E6 0%,#C58BF0 45%,#8FA8F5 100%);color:#022B1A;font-family:inherit;font-size:clamp(17px,1.56vw,23px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">On it<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;left:1.1em;width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#C58BF0"></path></svg></div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:#FFFFFF;color:#022B1A;font-family:inherit;font-size:clamp(14px,1.30vw,19px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">Table for 4 at 8?<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;right:1.1em;transform:scaleX(-1);width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#FFFFFF"></path></svg></div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:radial-gradient(130% 150% at 80% 30%,#E4ECFD 0%,#A9C4F7 45%,#3071E8 100%);color:#022B1A;font-family:inherit;font-size:clamp(14px,1.30vw,19px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform"><svg viewBox="0 0 24 24" style="width:1.3em;flex:none" fill="none" stroke="#022B1A" stroke-width="1.8" stroke-linejoin="round"><path d="M6.5 3.5 L9.5 3.5 L11 8 L8.8 9.4 C9.8 11.6 12.4 14.2 14.6 15.2 L16 13 L20.5 14.5 V17.5 C20.5 19 19.3 20.3 17.7 20.2 C10.5 19.6 4.4 13.5 3.8 6.3 C3.7 4.7 5 3.5 6.5 3.5 Z"></path></svg>incoming call</div>
+    <div data-fb="1" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.3em;height:3.4em;min-width:3.4em;justify-content:center;border-radius:0.9em;background:radial-gradient(120% 140% at 50% 60%,#F24E2A 0%,#F58A3C 45%,#F5C400 100%);color:#022B1A;font-family:inherit;font-size:clamp(18px,1.69vw,25px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">Paid<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;left:1.1em;width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#F58A3C"></path></svg></div>
+    <div data-fb="1" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.3em;height:3.4em;min-width:3.4em;justify-content:center;border-radius:0.9em;background:radial-gradient(120% 140% at 20% 20%,#E8FFB0 0%,#9BF58A 45%,#00E385 100%);color:#022B1A;font-family:inherit;font-size:clamp(18px,1.63vw,24px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">Done.<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;right:1.1em;transform:scaleX(-1);width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#00E385"></path></svg></div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:radial-gradient(130% 150% at 80% 30%,#E4ECFD 0%,#A9C4F7 45%,#3071E8 100%);color:#022B1A;font-family:inherit;font-size:clamp(14px,1.30vw,19px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform"><span style="display:flex;align-items:center;gap:3px"><span style="width:3px;height:6px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:12px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:18px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:10px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:22px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:14px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:8px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:16px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:24px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:12px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:6px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:14px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:20px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:10px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:16px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:8px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:12px;border-radius:2px;background:#022B1A"></span><span style="width:3px;height:6px;border-radius:2px;background:#022B1A"></span></span></div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:#FFFFFF;color:#022B1A;font-family:inherit;font-size:clamp(14px,1.30vw,19px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform"><svg viewBox="0 0 24 24" style="width:1.2em;flex:none" fill="none" stroke="#022B1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 L10 17 L19 7"></path></svg>Sent AED 500<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;left:1.1em;width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#FFFFFF"></path></svg></div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:radial-gradient(120% 160% at 10% 90%,#FFB3E6 0%,#C58BF0 45%,#8FA8F5 100%);color:#022B1A;font-family:inherit;font-size:clamp(14px,1.30vw,19px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">Reminder set<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;right:1.1em;transform:scaleX(-1);width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#C58BF0"></path></svg></div>
+    <div data-fb="1" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.3em;height:3.4em;min-width:3.4em;justify-content:center;border-radius:0.9em;background:#FFFFFF;color:#022B1A;font-family:inherit;font-size:clamp(15px,1.43vw,21px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">idk</div>
+    <div data-fb="1" data-shape="pill" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.2em;height:2.9em;border-radius:999px;background:linear-gradient(135deg,#F7FDFB 0%,#B0F5D8 45%,#00E385 100%);color:#022B1A;font-family:inherit;font-size:clamp(14px,1.30vw,19px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">See you there<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;left:1.1em;width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#B0F5D8"></path></svg></div>
+    <div data-fb="1" data-shape="circle" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0;width:3.6em;height:3.6em;justify-content:center;border-radius:50%;background:radial-gradient(120% 140% at 50% 60%,#F24E2A 0%,#F58A3C 45%,#F5C400 100%);color:#022B1A;font-family:inherit;font-size:clamp(18px,1.69vw,25px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform"><svg viewBox="0 0 24 24" style="width:1.6em;flex:none" fill="none" stroke="#022B1A" stroke-width="1.8" stroke-linejoin="round"><path d="M6.5 3.5 L9.5 3.5 L11 8 L8.8 9.4 C9.8 11.6 12.4 14.2 14.6 15.2 L16 13 L20.5 14.5 V17.5 C20.5 19 19.3 20.3 17.7 20.2 C10.5 19.6 4.4 13.5 3.8 6.3 C3.7 4.7 5 3.5 6.5 3.5 Z"></path></svg></div>
+    <div data-fb="1" style="position:absolute;left:0;top:0;opacity:0;display:flex;align-items:center;gap:0.5em;box-sizing:border-box;padding:0 1.3em;height:3.4em;min-width:3.4em;justify-content:center;border-radius:0.9em;background:radial-gradient(130% 150% at 80% 30%,#E4ECFD 0%,#A9C4F7 45%,#3071E8 100%);color:#022B1A;font-family:inherit;font-size:clamp(14px,1.30vw,19px);font-weight:500;letter-spacing:-0.01em;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,0.35);will-change:transform">Sure thing<svg viewBox="0 0 24 16" style="position:absolute;bottom:-0.55em;right:1.1em;transform:scaleX(-1);width:1.3em;height:0.9em;overflow:visible"><path d="M0 0 H14 C12 6 16 12 22 15 C12 15 4 10 0 0 Z" fill="#A9C4F7"></path></svg></div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:1100}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const loop = (t) => {
+      this.raf = requestAnimationFrame(loop);
+      document.querySelectorAll('[data-ffloat]').forEach(el => { const p = +el.dataset.phase || 0; el.style.transform = `translateY(${Math.sin(t / 900 + p) * 10}px) rotate(${Math.sin(t / 1300 + p) * 5}deg)`; });
+    };
+    this.raf = requestAnimationFrame(loop);
+    const pit = document.querySelector('[data-fword]');
+    if (pit) { this.vis = false; this.io = new IntersectionObserver(es => { this.vis = es[0].isIntersecting; if (this.vis && !this.started) { clearTimeout(this.st0); this.waitMatter(pit); } }, { threshold: 0, rootMargin: '200px 0px 200px 0px' }); this.io.observe(pit); this.st0 = setTimeout(() => this.waitMatter(pit), 5200); }
+  }
+  waitMatter(pit) { if (window.Matter && pit.clientWidth > 0) return this.startPit(pit); this.wt = setTimeout(() => this.waitMatter(pit), 100); }
+  startPit(pit) {
+    if (this.started) return; this.started = true;
+    const M = window.Matter, { Engine, Bodies, Body, Composite } = M;
+    const engine = Engine.create(); engine.gravity.y = 1.1;
+    let W = pit.clientWidth, H = pit.clientHeight;
+    const T = 400, wo = { isStatic: true, friction: 0.5 };
+    const ground = Bodies.rectangle(W / 2, H + T / 2, W * 3, T, wo), left = Bodies.rectangle(-T / 2, 0, T, H * 6, wo), right = Bodies.rectangle(W + T / 2, 0, T, H * 6, wo);
+    Composite.add(engine.world, [ground, left, right]);
+    const els = [...pit.querySelectorAll('[data-fb]')];
+    const items = els.map((el, i) => {
+      const w = el.offsetWidth, h = el.offsetHeight, shp = el.dataset.shape;
+      const x = i === 0 ? W / 2 : w / 2 + Math.random() * Math.max(1, W - w), y = i === 0 ? -h : -h - 80 - i * 70 - Math.random() * 60;
+      const opt = { restitution: 0.25, friction: 0.4, frictionAir: 0.012, density: 0.0014, angle: i === 0 ? 0 : (Math.random() - 0.5) * 1.2 };
+      const b = shp === 'circle' ? Bodies.circle(x, y, w / 2, opt) : Bodies.rectangle(x, y, w, h, { ...opt, chamfer: { radius: shp === 'pill' ? h / 2 - 1 : Math.min(h * 0.26, 18) } });
+      el.style.opacity = 1;
+      return { el, b, w, h };
+    });
+    Composite.add(engine.world, items.map(it => it.b));
+    let pre = 420;
+    const fine = matchMedia('(pointer:fine)').matches;
+    let drag = null;
+    if (fine) {
+      const mouse = M.Mouse.create(pit);
+      ['wheel', 'mousewheel', 'DOMMouseScroll'].forEach(ev => mouse.element.removeEventListener(ev, mouse.mousewheel));
+      drag = M.MouseConstraint.create(engine, { mouse, constraint: { stiffness: 0.2, render: { visible: false } } });
+      Composite.add(engine.world, drag);
+    }
+    const p = { x: 0, y: 0, vx: 0, vy: 0, in: false };
+    const move = (e) => { const r = pit.getBoundingClientRect(), nx = e.clientX - r.left, ny = e.clientY - r.top; if (p.in) { p.vx = nx - p.x; p.vy = ny - p.y; } p.x = nx; p.y = ny; p.in = true; };
+    pit.addEventListener('pointermove', move); pit.addEventListener('pointerenter', move);
+    pit.addEventListener('pointerleave', () => { p.in = false; pit.style.cursor = 'grab'; });
+    pit.addEventListener('pointerdown', (e) => { move(e); pit.style.cursor = 'grabbing';
+      if (!fine) items.forEach(({ b }) => { const dx = b.position.x - p.x, dy = b.position.y - p.y, d = Math.hypot(dx, dy) || 1; if (d < 240) Body.setVelocity(b, { x: b.velocity.x + dx / d * 8, y: -14 * (1 - d / 240) - 4 }); }); });
+    window.addEventListener('pointerup', this.pu = () => { pit.style.cursor = 'grab'; });
+    this.ro = new ResizeObserver(() => { W = pit.clientWidth; H = pit.clientHeight; Body.setPosition(ground, { x: W / 2, y: H + T / 2 }); Body.setPosition(right, { x: W + T / 2, y: 0 }); items.forEach(({ b }) => { if (b.position.x > W) Body.setPosition(b, { x: W - 80, y: b.position.y }); }); });
+    this.ro.observe(pit);
+    const R = 190;
+    let first = true;
+    const step = () => {
+      this.praf = requestAnimationFrame(step);
+      if (pre > 0) { for (let k = 0; k < 14; k++) Engine.update(engine, 1000 / 60); pre -= 14; } else if (!this.vis) return;
+      if (p.in && !(drag && drag.body)) {
+        items.forEach(({ b }) => {
+          const dx = b.position.x - p.x, dy = b.position.y - p.y, d = Math.hypot(dx, dy) || 1;
+          if (d < R) { const k = Math.pow(1 - d / R, 2) * b.mass; Body.applyForce(b, b.position, { x: (dx / d) * k * 0.005 + p.vx * k * 0.0004, y: (dy / d) * k * 0.005 + p.vy * k * 0.0004 - k * 0.0015 }); }
+        });
+      }
+      p.vx *= 0.8; p.vy *= 0.8;
+      if (pre <= 0) Engine.update(engine, 1000 / 60);
+      items.forEach(({ el, b, w, h }) => {
+        if (b.position.y > H + 400 || b.position.y < -3000) { Body.setPosition(b, { x: W / 2, y: -120 }); Body.setVelocity(b, { x: 0, y: 0 }); }
+        el.style.transform = `translate(${b.position.x - w / 2}px,${b.position.y - h / 2}px) rotate(${b.angle}rad)`;
+      });
+    };
+    this.praf = requestAnimationFrame(step);
+  }
+  componentWillUnmount() { clearTimeout(this.st0); cancelAnimationFrame(this.raf); cancelAnimationFrame(this.praf); clearTimeout(this.wt); this.io && this.io.disconnect(); this.ro && this.ro.disconnect(); this.pu && window.removeEventListener('pointerup', this.pu); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

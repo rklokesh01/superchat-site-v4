@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#FFFFFF;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#B8391C}
+</style>
+</helmet>
+<section data-screen-label="01 Bookings blog masthead" style="position:relative;background:#FFFFFF">
+  <dc-import name="Nav" active="Bookings" current="/bookings/blog" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:1200px;margin:16px auto 0;padding:0 24px;display:flex;flex-direction:column">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:2px solid #022B1A;border-bottom:1px solid rgba(2,43,26,0.15);font-size:13px;font-weight:600;letter-spacing:0.08em">
+      <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;color:#2E5A46"><a href="Bookings.dc.html" style="color:#2E5A46" style-hover="color:#022B1A">BOOKINGS</a><span>/</span><span style="color:#022B1A" aria-current="page">BLOG</span></nav>
+      <span style="color:#2E5A46">{{ countLine }}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:24px 48px;align-items:end;padding:clamp(36px,6vw,64px) 0 clamp(28px,4vw,40px)">
+      <h1 style="margin:0;font-weight:500;font-size:clamp(56px,9vw,128px);line-height:0.92;letter-spacing:-0.045em;text-wrap:balance">The Bookings <span style="color:#F24E2A">Blog</span></h1>
+      <p style="margin:0;font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:#2E5A46;max-width:36ch;text-wrap:pretty">Short guides to getting the table, the parking spot and the cleaner you want, without the phone calls.</p>
+    </div>
+    <div role="tablist" style="display:flex;gap:28px;flex-wrap:wrap;border-bottom:1px solid rgba(2,43,26,0.15)">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+        <button role="tab" onClick="{{ f.pick }}" style="display:flex;align-items:baseline;gap:6px;padding:14px 0 12px;margin-bottom:-1px;border:none;border-bottom:3px solid {{ f.line }};background:transparent;font-size:16px;font-weight:{{ f.weight }};color:#022B1A;cursor:pointer">{{ f.name }}<span style="font-size:12px;color:#2E5A46">{{ f.n }}</span></button>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Featured story" style="background:#FFFFFF;padding:clamp(32px,5vw,56px) clamp(18px,5vw,24px) 0">
+  <sc-if value="{{ hasFeat }}" hint-placeholder-val="{{ true }}">
+    <a href="{{ feat.href }}" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(24px,4vw,48px);align-items:center;color:#022B1A" style-hover="color:#B8391C">
+      <span style="display:block;position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;background:#FFE7DE"><image-slot id="bookings-cover-{{ feat.slug }}" shape="rect" placeholder="Cover photo for {{ feat.title }}"></image-slot></span>
+      <span style="display:flex;flex-direction:column;gap:18px">
+        <span style="display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.08em;color:#022B1A"><span style="width:10px;height:10px;border-radius:50%;background:#F24E2A"></span>FEATURED · {{ feat.catUp }}</span>
+        <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(34px,4vw,54px);font-weight:500;letter-spacing:-0.035em;line-height:1.02;text-wrap:balance;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill">{{ feat.title }}</span>
+        <span style="font-size:clamp(17px,1.5vw,19px);line-height:1.5;color:#2E5A46;max-width:44ch">{{ feat.dek }}</span>
+        <span style="display:flex;align-items:center;gap:12px;padding-top:6px;font-size:14px;color:#2E5A46"><span style="width:32px;height:32px;border-radius:50%;background:#F24E2A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 100 100" style="width:12px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#FFFFFF"></path></svg></span><span><strong style="color:#022B1A;font-weight:600">Superchat Bookings team</strong> · {{ feat.date }} · {{ feat.read }} read</span></span>
+      </span>
+    </a>
+  </sc-if>
+</section>
+
+<section data-screen-label="03 Latest articles" style="background:#FFFFFF;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(64px,10vw,100px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:2px solid #022B1A">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(26px,2.6vw,34px);letter-spacing:-0.025em">{{ listTitle }}</h2>
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#2E5A46">NEWEST FIRST</span>
+    </div>
+    <sc-for list="{{ posts }}" as="p" hint-placeholder-count="5">
+      <a href="{{ p.href }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px 40px;align-items:center;padding:28px 0;border-bottom:1px solid rgba(2,43,26,0.15);color:#022B1A" style-hover="color:#B8391C">
+        <span style="display:flex;flex-direction:column;gap:12px;grid-column:span 2;min-width:0">
+          <span style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.08em;color:#2E5A46"><span style="width:8px;height:8px;border-radius:50%;background:{{ p.dot }}"></span><span style="color:#022B1A">{{ p.catUp }}</span><span>{{ p.date }}</span><span>· {{ p.read }} READ</span></span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(24px,2.4vw,32px);font-weight:500;letter-spacing:-0.025em;line-height:1.1;text-wrap:balance;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill">{{ p.title }}</span>
+          <span style="font-size:17px;line-height:1.5;color:#2E5A46;max-width:58ch">{{ p.dek }}</span>
+        </span>
+        <span style="display:block;position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:#FFF5F1"><image-slot id="bookings-cover-{{ p.slug }}" shape="rect" placeholder="Cover photo"></image-slot></span>
+      </a>
+    </sc-for>
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:0;padding:28px 0;font-size:17px;color:#2E5A46">More in this category soon.</p>
+    </sc-if>
+  </div>
+</section>
+
+<section data-screen-label="04 Put it into practice" style="background:#FFFFFF;padding:0 clamp(18px,5vw,24px) clamp(72px,11vw,110px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:28px 32px;border-radius:28px;background:#FFF5F1;border:1px solid rgba(2,43,26,0.10)">
+    <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-0.02em;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill">Read enough? Try it in Superchat.</span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="Bookings.dc.html#weekend" style="font-size:15px;font-weight:600;padding:12px 20px;border-radius:999px;background:#F24E2A;color:#FFFFFF" style-hover="background:#B8391C;color:#FFFFFF">Plan my weekend</a>
+            <a href="Bookings.dc.html" style="font-size:15px;font-weight:600;padding:12px 20px;border-radius:999px;background:#FFFFFF;color:#022B1A;box-shadow:inset 0 0 0 1px rgba(2,43,26,0.15)" style-hover="background:#F3F7F5;color:#022B1A">All of Bookings</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { posts: [], cats: [], f: 'All' };
+  BLOG = { file: 'blog-bookings.js', article: 'Bookings%20Article.dc.html?p=', accent: '#F24E2A' };
+  componentDidMount() {
+    import(new URL(this.BLOG.file, location.href).href).then(m => this.setState({ posts: m.POSTS, cats: m.CATS }));
+  }
+  renderVals() {
+    const all = this.state.posts, f = this.state.f, dots = ['#F24E2A', '#F5C400', '#A9C4F7', '#00E385'];
+    const map = p => ({ ...p, catUp: p.cat.toUpperCase(), read: p.read.toUpperCase(), dot: dots[Math.max(0, this.state.cats.indexOf(p.cat))], href: this.BLOG.article + p.slug });
+    const feat = f === 'All' ? all.find(p => p.featured) : null;
+    const list = all.filter(p => (f === 'All' || p.cat === f) && p !== feat);
+    const latest = all.length ? all[0].date : '';
+    return {
+      countLine: all.length ? `${all.length} ARTICLES · UPDATED ${latest.toUpperCase()}` : '',
+      filters: ['All', ...this.state.cats].map(n => ({ name: n, n: n === 'All' ? all.length : all.filter(p => p.cat === n).length, line: n === f ? this.BLOG.accent : 'transparent', weight: n === f ? 600 : 500, pick: () => this.setState({ f: n }) })),
+      hasFeat: !!feat, feat: feat ? map(feat) : {},
+      listTitle: f === 'All' ? 'Latest' : f,
+      posts: list.map(map), empty: all.length > 0 && !list.length
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<script src="./sc-shapes.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent;text-size-adjust:100%}
+html{overflow-x:clip}
+img,svg{max-width:none}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+</style>
+</helmet>
+
+<section data-screen-label="01 WhatsApp hero" style="position:relative;background:#F7FDFB;overflow:hidden">
+  <dc-import name="Nav" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(28px,4vw,44px);padding:clamp(40px,7vw,96px) 16px clamp(72px,9vw,120px)">
+    <h1 style="margin:0;position:relative;font-weight:500;font-size:clamp(44px,11vw,156px);line-height:1;letter-spacing:-0.045em;color:#022B1A;display:flex;flex-direction:column;width:6.4em">
+      <span style="display:flex;align-items:center;gap:0.12em;height:1.04em;padding-left:0.85em">
+        <span>Just</span>
+        <span aria-hidden="true" style="width:0.8em;height:0.8em;border-radius:50%;background:#25D366;border:0.02em solid #022B1A;display:flex;align-items:center;justify-content:center;flex:none;-webkit-text-stroke:0"><svg viewBox="0 0 24 24" style="width:0.42em;height:0.42em" fill="none" stroke="#022B1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 L18 6M9 6h9v9"></path></svg></span>
+        <span aria-hidden="true" style="position:relative;width:1.75em;height:0.8em;border-radius:999px;background:{{ tgBg }};border:0.02em solid #022B1A;box-sizing:border-box;display:flex;align-items:center;padding:0 0.07em;flex:none;transition:background .5s;-webkit-text-stroke:0">
+          <span style="width:0.62em;height:0.62em;border-radius:50%;background:#FFFFFF;border:0.02em solid #022B1A;box-sizing:border-box;transform:translateX({{ tgX }});transition:transform .55s cubic-bezier(.6,0,.2,1);display:flex;align-items:center;justify-content:center"><span style="font-family:'PP Frama Text','Outfit',sans-serif;font-size:0.16em;font-weight:600;letter-spacing:0.04em;color:#022B1A">{{ tgLabel }}</span></span>
+          <sc-if value="{{ ears }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 160 120" style="position:absolute;left:100%;top:50%;z-index:0;width:1.6em;height:1.2em;overflow:visible;pointer-events:none;-webkit-text-stroke:0" fill="none"><path d="M4 0 H70 Q100 0 100 30 V70 Q100 100 130 100 H160" stroke="#022B1A" stroke-width="5" stroke-dasharray="14 12" stroke-linecap="round"></path><circle cx="4" cy="0" r="7" fill="#25D366" stroke="#022B1A" stroke-width="3"></circle></svg></sc-if>
+        </span>
+      </span>
+      <span style="display:flex;align-items:center;gap:0.12em;height:1.04em">
+        <span aria-hidden="true" style="position:relative;display:flex;align-items:center;flex:none;-webkit-text-stroke:0">
+          <span style="position:relative;z-index:2;width:0.8em;height:0.8em;border-radius:50%;background:#F5C400;border:0.02em solid #022B1A;box-sizing:border-box;display:flex;align-items:center;justify-content:center"><span style="font-size:0.34em;font-weight:600;color:#022B1A">S</span></span>
+          <span style="margin-left:-0.22em;width:1.3em;height:0.56em;border-radius:999px;background:#FFFFFF;border:0.02em solid #022B1A;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:0.045em;padding-left:0.18em">
+            <sc-for list="{{ wave }}" as="w" hint-placeholder-count="9"><span style="width:0.035em;height:{{ w.h }};border-radius:1em;background:#1B7236;transition:height .5s"></span></sc-for>
+          </span>
+          <sc-if value="{{ ears }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 80 120" style="position:absolute;left:0.4em;top:0.8em;z-index:0;width:0.8em;height:1.2em;overflow:visible;pointer-events:none;-webkit-text-stroke:0" fill="none"><path d="M0 0 V82 Q0 96 14 96 H52" stroke="#022B1A" stroke-width="5" stroke-dasharray="14 12" stroke-linecap="round"></path><path d="M50 84 L64 96 L50 108" stroke="#022B1A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg></sc-if>
+        </span>
+        <span>text it.</span>
+      </span>
+      <span style="display:flex;align-items:center;gap:0.14em;height:1.04em;padding-left:1.12em">
+        <span aria-hidden="true" style="position:relative;display:flex;align-items:center;flex:none;-webkit-text-stroke:0">
+          <span style="width:0.8em;height:0.8em;border-radius:50%;background:#FFB4A2;border:0.02em solid #022B1A;box-sizing:border-box"></span>
+          <span style="margin-left:-0.3em;width:0.8em;height:0.8em;border-radius:50%;background:#A9C4F7;border:0.02em solid #022B1A;box-sizing:border-box"></span>
+          <span style="position:absolute;left:0.3em;top:50%;z-index:2;transform:translateY(-50%);width:0.7em;height:0.4em;border-radius:999px;background:#FFFFFF;border:0.02em solid #022B1A;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:0.05em"><svg viewBox="0 0 24 24" style="width:0.22em;height:0.22em" fill="none" stroke="#022B1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 L5.3 16.2 A8 8 0 1 1 8 18.8 Z"></path></svg><span style="font-size:0.13em;font-weight:600;letter-spacing:0.02em;color:#1B7236">{{ ticks }}</span></span>
+        </span>
+        <span>it’s done.</span>
+      </span>
+    </h1>
+    <p style="margin:0;font-size:clamp(17px,1.5vw,21px);line-height:1.45;color:#2E5A46;max-width:38ch;text-align:center;text-wrap:pretty">Superchat books, pays and calls for you, then replies in the same WhatsApp thread. No app, no sign up.</p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px">
+      <a href="https://wa.me/971500000000?text=Hi%20Superchat" style="display:flex;align-items:center;gap:10px;font-size:18px;font-weight:500;padding:16px 28px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 5px 0 #25D366;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 3px 0 #25D366;color:#F7FDFB"><svg viewBox="0 0 24 24" style="width:20px" fill="none" stroke="#25D366" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 L5.3 16.2 A8 8 0 1 1 8 18.8 Z"></path></svg>Message Superchat</a>
+      <a href="#start" style="display:flex;align-items:center;gap:8px;font-size:18px;font-weight:500;padding:16px 22px;border-radius:999px;color:#022B1A;border:2px solid #022B1A;background:#FFFFFF" style-hover="background:#DDF7E7;color:#022B1A">How it works<svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="#022B1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a>
+    </div>
+  </div>
+</section>
+
+<section id="start" data-screen-label="02 Start in 30 seconds" style="background:#F7FDFB;padding:clamp(56px,8vw,96px) clamp(18px,5vw,24px) clamp(40px,6vw,72px);overflow:hidden">
+  <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:14px;font-weight:600;padding:6px 12px;border-radius:999px;background:#DDF7E7;color:#1B7236">01</span>
+        <span style="font-size:14px;font-weight:600;padding:6px 14px;border-radius:999px;background:#DDF7E7;color:#1B7236">How it works</span>
+      </div>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5.6vw,76px);line-height:1;letter-spacing:-0.035em;color:#022B1A;max-width:9.5em;text-wrap:balance">Up and running in <span style="color:#1B7236">30 seconds.</span></h2>
+      <sc-if value="{{ notWide }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:18px;line-height:1.45;color:#2E5A46;max-width:40ch">Nothing to download, nothing to connect. If you can send a WhatsApp, you can use Superchat.</p></sc-if>
+    </div>
+    <div style="position:relative;display:flex;flex-direction:{{ rowDir }};align-items:{{ rowAlign }};justify-content:center;flex-wrap:{{ rowWrap }};padding:24px 0 clamp(40px,6vw,90px)">
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;right:0;top:-150px;display:flex;align-items:flex-start;gap:0;pointer-events:none">
+          <svg viewBox="0 0 110 160" style="width:110px;height:160px;overflow:visible;margin-top:9px" fill="none"><path d="M106 0 H40 Q20 0 20 20 V150" stroke="#022B1A" stroke-width="1.6" stroke-dasharray="2 5" stroke-linecap="round"></path><circle cx="20" cy="152" r="6" fill="#25D366" stroke="#022B1A" stroke-width="2"></circle></svg>
+          <div style="display:flex;gap:10px;align-items:flex-start;width:250px"><span style="width:12px;height:12px;border-radius:50%;background:#25D366;border:2px solid #022B1A;flex:none;margin-top:4px"></span><span style="font-size:16px;line-height:1.4;color:#2E5A46">Nothing to download, nothing to connect. If you can send a WhatsApp, you can use Superchat.</span></div>
+        </div>
+      </sc-if>
+      <sc-for list="{{ steps }}" as="c" hint-placeholder-count="4">
+        <div onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" style="position:relative;z-index:{{ c.z }};flex:none;width:{{ cardW }};margin:{{ c.m }};display:flex">
+        <div style="width:100%;min-height:400px;box-sizing:border-box;padding:22px;border-radius:34px;background:{{ c.bg }};border:2px solid #022B1A;box-shadow:{{ c.shadow }};transform:{{ c.tf }};transition:transform .6s cubic-bezier(.2,.8,.2,1),box-shadow .4s;display:flex;flex-direction:column;gap:12px;color:#022B1A">
+          <span style="width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.55);border:2px solid #022B1A;box-sizing:border-box;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600">{{ c.n }}</span>
+          <h3 style="margin:6px 0 0;font-weight:500;font-size:clamp(28px,2.6vw,34px);line-height:1.02;letter-spacing:-0.03em">{{ c.t }}</h3>
+          <span style="font-size:15px;line-height:1.4">{{ c.d }}</span>
+          <sc-if value="{{ c.chat }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-top:auto;display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:22px;background:#EFEAE2;border:2px solid #022B1A">
+              <span style="align-self:flex-end;max-width:85%;font-size:13px;padding:7px 11px;border-radius:12px 12px 4px 12px;background:#D5F7C8">{{ c.me }}</span>
+              <span style="align-self:flex-start;max-width:85%;font-size:13px;padding:7px 11px;border-radius:12px 12px 12px 4px;background:#FFFFFF">{{ c.sc }}</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ c.qr }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:auto;display:flex;align-items:center;gap:12px;padding:12px;border-radius:22px;background:#FFFFFF;border:2px solid #022B1A">
+              <div style="width:76px;height:76px;border-radius:12px;border:2px dashed #6B8F80;display:flex;align-items:center;justify-content:center;flex:none;color:#6B8F80;font-size:11px;text-align:center;line-height:1.25">QR code<br>from client</div>
+              <a href="https://wa.me/971500000000?text=Hi%20Superchat" style="font-size:14px;font-weight:600;padding:10px 14px;border-radius:999px;background:#022B1A;color:#F7FDFB;text-align:center" style-hover="color:#F7FDFB;background:#1B7236">Open on this device</a>
+            </div>
+          </sc-if>
+        </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Talk the way you WhatsApp" style="background:#F7FDFB;padding:clamp(72px,10vw,110px) clamp(10px,2vw,24px)">
+  <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(28px,4vw,44px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:0 14px">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5.2vw,72px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance">Talk to it the way you <span style="color:#1B7236">already WhatsApp.</span></h2>
+      <p style="margin:0;font-size:19px;line-height:1.45;color:#2E5A46;max-width:42ch">Voice notes, forwards, photos, family groups. Superchat understands all of it and turns it into jobs done.</p>
+    </div>
+    <div style="width:100%;box-sizing:border-box;border-radius:clamp(28px,4vw,44px);background:#0B3B26;background-image:radial-gradient(rgba(255,255,255,.06) 1.2px,transparent 1.4px);background-size:18px 18px;padding:clamp(22px,4vw,56px) clamp(12px,3vw,48px) clamp(20px,3vw,36px);display:flex;flex-direction:column;align-items:center;gap:clamp(18px,2.5vw,28px)">
+      <div style="position:relative;width:100%;max-width:1060px;padding:12px;box-sizing:border-box;border-radius:22px;background:#1E1E1C;box-shadow:0 30px 60px rgba(0,0,0,.35)">
+        <div style="position:relative;display:grid;grid-template-columns:{{ nbCols }};gap:{{ nbGap }};border-radius:12px">
+          <div style="position:relative;min-height:540px;border-radius:12px 4px 4px 12px;background-color:#FDFCF8;background-image:repeating-linear-gradient(transparent 0 31px,#DCE6EE 31px 32px);padding:clamp(22px,3vw,36px) clamp(18px,3vw,40px) clamp(22px,3vw,36px) clamp(18px,3vw,36px);box-shadow:inset -18px 0 24px -18px rgba(0,0,0,.18)">
+            <span style="font-family:'Caveat',cursive;font-size:26px;font-weight:700;color:#1B7236;display:block;margin-bottom:14px">five ways to ask ↓</span>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px;align-items:start">
+              <button onClick="{{ scrap0.pick }}" aria-pressed="{{ scrap0.on }}" aria-label="{{ scrap0.label }}" style="position:relative;z-index:{{ scrap0.z }};border:none;padding:0;background:transparent;cursor:pointer;text-align:left;color:#022B1A;transform:{{ scrap0.tf }};filter:{{ scrap0.sh }};transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .3s;"><span style="position:relative;display:flex;flex-direction:column;gap:10px;padding:14px 14px 12px;background:#FFFFFF;border-radius:4px"><span style="position:absolute;left:50%;top:-11px;margin-left:-35px;width:70px;height:22px;background:rgba(232,226,205,.85);border-left:1px dashed rgba(0,0,0,.08);border-right:1px dashed rgba(0,0,0,.08);transform:rotate(-4deg);box-shadow:0 1px 2px rgba(0,0,0,.08)"></span><span style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;background:#D9FDD3"><span style="width:30px;height:30px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:12px" fill="#022B1A"><path d="M7 4l13 8-13 8z"></path></svg></span><span style="display:flex;align-items:center;gap:2px;height:22px;flex:1"><sc-for list="{{ nbWave }}" as="h" hint-placeholder-count="16"><span style="width:2.5px;height:{{ h }};border-radius:2px;background:#1B7236;transition:height .14s linear"></span></sc-for></span><span style="font-size:11px;color:#2E5A46">0:12</span></span><span style="font-family:'Caveat',cursive;font-size:24px;line-height:1">voice notes. just talk.</span></span></button>
+              <button onClick="{{ scrap1.pick }}" aria-pressed="{{ scrap1.on }}" aria-label="{{ scrap1.label }}" style="position:relative;z-index:{{ scrap1.z }};border:none;padding:0;background:transparent;cursor:pointer;text-align:left;color:#022B1A;transform:{{ scrap1.tf }};filter:{{ scrap1.sh }};transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .3s;margin-top:12px;"><span style="position:relative;display:flex;flex-direction:column;gap:6px;padding:16px 16px 14px;background-color:#FDFCF8;background-image:repeating-linear-gradient(transparent 0 31px,#DCE6EE 31px 32px);background-image:repeating-linear-gradient(transparent 0 23px,#E3D9C8 23px 24px);background-color:#FFFDF6;border-radius:2px;clip-path:polygon(0 4%,8% 0,20% 3%,34% 0,50% 2%,66% 0,80% 3%,92% 0,100% 3%,100% 100%,0 100%)"><span style="font-size:17px;font-weight:600;direction:rtl;text-align:right">احجز لي تاكسي للمطار</span><span style="font-family:'Caveat',cursive;font-size:22px;line-height:1.05;color:#2E5A46">= book me a taxi to the airport</span><span style="font-family:'Caveat',cursive;font-size:20px;color:#1B7236">arabic or english ✓</span></span></button>
+              <button onClick="{{ scrap2.pick }}" aria-pressed="{{ scrap2.on }}" aria-label="{{ scrap2.label }}" style="position:relative;z-index:{{ scrap2.z }};border:none;padding:0;background:transparent;cursor:pointer;text-align:left;color:#022B1A;transform:{{ scrap2.tf }};filter:{{ scrap2.sh }};transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .3s;"><span style="position:relative;display:flex;flex-direction:column;gap:6px;padding:14px;background:#FFFFFF;border:1.5px solid #E6E1D6;border-radius:6px"><svg viewBox="0 0 20 48" style="position:absolute;right:16px;top:-16px;width:14px" fill="none" stroke="#8A8F94" stroke-width="2.2" stroke-linecap="round"><path d="M6 14v24a4 4 0 0 0 8 0V8a6 6 0 0 0-12 0v28"></path></svg><span style="font-size:11px;font-weight:600;letter-spacing:0.08em;color:#6B8F80;display:flex;align-items:center;gap:5px"><svg viewBox="0 0 24 24" style="width:12px" fill="none" stroke="#6B8F80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5l7 7-7 7M21 12H9a6 6 0 0 0-6 6"></path></svg>FORWARDED</span><span style="font-size:14px;line-height:1.35">“Wedding in Abu Dhabi, 14 Nov, 7pm. RSVP by Friday.”</span><span style="font-family:'Caveat',cursive;font-size:22px;color:#1B7236">forward anything →</span></span></button>
+              <button onClick="{{ scrap3.pick }}" aria-pressed="{{ scrap3.on }}" aria-label="{{ scrap3.label }}" style="position:relative;z-index:{{ scrap3.z }};border:none;padding:0;background:transparent;cursor:pointer;text-align:left;color:#022B1A;transform:{{ scrap3.tf }};filter:{{ scrap3.sh }};transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .3s;margin-top:-6px;"><span style="position:relative;display:flex;flex-direction:column;gap:6px;padding:18px 16px 16px;background:#FFE88A;box-shadow:inset 0 -12px 18px -14px rgba(0,0,0,.25)"><span style="position:absolute;left:12px;top:-10px;width:54px;height:22px;background:rgba(232,226,205,.85);border-left:1px dashed rgba(0,0,0,.08);border-right:1px dashed rgba(0,0,0,.08);transform:rotate(-8deg);box-shadow:0 1px 2px rgba(0,0,0,.08)"></span><span style="font-size:12px;font-weight:600;color:#7A5B00">Family 🏠</span><span style="font-family:'Caveat',cursive;font-size:24px;line-height:1.05">@Superchat table for 8 on Eid, near Mum</span><span style="font-family:'Caveat',cursive;font-size:19px;color:#7A5B00">works in groups too!</span></span></button>
+              <button onClick="{{ scrap4.pick }}" aria-pressed="{{ scrap4.on }}" aria-label="{{ scrap4.label }}" style="position:relative;z-index:{{ scrap4.z }};border:none;padding:0;background:transparent;cursor:pointer;text-align:left;color:#022B1A;transform:{{ scrap4.tf }};filter:{{ scrap4.sh }};transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .3s;grid-column:1 / -1;justify-self:center;width:min(240px,100%);"><span style="position:relative;display:flex;flex-direction:column;gap:8px;padding:10px 10px 12px;background:#FFFFFF;border-radius:2px"><span style="position:absolute;right:-14px;top:6px;width:56px;height:22px;background:rgba(232,226,205,.85);border-left:1px dashed rgba(0,0,0,.08);border-right:1px dashed rgba(0,0,0,.08);transform:rotate(38deg);box-shadow:0 1px 2px rgba(0,0,0,.08)"></span><span style="display:block;position:relative;aspect-ratio:4/3;background:#DCE6EE;overflow:hidden"><image-slot id="wa-scrap-photo" shape="rect" placeholder="Photo: parking sign"></image-slot></span><span style="font-family:'Caveat',cursive;font-size:22px;line-height:1">snap it. zone 367, paid.</span></span></button>
+            </div>
+          </div>
+          <sc-if value="{{ nbRings }}" hint-placeholder-val="{{ true }}">
+            <div aria-hidden="true" style="position:absolute;left:50%;top:0;bottom:0;width:44px;margin-left:-22px;z-index:6;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;pointer-events:none">
+              <span style="width:44px;height:16px;border-radius:999px;border:4px solid #B9BEC2;box-shadow:inset 0 2px 0 #FFFFFF,0 2px 3px rgba(0,0,0,.3)"></span>
+              <span style="width:44px;height:16px;border-radius:999px;border:4px solid #B9BEC2;box-shadow:inset 0 2px 0 #FFFFFF,0 2px 3px rgba(0,0,0,.3)"></span>
+              <span style="width:44px;height:16px;border-radius:999px;border:4px solid #B9BEC2;box-shadow:inset 0 2px 0 #FFFFFF,0 2px 3px rgba(0,0,0,.3)"></span>
+            </div>
+          </sc-if>
+          <div style="position:relative;min-height:540px;border-radius:4px 12px 12px 4px;background:#FDFCF8;padding:clamp(22px,3vw,36px) clamp(18px,3vw,36px);box-shadow:inset 18px 0 24px -18px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:16px">
+            <div style="position:relative;padding:12px 16px;background-color:#FDFCF8;background-image:repeating-linear-gradient(transparent 0 31px,#DCE6EE 31px 32px);background-image:repeating-linear-gradient(transparent 0 27px,#DCE6EE 27px 28px);border-radius:2px;transform:rotate(-1deg);box-shadow:0 2px 6px rgba(0,0,0,.08)">
+              <svg viewBox="0 0 20 48" style="position:absolute;left:14px;top:-18px;width:16px" fill="none" stroke="#8A8F94" stroke-width="2.2" stroke-linecap="round"><path d="M6 14v24a4 4 0 0 0 8 0V8a6 6 0 0 0-12 0v28"></path></svg>
+              <span style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-left:22px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em">TODAY | {{ nbLabelUp }}</span><span style="font-size:12px;color:#6B8F80">{{ nbIdx }} / 5</span></span>
+            </div>
+            <div style="position:relative;align-self:center;width:min(250px,100%);aspect-ratio:9/19;box-sizing:border-box;padding:7px;border-radius:44px;background:#14171A;border:1.5px solid #3A4045;transform:rotate(1.2deg);box-shadow:inset 0 0 0 2px #2A2F33,0 18px 30px rgba(0,0,0,.22);display:flex">
+              <span style="position:absolute;right:-4px;top:110px;width:3px;height:52px;border-radius:0 2px 2px 0;background:#3A4045"></span>
+              <span style="position:absolute;left:-4px;top:90px;width:3px;height:30px;border-radius:2px 0 0 2px;background:#3A4045"></span>
+              <span style="position:absolute;left:-4px;top:130px;width:3px;height:30px;border-radius:2px 0 0 2px;background:#3A4045"></span>
+              <div style="position:relative;flex:1;min-width:0;display:flex;flex-direction:column;border-radius:37px;background:#EFEAE2;overflow:hidden">
+                <div style="position:absolute;left:0;right:0;top:0;z-index:4;height:30px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;color:#F7FDFB;font-size:11px;font-weight:600">
+                  <span>9:41</span>
+                  <span style="position:absolute;left:50%;top:8px;width:76px;height:22px;margin-left:-38px;border-radius:999px;background:#0A0C0E;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;box-sizing:border-box"><span style="width:7px;height:7px;border-radius:50%;background:#1C2A3A;box-shadow:inset 0 0 0 1.5px #22303F"></span></span>
+                  <span style="display:flex;align-items:center;gap:4px"><svg viewBox="0 0 18 12" style="width:15px" fill="#F7FDFB"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5" width="3" height="7" rx="1"></rect><rect x="10" y="2" width="3" height="10" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1" opacity=".4"></rect></svg><span style="width:20px;height:10px;border-radius:3px;border:1.2px solid #F7FDFB;box-sizing:border-box;padding:1px;display:flex"><span style="width:70%;background:#F7FDFB;border-radius:1px"></span></span></span>
+                </div>
+              
+              <div style="display:flex;align-items:center;gap:10px;padding:40px 14px 10px;background:#0B4A2F;color:#F7FDFB"><span style="width:32px;height:32px;border-radius:50%;background:{{ tabAvBg }};border:2px solid #F7FDFB;box-sizing:border-box;flex:none;display:flex;align-items:center;justify-content:center"><sc-if value="{{ tabIsSc }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 100 100" style="width:12px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#022B1A"></path></svg></sc-if></span><span style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:600">{{ tabChat }}</span><span style="font-size:11px;color:#B0F5D8">{{ tabMembers }}</span></span></div>
+              <div style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:14px;overflow:hidden">
+                <sc-for list="{{ tabMsgs }}" as="m" hint-placeholder-count="3">
+                  <div style="flex-shrink:0;align-self:{{ m.side }};max-width:86%;display:flex;flex-direction:column;gap:3px;background:{{ m.bg }};border-radius:{{ m.radius }};padding:8px 11px;box-shadow:0 1px 0 rgba(2,43,26,.15);opacity:{{ m.op }};transform:{{ m.tf }};transition:opacity .35s,transform .35s cubic-bezier(.2,.8,.2,1)">
+                    <span style="font-size:11px;font-weight:600;color:{{ m.nameC }}">{{ m.who }}</span>
+                    <span style="font-size:14px;line-height:1.4;direction:{{ m.dir }}">{{ m.t }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              </div>
+            </div>
+            <span style="font-family:'Caveat',cursive;font-size:clamp(26px,2.6vw,32px);line-height:1.1;color:#2E5A46;text-align:center;padding:0 10px">{{ nbShort }}</span>
+            <div style="display:flex;justify-content:center;gap:0">
+              <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="5">
+                <button onClick="{{ tb.pick }}" aria-label="{{ tb.label }}" style="display:flex;align-items:center;justify-content:center;min-width:28px;height:44px;padding:0 4px;border:none;background:transparent;cursor:pointer"><span style="position:relative;display:block;width:{{ tb.dotW }};height:8px;border-radius:999px;background:#D7DDD9;overflow:hidden;transition:width .3s"><span style="position:absolute;left:0;top:0;bottom:0;width:{{ tb.dotFill }};background:#1B7236;transition:width .7s linear"></span></span></button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span style="font-family:'Caveat',cursive;font-size:clamp(24px,2.6vw,32px);color:#F7FDFB;text-align:center">reminder: if you can WhatsApp it, Superchat can do it.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Asks before it acts" style="position:relative;background:#F7FDFB;padding:clamp(56px,8vw,96px) clamp(18px,5vw,24px);overflow:hidden">
+  <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:clamp(28px,4vw,40px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5.6vw,76px);line-height:1;letter-spacing:-0.035em;color:#022B1A;max-width:11em;text-wrap:balance">Nothing moves without your <span style="color:#1B7236">yes.</span></h2>
+      <p style="margin:0;font-size:clamp(17px,1.5vw,19px);line-height:1.45;color:#2E5A46;max-width:38ch;text-wrap:pretty">Every booking, payment and message waits for one tap from you. Try it.</p>
+    </div>
+    <div style="position:relative;width:100%;min-height:{{ yesH }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+      <sc-if value="{{ orbit }}" hint-placeholder-val="{{ true }}">
+        <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)">
+        <div aria-hidden="true" style="position:absolute;left:50%;top:50%;width:440px;height:440px;margin:-220px 0 0 -220px;border-radius:50%;border:1.5px solid #CFE9DA;pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;left:50%;top:50%;width:740px;height:740px;margin:-370px 0 0 -370px;border-radius:50%;border:1.5px solid #DDF2E6;pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;left:50%;top:50%;width:1060px;height:1060px;margin:-530px 0 0 -530px;border-radius:50%;border:1.5px solid #E6F6EC;pointer-events:none"></div>
+        </div>
+        <div style="position:absolute;left:5%;top:24px;z-index:2;max-width:240px;padding:12px 16px;border-radius:20px 20px 6px 20px;background:#D5F7C8;border:2px solid #022B1A;font-size:16px;line-height:1.35;transform:rotate(-6deg) translateY({{ bob0 }});transition:transform 1.4s ease-in-out;box-shadow:0 18px 30px rgba(2,43,26,.14)">send 500 to omar for his birthday</div>
+        <div style="position:absolute;left:2%;top:250px;z-index:2;width:190px;display:flex;flex-direction:column;align-items:center;gap:12px;transform:translateY({{ bob1 }});transition:transform 1.4s ease-in-out">
+          <span style="width:88px;height:88px;border-radius:50%;background:#F5C400;border:2px solid #022B1A;box-shadow:0 0 0 7px #FFFFFF,0 20px 34px rgba(2,43,26,.18);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:34px" fill="none" stroke="#022B1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"></path></svg></span>
+          <span style="font-size:15px;line-height:1.3;font-weight:500;text-align:center;padding:8px 14px;border-radius:16px;background:#FFFFFF;border:1.5px solid #022B1A;text-wrap:balance">Spending limits you set, never exceeded</span>
+        </div>
+        <div style="position:absolute;right:3%;top:40px;z-index:2;width:190px;display:flex;flex-direction:column;align-items:center;gap:12px;transform:translateY({{ bob2 }});transition:transform 1.4s ease-in-out">
+          <span style="width:88px;height:88px;border-radius:50%;background:#A9C4F7;border:2px solid #022B1A;box-shadow:0 0 0 7px #FFFFFF,0 20px 34px rgba(2,43,26,.18);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:34px" fill="none" stroke="#022B1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM3 10h18M7 15h4"></path></svg></span>
+          <span style="font-size:15px;line-height:1.3;font-weight:500;text-align:center;padding:8px 14px;border-radius:16px;background:#FFFFFF;border:1.5px solid #022B1A;text-wrap:balance">Amount, card and recipient, always shown</span>
+        </div>
+        <div style="position:absolute;right:7%;top:330px;z-index:2;width:190px;display:flex;flex-direction:column;align-items:center;gap:12px;transform:translateY({{ bob0 }});transition:transform 1.4s ease-in-out">
+          <span style="width:88px;height:88px;border-radius:50%;background:#FFB4A2;border:2px solid #022B1A;box-shadow:0 0 0 7px #FFFFFF,0 20px 34px rgba(2,43,26,.18);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:34px" fill="none" stroke="#022B1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9c-4.6-1-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5"></path></svg></span>
+          <span style="font-size:15px;line-height:1.3;font-weight:500;text-align:center;padding:8px 14px;border-radius:16px;background:#FFFFFF;border:1.5px solid #022B1A;text-wrap:balance">Your data stays in the UAE, never sold</span>
+        </div>
+      </sc-if>
+      <sc-if value="{{ noOrbit }}" hint-placeholder-val="{{ false }}"><div style="align-self:center;max-width:240px;margin-bottom:-14px;position:relative;z-index:4;padding:12px 16px;border-radius:20px 20px 6px 20px;background:#D5F7C8;border:2px solid #022B1A;font-size:16px;line-height:1.35;transform:translateX(min(30%,120px)) rotate(-3deg)">send 500 to omar for his birthday</div></sc-if>
+      <div style="position:relative;z-index:3;width:min(440px,100%);transform:rotate(-3deg)">
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:16px;padding:clamp(22px,3vw,30px);border-radius:36px;background:#1B7236;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 30px 60px rgba(2,43,26,.28)">
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#B0F5D8">SUPERCHAT · CONFIRM TRANSFER</span>
+          <h3 style="margin:0;font-weight:500;font-size:clamp(28px,3vw,34px);line-height:1.05;letter-spacing:-0.03em">Send 500 AED to Omar?</h3>
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1.5px dashed #3E9A5E;font-size:15px"><span style="color:#B0F5D8">To</span><span style="font-weight:600;text-align:right">Omar · Meezan Bank</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1.5px dashed #3E9A5E;font-size:15px"><span style="color:#B0F5D8">He gets</span><span style="font-weight:600;text-align:right">PKR 37,800</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1.5px dashed #3E9A5E;font-size:15px"><span style="color:#B0F5D8">From</span><span style="font-weight:600;text-align:right">Visa •• 4821</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1.5px dashed #3E9A5E;border-bottom:1.5px dashed #3E9A5E;font-size:15px"><span style="color:#B0F5D8">Note</span><span style="font-weight:600;text-align:right">Happy birthday!</span></div>
+          </div>
+          <sc-if value="{{ apPending }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;gap:10px">
+              <button onClick="{{ apYes }}" style="flex:1;padding:13px;border-radius:999px;border:2px solid #022B1A;background:#25D366;color:#022B1A;font-size:16px;font-weight:600;box-shadow:0 4px 0 #022B1A;cursor:pointer">Approve</button>
+              <button onClick="{{ apNo }}" style="flex:1;padding:13px;border-radius:999px;border:2px solid #022B1A;background:#FFFFFF;color:#022B1A;font-size:16px;font-weight:600;box-shadow:0 4px 0 #022B1A;cursor:pointer">Not now</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ apDone }}" hint-placeholder-val="{{ false }}"><span style="font-size:16px;line-height:1.4">Sent. Omar has it, and I added your note. Receipt is saved here.</span></sc-if>
+          <sc-if value="{{ apDeclined }}" hint-placeholder-val="{{ false }}"><span style="font-size:16px;line-height:1.4">No problem, nothing was sent. Want a reminder on his birthday instead?</span></sc-if>
+          <sc-if value="{{ apSettled }}" hint-placeholder-val="{{ false }}"><button onClick="{{ apReset }}" style="align-self:flex-start;padding:8px 16px;border-radius:999px;border:1.5px solid #F7FDFB;background:transparent;font-size:14px;font-weight:500;color:#F7FDFB;cursor:pointer">Try again</button></sc-if>
+        </div>
+        <svg viewBox="0 0 44 34" style="position:absolute;left:44px;bottom:-28px;z-index:2;width:44px;height:34px" fill="none"><path d="M2 2 V26 Q2 33 9 29 L42 2" fill="#1B7236" stroke="#022B1A" stroke-width="2" stroke-linejoin="round"></path><path d="M3 0 H41" stroke="#1B7236" stroke-width="4"></path></svg>
+        <span style="position:absolute;right:-22px;bottom:-22px;z-index:3;transform:rotate(9deg);font-size:14px;font-weight:600;letter-spacing:0.06em;padding:9px 16px;border-radius:999px;background:{{ apTagBg }};color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:background .3s">{{ apTag }}</span>
+      </div>
+      <sc-if value="{{ noOrbit }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px">
+          <span style="display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:#FFFFFF;border:1.5px solid #022B1A;font-size:15px;font-weight:500"><span style="width:34px;height:34px;border-radius:50%;background:#F5C400;border:1.5px solid #022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"></path></svg></span>Spending limits you set</span>
+          <span style="display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:#FFFFFF;border:1.5px solid #022B1A;font-size:15px;font-weight:500"><span style="width:34px;height:34px;border-radius:50%;background:#A9C4F7;border:1.5px solid #022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM3 10h18M7 15h4"></path></svg></span>Amount and recipient shown</span>
+          <span style="display:flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:#FFFFFF;border:1.5px solid #022B1A;font-size:15px;font-weight:500"><span style="width:34px;height:34px;border-radius:50%;background:#FFB4A2;border:1.5px solid #022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9c-4.6-1-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5"></path></svg></span>Data stays in the UAE</span>
+        </div>
+      </sc-if>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:22px">
+      <a href="https://wa.me/971500000000?text=Hi%20Superchat" style="display:flex;align-items:center;justify-content:center;gap:12px;min-width:min(380px,80vw);font-size:18px;font-weight:500;padding:18px 32px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 5px 0 #25D366;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 3px 0 #25D366;color:#F7FDFB">Message Superchat<span style="width:24px;height:24px;border-radius:50%;background:#F7FDFB;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:14px" fill="none" stroke="#022B1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span></a>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;font-size:17px">
+        <a href="Security.dc.html" style="display:flex;align-items:center;gap:8px;text-decoration:underline;text-underline-offset:4px"><svg viewBox="0 0 24 24" style="width:20px" fill="none" stroke="#022B1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9c-4.6-1-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5"></path></svg>How we keep you safe</a>
+        <a href="#start" style="display:flex;align-items:center;gap:8px;text-decoration:underline;text-underline-offset:4px"><svg viewBox="0 0 24 24" style="width:20px" fill="none" stroke="#022B1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"></path></svg>How it works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 Answers vs actions" style="background:#F7FDFB;padding:clamp(56px,8vw,96px) clamp(10px,2vw,24px)">
+  <div style="max-width:1240px;margin:0 auto;border-radius:clamp(28px,4vw,44px);background:#DCEBFC;border:2px solid #022B1A;padding:clamp(22px,3.5vw,44px);display:flex;flex-direction:column;gap:clamp(24px,3vw,36px);overflow:hidden">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-bottom:clamp(18px,2.5vw,24px);border-bottom:1.5px solid rgba(2,43,26,0.15)">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(34px,4.4vw,60px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance">Other bots answer. <span style="color:#1B7236">This one acts.</span></h2>
+      <div style="display:flex;align-items:center;gap:4px;padding:4px;border-radius:999px;background:#FFFFFF;border:1.5px solid rgba(2,43,26,0.15)">
+        <button onClick="{{ vsBot }}" style="font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;border:none;background:{{ vsBotBg }};color:{{ vsBotInk }};cursor:pointer;transition:background .2s,color .2s">A chatbot</button>
+        <button onClick="{{ vsSc }}" style="font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;border:none;background:{{ vsScBg }};color:{{ vsScInk }};cursor:pointer;transition:background .2s,color .2s">Superchat</button>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ vsCols }};gap:clamp(20px,3vw,32px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:18px;opacity:{{ vsIn0.o }};transform:{{ vsIn0.t }};transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(72px,8vw,112px);font-weight:500;letter-spacing:-0.05em;line-height:0.9;color:#022B1A">{{ vsBig }}</span>
+          <span style="font-size:16px;color:#2E5A46">{{ vsBigSub }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:24px;background:{{ vsCardBg }};border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;transform:{{ vsCardTf }};transition:background .3s,transform .4s cubic-bezier(.3,1.6,.5,1)">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font-size:15px;font-weight:600">{{ vsCardTitle }}</span><span style="font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:#FFFFFF;border:1.5px solid #022B1A">THIS WEEK</span></div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+            <sc-for list="{{ vsStats }}" as="s" hint-placeholder-count="3">
+              <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(30px,3vw,38px);font-weight:500;letter-spacing:-0.03em;line-height:1">{{ s.v }}</span><span style="font-size:13px">{{ s.l }}</span></span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="grid-column:{{ vsMidCol }};order:{{ vsMidOrder }};display:flex;justify-content:center;padding:6px 0 112px;opacity:{{ vsIn1.o }};transform:{{ vsIn1.t }};transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)">
+        <div style="position:relative;width:100%;max-width:440px">
+          <sc-for list="{{ vsBack }}" as="c" hint-placeholder-count="2">
+            <div style="position:absolute;left:0;right:0;top:0;bottom:0;z-index:{{ c.z }};box-sizing:border-box;padding:0 20px 12px;border-radius:24px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transform:{{ c.tf }};transform-origin:50% 100%;transition:transform .5s cubic-bezier(.2,.8,.2,1);display:flex;align-items:flex-end;justify-content:space-between;gap:10px">
+              <span style="display:flex;align-items:center;gap:10px;min-width:0"><span style="width:24px;height:24px;border-radius:8px;background:{{ c.tint }};border:1.5px solid #022B1A;flex:none"></span><span style="font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.q }}</span></span>
+              <span style="flex:none;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;background:{{ c.tagBg }};color:{{ c.tagInk }}">{{ c.tag }}</span>
+            </div>
+          </sc-for>
+          <div style="position:relative;z-index:5;box-sizing:border-box;padding:18px 20px;border-radius:24px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 8px 0 #022B1A;transform:{{ vsFront.tf }};opacity:{{ vsFront.op }};transition:{{ vsFront.tr }};display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <span style="display:flex;align-items:center;gap:10px;min-width:0"><span style="width:30px;height:30px;border-radius:10px;background:{{ vsFront.tint }};border:1.5px solid #022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:15px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ vsFront.icon }}"></path></svg></span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1.1">{{ vsFront.q }}</span></span>
+              <span style="flex:none;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:{{ vsFront.tagBg }};color:{{ vsFront.tagInk }}">{{ vsFront.tag }}</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;padding:12px 0;border-top:1.5px dashed #CFE3DA;border-bottom:1.5px dashed #CFE3DA">
+              <sc-for list="{{ vsFront.fields }}" as="fd" hint-placeholder-count="3">
+                <span style="display:flex;flex-direction:column;gap:3px;opacity:{{ fd.o }};transform:{{ fd.t }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)"><span style="font-size:12px;color:#6B8F80">{{ fd.k }}</span><span style="font-size:14px;font-weight:600;line-height:1.3">{{ fd.v }}</span></span>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+              <span style="font-size:14px;line-height:1.4;color:{{ vsFront.replyInk }};max-width:26ch;opacity:{{ vsFront.replyO }};transition:opacity .4s">{{ vsFront.reply }}</span>
+              <span style="position:relative;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:10px 16px;border-radius:999px;background:{{ vsFront.btnBg }};color:{{ vsFront.btnInk }};border:1.5px solid {{ vsFront.btnBd }};transform:scale({{ vsFront.btnS }});transition:transform .3s cubic-bezier(.3,1.8,.5,1),background .3s,color .3s"><sc-if value="{{ vsFront.working }}" hint-placeholder-val="{{ false }}"><span style="display:flex;gap:3px"><sc-for list="{{ vsDots }}" as="d" hint-placeholder-count="3"><span style="width:5px;height:5px;border-radius:50%;background:#022B1A;opacity:{{ d.o }};transform:translateY({{ d.y }});transition:opacity .15s,transform .15s"></span></sc-for></span></sc-if>{{ vsFront.btn }}<svg viewBox="0 0 24 24" style="position:absolute;right:-18px;bottom:-22px;width:26px;transform:rotate(-12deg);filter:drop-shadow(0 3px 0 rgba(2,43,26,.25))" fill="#FFFFFF" stroke="#022B1A" stroke-width="1.6" stroke-linejoin="round"><path d="M4 3l16 8-7 2-3 7z"></path></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;opacity:{{ vsIn2.o }};transform:{{ vsIn2.t }};transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)">
+        <div style="display:flex;flex-direction:column;padding:18px 18px 8px;border-radius:24px;background:rgba(255,255,255,0.6);border:1.5px solid rgba(2,43,26,0.12)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:8px"><span style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600"><span style="width:24px;height:24px;border-radius:50%;background:#25D366;border:1.5px solid #022B1A"></span>Try a request</span><span style="font-size:13px;color:#2E5A46">Tap one</span></div>
+          <sc-for list="{{ vsList }}" as="r" hint-placeholder-count="4">
+            <button onClick="{{ r.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 4px;border:none;border-top:1px solid rgba(2,43,26,0.12);background:transparent;text-align:left;font-size:15px;line-height:1.35;font-weight:{{ r.w }};color:#022B1A;cursor:pointer;position:relative">{{ r.q }}<span style="position:absolute;left:0;bottom:-1px;height:2px;width:{{ r.prog }};background:#25D366;transition:width .1s linear"></span><span style="width:26px;height:26px;border-radius:50%;background:{{ r.dot }};display:flex;align-items:center;justify-content:center;transition:background .2s"><svg viewBox="0 0 24 24" style="width:10px" fill="{{ r.arrow }}"><path d="M7 4l13 8-13 8z"></path></svg></span></button>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:24px;background:#FFFFFF;border:2px solid #022B1A">
+          <span style="align-self:flex-start;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:#A9C4F7;border:1.5px solid #022B1A">Voice note</span>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+            <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:24px;font-weight:500;letter-spacing:-0.02em;line-height:1.05;max-width:8ch">Say it. Consider it done.</span>
+            <div style="display:flex;align-items:center;gap:3px;height:44px">
+              <sc-for list="{{ vsWave }}" as="h" hint-placeholder-count="14">
+                <span style="width:3px;height:{{ h }};border-radius:2px;background:#3071E8;transition:height .12s linear"></span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 WhatsApp FAQ" style="background:#F7FDFB;padding:0 clamp(18px,5vw,24px) clamp(80px,11vw,120px)">
+  <div style="max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:clamp(28px,5vw,64px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Good questions.</h2>
+      <div style="display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:26px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;max-width:360px">
+        <span style="font-size:17px;line-height:1.45">Still unsure? Ask Superchat itself. It’s happy to explain.</span>
+        <a href="https://wa.me/971500000000?text=Hi%20Superchat" style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:500;padding:11px 18px;border-radius:999px;background:#25D366;color:#022B1A;border:2px solid #022B1A" style-hover="color:#022B1A">Ask on WhatsApp</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+        <div style="border-radius:24px;border:2px solid #022B1A;background:{{ f.bg }};box-shadow:{{ f.shadow }};overflow:hidden;transition:box-shadow .3s,background .3s">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;border:none;background:transparent;font-size:clamp(18px,1.8vw,21px);font-weight:500;color:#022B1A;text-align:left;cursor:pointer">
+            <span style="flex:1">{{ f.q }}</span>
+            <span style="width:36px;height:36px;border-radius:50%;border:2px solid #022B1A;background:{{ f.iconBg }};display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transform:{{ f.rot }};transition:transform .4s cubic-bezier(.2,.8,.2,1),background .2s">+</span>
+          </button>
+          <div aria-hidden="{{ f.closed }}" style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)"><div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.5;color:#2E5A46;max-width:60ch;opacity:{{ f.op }};transform:{{ f.ty }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)">{{ f.a }}</p></div></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="07 Final CTA" style="background:#F7FDFB;padding:0 clamp(10px,2vw,24px) clamp(56px,8vw,96px)">
+  <div style="position:relative;border-radius:clamp(28px,4vw,44px);border:2px solid #022B1A;box-shadow:0 10px 0 #022B1A;background-color:#25D366;background-image:radial-gradient(#1FBF5B 1.4px,transparent 1.8px);background-size:22px 22px;overflow:hidden;padding:clamp(64px,9vw,110px) clamp(20px,5vw,48px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
+    <div style="width:88px;height:88px;border-radius:26px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 6px 0 #022B1A;display:flex;align-items:center;justify-content:center">
+      <x-import component-from-global-scope="sc-shape" from="./sc-shapes.js" kind="bubble" color="#25D366" face="grin" style="width:56px" hint-size="56px,50px"></x-import>
+    </div>
+    <h2 style="margin:0;font-weight:500;font-size:clamp(44px,6.4vw,88px);line-height:.98;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance">Say hi. It takes it from there.</h2>
+    <p style="margin:0;font-size:19px;line-height:1.45;max-width:36ch">Free to start. Works on any phone with WhatsApp, in English or Arabic.</p>
+    <a href="https://wa.me/971500000000?text=Hi%20Superchat" style="display:flex;align-items:center;gap:12px;font-size:19px;font-weight:500;padding:20px 32px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 5px 0 #F7FDFB;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 3px 0 #F7FDFB;color:#F7FDFB"><svg viewBox="0 0 24 24" style="width:22px" fill="none" stroke="#25D366" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 L5.3 16.2 A8 8 0 1 1 8 18.8 Z"></path></svg>Message Superchat</a>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { nbTick: 0, vsI: 0, vsMode: 'sc', vsTick: 0, vsAge: 0, vsModeAge: 0, vsIn: 0, vsAuto: true, wide: typeof window === 'undefined' ? true : window.innerWidth >= 960, hs: 0, hsClock: 0, hsAuto: true, narrow: typeof window === 'undefined' ? false : window.innerWidth < 720, thread: [], typing: false, auto: true, composer: 'Message', tab: 0, tabStep: 0, tabClock: 0, tabAuto: true, clock: 0, ap: 'pending', faq: 0 };
+  uid = 0; mins = 41; timers = [];
+  VS = [
+    { q: 'Send 500 AED to my brother', icon: 'M22 2 11 13M22 2l-7 20-4-9-9-4z', tint: '#D9F8EA', bot: 'Here’s how to send money abroad from the UAE…', sc: 'Sent at the Google rate.', tag: 'Sent', fields: [['To', 'Ahmed · HBL'], ['He gets', 'PKR 37,800'], ['Arrives', 'In minutes']], botFields: [['Sent', 'Nothing'], ['Links', '3 guides'], ['Your job', 'Do it yourself']] },
+    { q: 'Book a table tonight', icon: 'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7', tint: '#FFE7DE', bot: 'Here are five restaurants you could call.', sc: 'Invite sent to the family group.', tag: 'Booked', fields: [['Where', 'Sal, JBR · terrace'], ['When', 'Tonight, 8:15pm'], ['Guests', '4 people']], botFields: [['Booked', 'Nothing'], ['Links', '5 restaurants'], ['Your job', 'Call them']] },
+    { q: 'Pay my du bill', icon: 'M3 6h18v12H3zM3 10h18M7 15h4', tint: '#FFF3C9', bot: 'You can pay through the du app or website.', sc: 'Receipt is right here in chat.', tag: 'Paid', fields: [['Amount', '299 AED'], ['From', 'Visa •• 4821'], ['Next due', '8 Nov']], botFields: [['Paid', 'Nothing'], ['Links', 'du website'], ['Your job', 'Log in, pay']] },
+    { q: 'Call the garage for me', icon: 'M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z', tint: '#E2ECFD', bot: 'I can’t make phone calls.', sc: 'Pickup included, reminder set.', tag: 'Called', fields: [['Garage', 'AutoPro, Al Quoz'], ['Slot', 'Sat, 9:00am'], ['Pickup', 'Included']], botFields: [['Called', 'Nobody'], ['Links', 'None'], ['Your job', 'Call them']] }
+  ];
+  vsVals(S) {
+    const sc = S.vsMode === 'sc', n = this.VS.length, i = S.vsI % n, k = S.vsTick, age = S.vsAge, p = Math.min(1, S.vsModeAge / 8), ease = 1 - Math.pow(1 - p, 3);
+    const inC = j => { const on = S.vsIn > j * 3; return { o: on ? 1 : 0, t: on ? 'none' : 'translateY(28px)' }; };
+    const count = v => { const m = String(v).match(/^(\d+)(.*)$/); return m ? Math.round(+m[1] * ease) + m[2] : v; };
+    return {
+      vsBot: () => this.setState({ vsMode: 'bot', vsModeAge: 0, vsAge: 0 }), vsSc: () => this.setState({ vsMode: 'sc', vsModeAge: 0, vsAge: 0 }),
+      vsBotBg: sc ? 'transparent' : '#022B1A', vsBotInk: sc ? '#022B1A' : '#F7FDFB', vsScBg: sc ? '#022B1A' : 'transparent', vsScInk: sc ? '#F7FDFB' : '#022B1A',
+      vsIn0: inC(0), vsIn1: inC(1), vsIn2: inC(2), vsCardTf: S.vsModeAge < 3 ? 'scale(1.03) rotate(-1deg)' : 'none',
+      vsDots: [0, 1, 2].map(d => { const on = Math.floor(k / 2) % 3 === d; return { o: on ? 1 : .3, y: on ? '-2px' : '0px' }; }),
+      vsBig: (sc ? Math.round(4 * ease) : Math.round(4 * (1 - ease))) + '/4', vsBigSub: sc ? 'Requests actually finished, not just answered.' : 'Requests finished. Lots of helpful links, though.',
+      vsCardBg: sc ? '#F5C400' : '#FFFFFF', vsCardTitle: sc ? 'Done by Superchat' : 'Done by a chatbot',
+      vsStats: (sc ? [['3', 'Bookings'], ['5', 'Payments'], ['2h', 'Saved']] : [['0', 'Bookings'], ['0', 'Payments'], ['9', 'Links']]).map(([v, l]) => ({ v: count(v), l })),
+      vsCols: S.narrow ? 'minmax(0,1fr)' : S.mid ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,0.9fr) minmax(0,1.25fr) minmax(0,0.9fr)',
+      vsMidCol: S.mid ? '1 / -1' : 'auto', vsMidOrder: S.mid || S.narrow ? -1 : 0,
+      vsFront: (() => { const c = this.VS[i], working = sc && age < 11; return { q: c.q, icon: c.icon, tint: c.tint, working,
+          tf: age === 0 ? 'translateY(36px) rotate(3deg) scale(.96)' : 'rotate(-1deg)', op: age === 0 ? 0 : 1, tr: age === 0 ? 'none' : 'transform .55s cubic-bezier(.2,.8,.2,1),opacity .35s',
+          replyO: sc ? (age >= 11 ? 1 : 0) : (age >= 3 ? 1 : 0), btnS: sc && age >= 11 && age < 14 ? 1.1 : 1,
+          tag: sc ? c.tag : 'Answered', tagBg: sc ? '#25D366' : '#FFE1D8', tagInk: sc ? '#022B1A' : '#B8391C',
+          fields: (sc ? c.fields : c.botFields).map(([kk, v], j) => { const on = age >= 3 + j * 2; return { k: kk, v, o: on ? 1 : 0, t: on ? 'none' : 'translateY(8px)' }; }),
+          reply: sc ? c.sc : '“' + c.bot + '”', replyInk: sc ? '#022B1A' : '#6B8F80',
+          btn: working ? 'Working' : sc ? 'Done ✓' : 'Over to you', btnBg: working ? '#E3EEE8' : sc ? '#022B1A' : '#FFFFFF', btnInk: working ? '#022B1A' : sc ? '#F7FDFB' : '#6B8F80', btnBd: working ? '#CFE3DA' : sc ? '#022B1A' : '#C9D2CE' }; })(),
+      vsBack: [1, 2].map(d => { const c = this.VS[(i + d) % n]; return { q: c.q, tint: c.tint, z: 5 - d,
+          tf: `translateY(${d * 48 + Math.sin((k + d * 9) / 7) * 3}px) scale(${1 - d * 0.04}) rotate(${d === 1 ? 1.5 : -1.5}deg)`,
+          tag: sc ? c.tag : 'Answered', tagBg: sc ? '#25D366' : '#FFE1D8', tagInk: sc ? '#022B1A' : '#B8391C' }; }),
+      vsList: this.VS.map((c, j) => { const on = j === i; return { q: c.q, w: on ? 600 : 400, prog: on && S.vsAuto ? Math.min(100, age / 55 * 100) + '%' : '0%', dot: on ? '#022B1A' : 'rgba(2,43,26,0.08)', arrow: on ? '#25D366' : '#022B1A', pick: () => this.setState({ vsI: j, vsAge: 0, vsAuto: false }) }; }),
+      vsWave: [0.4, 0.7, 1, 0.6, 0.85, 0.5, 0.95, 0.65, 0.4, 0.8, 0.55, 0.9, 0.45, 0.7].map((h, j) => Math.round(8 + 34 * Math.abs(Math.sin(h * 3 + j * 0.9 + k * 0.35))) + 'px')
+    };
+  }
+  SCEN = [
+    { me: { type: 'text', t: 'pay my DEWA bill pls' },
+      reply: { type: 'card', tag: 'CONFIRM PAYMENT', tagBg: '#F5C400', title: 'DEWA · 412 AED', body: 'From Visa •• 4821. Due 12 Oct.', action: 'Pay 412 AED' }, done: 'Paid. Receipt saved in this chat.' },
+    { me: { type: 'voice', t: '0:07' }, pre: 'Heard you: dinner for 4, Friday, somewhere with a terrace.',
+      reply: { type: 'card', tag: 'BOOKING', tagBg: '#A9C4F7', title: 'Sal, JBR · Fri 8:15pm', body: 'Table for 4 on the terrace.', action: 'Book it' }, done: 'Booked. Invite sent to the group.' },
+    { me: { type: 'text', t: 'send 500 aed to omar' },
+      reply: { type: 'card', tag: 'CONFIRM TRANSFER', tagBg: '#F5C400', title: '500 AED → PKR 37,800', body: 'To Omar, Meezan Bank. Arrives in minutes.', action: 'Send 500 AED' }, done: 'Sent. Omar has it.' },
+    { me: { type: 'text', t: 'can you call the garage and book a service' }, pre: 'Calling Al Quoz Auto now…',
+      reply: { type: 'card', tag: 'CALL DONE · 3 MIN', tagBg: '#25D366', title: 'Sat 9:00am service', body: 'Pickup from home included. 380 AED.' } }
+  ];
+  TABS = [
+    { label: 'Voice notes', short: 'Just talk. It gets the details.', icon: 'M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM5 11a7 7 0 0 0 14 0M12 18v3', iconBg: '#DDF7E7', chat: 'Superchat', members: 'online', dot: '#00E385',
+      msgs: [{ who: 'You', t: '▶ Voice note, 0:12', me: 1 }, { who: 'Superchat', t: 'Heard you: dentist this week after 5, near Al Barsha. Booked Wednesday 5:30pm at Smile Clinic.', sc: 1 }, { who: 'You', t: 'perfect', me: 1 }] },
+    { label: 'Arabic or English', short: 'It replies in the language you use.', icon: 'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18', iconBg: '#FFF1B8', chat: 'Superchat', members: 'online', dot: '#00E385',
+      msgs: [{ who: 'You', t: 'احجز لي تاكسي للمطار بكرة الساعة ٦', me: 1, rtl: 1 }, { who: 'Superchat', t: 'تم. تاكسي من البيت إلى مطار دبي، الساعة ٦ صباحًا. ٩٥ درهم.', sc: 1, rtl: 1 }, { who: 'You', t: 'thanks!', me: 1 }] },
+    { label: 'Forward anything', short: 'Bills, invites, screenshots. Consider it handled.', icon: 'M14 5l7 7-7 7M21 12H9a6 6 0 0 0-6 6', iconBg: '#DCE7FD', chat: 'Superchat', members: 'online', dot: '#00E385',
+      msgs: [{ who: 'You', t: 'Forwarded: “Wedding in Abu Dhabi, 14 Nov, 7pm. RSVP by Friday.”', me: 1 }, { who: 'You', t: 'rsvp yes for 2 and book a hotel nearby', me: 1 }, { who: 'Superchat', t: 'RSVP sent for 2. Room held 5 minutes from the venue, 540 AED, free cancellation.', sc: 1 }] },
+    { label: 'Family groups', short: 'Mention @Superchat. It books for everyone.', icon: 'M9 6a3 3 0 1 0 0 6a3 3 0 1 0 0-6zM3 19c.8-3 3.2-4.5 6-4.5s5.2 1.5 6 4.5M16 6.5a3 3 0 0 1 0 5.6M18 14.8c1.4.6 2.4 2 2.9 4.2', iconBg: '#FFE1D8', chat: 'Family', members: 'Mum, Omar, You, Superchat', dot: '#F5C400',
+      msgs: [{ who: 'Mum', t: 'Who is booking Eid lunch?', nameC: '#B8391C' }, { who: 'You', t: '@Superchat table for 8 on Eid, Lebanese, near Mum', me: 1 }, { who: 'Superchat', t: 'Booked Em Sherif, 1pm, table for 8. Added to everyone’s calendar.', sc: 1 }] },
+    { label: 'Photos', short: 'Snap it. It finds it, pays it or fixes it.', icon: 'M4 8h3l2-3h6l2 3h3v11H4zM12 9.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 1 0 0-7z', iconBg: '#DDF7E7', chat: 'Superchat', members: 'online', dot: '#00E385',
+      msgs: [{ who: 'You', t: '📷 Photo: parking sign, zone 367', me: 1 }, { who: 'You', t: '2 hours', me: 1 }, { who: 'Superchat', t: 'Paid zone 367 until 14:30. I’ll remind you at 14:15 so you can extend.', sc: 1 }] }
+  ];
+  HS = [
+    { label: 'Dining', status: 'BOOKED ✓', title: 'Friday dinner', msg: '▶ Voice note: dinner for 4 on Friday, somewhere with a terrace',
+      rows: [{ t: 'Table for 4', s: 'Sal, JBR · terrace', v: '8:15pm', c: '#25D366' }, { t: 'Invite sent', s: 'Family group', v: '4 people', c: '#A9C4F7' }, { t: 'Taxi booked', s: 'Pickup at 7:40pm', v: '45 AED', c: '#F5C400' }],
+      sideTag: 'DATE', sideTitle: 'Fri 10 Oct', sideSub: '8:15pm · table for 4', sideToggle: 'Added to calendar' },
+    { label: 'Bills', status: 'PAID ✓', title: 'This month’s bills', msg: 'pay all my bills this month pls',
+      rows: [{ t: 'DEWA', s: 'Electricity and water', v: '412 AED', c: '#25D366' }, { t: 'du', s: 'Home internet', v: '299 AED', c: '#A9C4F7' }, { t: 'Salik', s: 'Toll top-up', v: '100 AED', c: '#F5C400' }],
+      sideTag: 'TOTAL', sideTitle: '811 AED', sideSub: 'From Visa •• 4821', sideToggle: 'Pay these every month' },
+    { label: 'Transfers', status: 'SENT ✓', title: 'Omar’s birthday', msg: 'send 500 to omar for his birthday',
+      rows: [{ t: 'Transfer', s: 'Omar · Meezan Bank', v: 'PKR 37,800', c: '#25D366' }, { t: 'Note added', s: '“Happy birthday!”', v: '', c: '#FFB4A2' }, { t: 'Receipt', s: 'Saved in your chat', v: '', c: '#A9C4F7' }],
+      sideTag: 'ARRIVES', sideTitle: 'In minutes', sideSub: 'At the Google rate', sideToggle: 'Remind me next year' }
+  ];
+  t(fn, ms) { this.timers.push(setTimeout(fn, ms)); }
+  clear() { this.timers.forEach(clearTimeout); this.timers = []; }
+  time() { this.mins++; const h = 9 + Math.floor(this.mins / 60), m = this.mins % 60; return `${h}:${String(m).padStart(2, '0')}`; }
+  push(m) { const msg = { ...m, id: ++this.uid, time: this.time() }; this.setState(s => ({ thread: [...s.thread, msg].slice(-6) })); return msg.id; }
+  play(i) {
+    if (this.state.auto && this.vis && (this.vis['01 WhatsApp hero'] === false || this.scrolling)) { this.t(() => this.play(i), 1200); return; }
+    const sc = this.SCEN[i];
+    this.setState({ composer: sc.me.type === 'voice' ? 'Recording… 0:07' : sc.me.t });
+    this.t(() => { this.setState({ composer: 'Message' }); this.push({ ...sc.me, me: 1 }); }, 700);
+    this.t(() => this.setState({ typing: true }), 1100);
+    let at = 2300;
+    if (sc.pre) { this.t(() => { this.setState({ typing: false }); this.push({ type: 'text', t: sc.pre }); }, at); this.t(() => this.setState({ typing: true }), at + 300); at += 1300; }
+    this.t(() => {
+      this.setState({ typing: false });
+      const id = this.push(sc.reply);
+      if (!sc.reply.action) { if (this.state.auto) this.t(() => this.play((i + 1) % this.SCEN.length), 3000); }
+      else if (this.state.auto) this.t(() => this.act(id, i), 1900);
+    }, at);
+  }
+  act(id, i) {
+    this.setState(s => ({ thread: s.thread.map(m => m.id === id ? { ...m, acted: 1 } : m), typing: true }));
+    this.t(() => { this.setState({ typing: false }); this.push({ type: 'text', t: this.SCEN[i].done }); if (this.state.auto) this.t(() => this.play((i + 1) % this.SCEN.length), 2800); }, 1100);
+  }
+  componentDidMount() {
+    this.onResize = () => { const w = window.innerWidth >= 960; const nr = window.innerWidth < 720; const md = !nr && window.innerWidth < 1100; if (w !== this.state.wide || nr !== this.state.narrow || md !== this.state.mid) this.setState({ wide: w, narrow: nr, mid: md }); };
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+    this.vis = {};
+    const q = l => document.querySelector(`[data-screen-label="${l}"]`);
+    this.io = new IntersectionObserver(es => es.forEach(e => { this.vis[e.target.dataset.screenLabel] = e.isIntersecting; }), { rootMargin: '100px' });
+    ['01 WhatsApp hero', '02 Start in 30 seconds', '03 Talk the way you WhatsApp', '04 Asks before it acts', '05 Answers vs actions'].forEach(l => { const el = q(l); if (el) this.io.observe(el); });
+    this.nbIv = setInterval(() => { if (this.vis['03 Talk the way you WhatsApp']) this.setState(s => ({ nbTick: s.nbTick + 1 })); }, 140);
+    this.vsIv = setInterval(() => {
+      if (!this.vis['05 Answers vs actions']) return;
+      this.setState(s => { const n = { vsTick: s.vsTick + 1, vsAge: s.vsAge + 1, vsModeAge: s.vsModeAge + 1, vsIn: Math.min(30, s.vsIn + 1) };
+        if (s.vsAuto && s.vsAge >= 55) { n.vsI = (s.vsI + 1) % this.VS.length; n.vsAge = 0; }
+        return n; });
+    }, 100);
+    this.iv = setInterval(() => {
+      if (this.scrolling || !(this.vis['01 WhatsApp hero'] || this.vis['02 Start in 30 seconds'] || this.vis['03 Talk the way you WhatsApp'] || this.vis['04 Asks before it acts'] || this.vis['05 Answers vs actions'])) return;
+      this.setState(s => {
+        const n = { clock: s.clock + 1 };
+        if (s.hsAuto) { const c = s.hsClock + 1; if (c > 8) { n.hs = (s.hs + 1) % 3; n.hsClock = 0; } else n.hsClock = c; }
+        if (s.tabStep < this.TABS[s.tab].msgs.length) n.tabStep = s.tabStep + 1;
+        if (s.tabAuto) { const c = s.tabClock + 1; if (c > 9) { n.tab = (s.tab + 1) % this.TABS.length; n.tabStep = 0; n.tabClock = 0; } else n.tabClock = c; }
+        return n;
+      });
+    }, 700);
+    this.onScroll = () => { this.scrolling = true; clearTimeout(this.st); this.st = setTimeout(() => { this.scrolling = false; }, 180); };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+  }
+  componentWillUnmount() { this.clear(); clearInterval(this.iv); clearInterval(this.vsIv); clearInterval(this.nbIv); clearTimeout(this.st); this.io && this.io.disconnect(); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onResize); }
+  renderVals() {
+    const S = this.state, H = this.HS[S.hs], tb = this.TABS[S.tab], active = Math.floor(S.clock / 6) % 3, W = S.wide;
+    return {
+      side: W, ears: !S.narrow, tgX: Math.floor(S.clock / 3) % 2 ? '0.97em' : '0em', tgBg: Math.floor(S.clock / 3) % 2 ? '#25D366' : '#022B1A', tgLabel: Math.floor(S.clock / 3) % 2 ? 'YES' : '', ticks: Math.floor(S.clock / 3) % 2 ? '✓✓' : '✓', wave: [.3,.55,.8,.45,.65,.35,.75,.5,.3].map((v, i) => ({ h: (0.08 + 0.26 * (((i + S.clock) % 9) / 9 * 0.6 + v * 0.4)) + 'em' })), tabMax: S.narrow ? '100%' : 'min(780px, calc(100% - 180px))', panelRad: S.narrow ? '0 0 28px 28px' : '36px',
+      hsStatus: H.status, hsTitle: H.title, hsMsg: H.msg, hsRows: H.rows, hsSideTag: H.sideTag, hsSideTitle: H.sideTitle, hsSideSub: H.sideSub, hsSideToggle: H.sideToggle,
+      hsTabs: this.HS.map((x, i) => ({ n: '0' + (i + 1), label: x.label, nc: i === S.hs ? '#022B1A' : '#6B8F80', lc: i === S.hs ? '#022B1A' : '#6B8F80',
+        prog: i === S.hs ? (S.hsAuto ? `${Math.min(100, (S.hsClock / 8) * 100)}%` : '100%') : (i < S.hs ? '100%' : '0%'), pick: () => this.setState({ hs: i, hsClock: 0, hsAuto: false }) })),
+      wide: W, frameH: W ? '860px' : '0px',
+      chatPos: W ? 'absolute' : 'relative', chatLeft: W ? '2%' : 'auto', chatBottom: W ? '-80px' : 'auto',
+      chatTf: W ? 'perspective(1600px) rotateX(36deg) rotateZ(-14deg)' : 'none', chatMargin: W ? '0' : '44px auto 32px',
+      chatShadow: W ? '0 16px 0 #1B7236,0 50px 70px rgba(2,43,26,.25)' : '0 8px 0 #1B7236',
+      week: [{ d: 'MON', t: 'Dentist, 5:30pm', c: '#A9C4F7' }, { d: 'WED', t: 'DEWA bill paid', c: '#25D366' }, { d: 'FRI', t: 'Sal, JBR · table for 4', c: '#F5C400' }, { d: 'SAT', t: 'Garage, pickup 9am', c: '#FFB4A2' }],
+      typing: S.typing, composer: S.composer, heroStatus: S.typing ? 'typing…' : 'online',
+      thread: S.thread.map(m => ({ ...m, isText: m.type === 'text', isVoice: m.type === 'voice', isCard: m.type === 'card', side: m.me ? 'flex-end' : 'flex-start', bg: m.me ? '#D5F7C8' : '#FFFFFF', radius: m.me ? '12px 12px 4px 12px' : '12px 12px 12px 4px', ticks: m.me ? '✓✓' : '',
+        showBtn: !!m.action && !m.acted, acted: !!m.acted, act: () => { const i = this.SCEN.findIndex(x => x.reply.title === m.title); this.clear(); this.setState({ auto: false }); this.act(m.id, i); } })),
+      notWide: !W, orbit: !S.narrow && !S.mid, noOrbit: S.narrow || S.mid, yesH: !S.narrow && !S.mid ? '600px' : '0px', bob0: Math.floor(S.clock / 2) % 2 ? '-8px' : '0px', bob1: Math.floor(S.clock / 2 + 1) % 2 ? '-8px' : '0px', bob2: Math.floor(S.clock / 3) % 2 ? '-10px' : '0px', rowDir: S.narrow ? 'column' : 'row', rowAlign: S.narrow ? 'center' : 'flex-start', rowWrap: S.mid ? 'wrap' : 'nowrap', cardW: S.narrow ? 'min(340px, 100%)' : S.mid ? 'min(340px, calc(50% - 28px))' : 'clamp(230px, 23vw, 280px)',
+      steps: [
+        { n: '01', t: 'Save the number', d: 'Tap Message Superchat. It opens straight in WhatsApp.', me: 'Hi Superchat', sc: 'Hey! Saved you as a contact ✓', bg: '#25D366', rot: -7, y: 40 },
+        { n: '02', t: 'Say hi', d: 'It introduces itself and asks a couple of quick questions.', me: 'Call me Sara', sc: 'Nice to meet you, Sara. Which city?', bg: '#F5C400', rot: 5, y: 0 },
+        { n: '03', t: 'Ask for anything', d: 'Money, travel, bookings, bills. Type it or send a voice note.', me: 'pay my du bill', sc: 'Paid 299 AED. Anything else?', bg: '#A9C4F7', rot: -4, y: 70 },
+        { n: '04', t: 'On a laptop? Scan it.', d: 'Point your phone camera at the code. Superchat opens ready.', qr: 1, bg: '#FFB4A2', rot: 6, y: 20 }
+      ].map((c, i) => { const on = i === S.hover, nr = S.narrow, md = S.mid, rot = nr || md ? c.rot / 2 : c.rot, y = nr ? 0 : md ? (i % 2 ? 24 : 0) : c.y;
+        return { ...c, chat: !c.qr, z: on ? 10 : i + 1,
+          m: nr ? (i ? '-22px 0 0' : '0') : md ? '0 14px 28px' : (i ? '0 0 0 -12px' : '0'),
+          tf: on ? `translateY(${y - 18}px) translateX(${nr ? (i % 2 ? 14 : -14) : 0}px) rotate(${rot}deg)` : `translateY(${y}px) translateX(${nr ? (i % 2 ? 14 : -14) : 0}px) rotate(${rot}deg)`,
+          shadow: '0 4px 0 #022B1A',
+          enter: () => this.setState({ hover: i }), leave: () => this.setState({ hover: null }) }; }),
+      tabs: this.TABS.map((x, i) => { const on = i === S.tab; return { label: x.label, short: x.short, icon: x.icon, iconBg: x.iconBg,
+        bg: on ? '#022B1A' : '#FFFFFF', fg: on ? '#F7FDFB' : '#022B1A', sub: on ? '#B0F5D8' : '#2E5A46', bd: on ? '#022B1A' : '#CFE9DA', shadow: on ? '0 5px 0 #25D366' : 'none',
+        prog: on && S.tabAuto ? `${(S.tabClock / 9) * 100}%` : '0%', dotW: on ? '34px' : '8px', dotFill: on ? (S.tabAuto ? `${(S.tabClock / 9) * 100}%` : '100%') : '0%', pick: () => this.setState({ tab: i, tabStep: 0, tabClock: 0, tabAuto: false }) }; }),
+      ...(() => { const ROT = [-4, 3, 2.5, -3, -2]; const out = {};
+        this.TABS.forEach((x, i) => { const on = i === S.tab; out['scrap' + i] = { on, label: x.label, z: on ? 5 : 1, tf: on ? 'rotate(0deg) scale(1.05) translateY(-4px)' : `rotate(${ROT[i]}deg)`, sh: on ? 'drop-shadow(0 14px 16px rgba(0,0,0,.22)) drop-shadow(0 0 0 #000)' : 'drop-shadow(0 3px 4px rgba(0,0,0,.14))', pick: () => this.setState({ tab: i, tabStep: 0, tabClock: 0, tabAuto: false }) }; });
+        return out; })(),
+      nbCols: S.narrow ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))', nbGap: S.narrow ? '10px' : '0px', nbRings: !S.narrow,
+      nbLabelUp: tb.label.toUpperCase(), nbIdx: S.tab + 1, nbShort: tb.short,
+      nbWave: Array.from({ length: 16 }, (_, j) => { const t = S.nbTick * 0.55; return Math.round(4 + 16 * Math.abs(Math.sin(j * 0.9 + t) * 0.6 + Math.sin(j * 2.1 - t * 1.4) * 0.4)) + 'px'; }),
+      tabIsSc: true, tabAvBg: '#00E385',
+      tabChat: tb.chat, tabMembers: tb.members, tabDot: tb.dot,
+      tabMsgs: tb.msgs.map((m, i) => ({ ...m, side: m.me ? 'flex-end' : 'flex-start', bg: m.me ? '#D5F7C8' : '#FFFFFF', radius: m.me ? '12px 12px 4px 12px' : '12px 12px 12px 4px', nameC: m.sc ? '#1B7236' : m.me ? '#10306A' : (m.nameC || '#2E5A46'),
+        dir: m.rtl ? 'rtl' : 'ltr', op: i < S.tabStep ? 1 : 0, tf: i < S.tabStep ? 'none' : 'translateY(10px) scale(.97)' })),
+      apTag: S.ap === 'done' ? 'SENT ✓' : S.ap === 'no' ? 'CANCELLED' : 'WAITING FOR YOU', apTagBg: S.ap === 'done' ? '#25D366' : S.ap === 'no' ? '#E5E9E7' : '#F5C400',
+      apPending: S.ap === 'pending', apDone: S.ap === 'done', apDeclined: S.ap === 'no', apSettled: S.ap !== 'pending',
+      apYes: () => this.setState({ ap: 'done' }), apNo: () => this.setState({ ap: 'no' }), apReset: () => this.setState({ ap: 'pending' }),
+      ...this.vsVals(S),
+      vs: [
+        { q: 'Send 500 AED to my brother', bot: 'Here’s how to send money abroad from the UAE…', sc: 'Sent at the Google rate. He has PKR 37,800.' },
+        { q: 'Book a table tonight', bot: 'Here are five restaurants you could call.', sc: 'Booked 8:15pm on the terrace. Invite sent.' },
+        { q: 'Pay my du bill', bot: 'You can pay through the du app or website.', sc: 'Paid 299 AED. Receipt is right here.' },
+        { q: 'Call the garage for me', bot: 'I can’t make phone calls.', sc: 'Called them. Saturday 9am, pickup included.' }
+      ],
+      faqs: [
+        { q: 'Is this the same Superchat as the app?', a: 'Yes. Same agent, same memory, same bookings and payments. Start in WhatsApp, pick up in the app, or the other way round.' },
+        { q: 'Do I need to install anything?', a: 'No. If you have WhatsApp, you can use Superchat. The app is there when you want extras like your spending view.' },
+        { q: 'Can it read my other WhatsApp chats?', a: 'No. Superchat only sees what you send to it, or messages in groups where you add it.' },
+        { q: 'Does it understand Arabic voice notes?', a: 'Yes. Send voice notes in Arabic or English and it replies in the language you use.' },
+        { q: 'Will it pay for things without asking?', a: 'Never. Superchat confirms before it books, pays or sends anything on your behalf.' },
+        { q: 'What does it cost?', a: 'Starting is free. Some services, like transfers, show their fee before you approve.' }
+      ].map((f, i) => ({ ...f, open: S.faq === i, closed: S.faq !== i, rows: S.faq === i ? '1fr' : '0fr', op: S.faq === i ? 1 : 0, ty: S.faq === i ? 'none' : 'translateY(-6px)', rot: S.faq === i ? 'rotate(45deg)' : 'none', bg: S.faq === i ? '#FFFFFF' : '#F7FDFB', shadow: S.faq === i ? '0 5px 0 #022B1A' : 'none', iconBg: S.faq === i ? '#25D366' : '#FFFFFF', toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

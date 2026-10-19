@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif}
+button,input{font-family:inherit}
+h1,h2,h3,[style*="font-family:'PP Frama','Outfit',sans-serif"]{-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+body{margin:0;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent;text-size-adjust:100%}
+html{overflow-x:clip}
+img,svg{max-width:none}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+@keyframes scNavDash{to{stroke-dashoffset:-13}}
+</style>
+</helmet>
+<div style="position:relative;z-index:50;min-height:92px">
+<sc-if value="{{ ownSticky }}" hint-placeholder-val="{{ false }}">
+<button data-totop="1" aria-label="Back to top" onClick="{{ toTop }}" style="position:fixed;right:clamp(14px,2vw,24px);bottom:clamp(88px,10vh,112px);z-index:85;width:40px;height:40px;border-radius:50%;border:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:rgba(247,253,251,0.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:inset 0 0 0 1px rgba(2,43,26,0.10);opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .3s,transform .3s cubic-bezier(.22,1,.36,1),background .2s" style-hover="background:rgba(247,253,251,0.85)"><svg viewBox="0 0 24 24" style="width:16px" fill="none" stroke="#022B1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19 V5 M6 11 L12 5 L18 11"></path></svg></button>
+</sc-if>
+<div ref="{{ barRef }}" style="left:0;right:0;top:0;z-index:90;transition:transform .45s cubic-bezier(.22,1,.36,1),background .3s,box-shadow .3s">
+<div onMouseLeave="{{ softClose }}" style="position:relative;z-index:50;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;color:#022B1A">
+  <nav style="position:relative;max-width:1200px;margin:0 auto;padding:21px clamp(16px,4vw,32px);display:flex;align-items:center;gap:16px">
+    <a href="Superchat%20Home.dc.html" aria-label="Superchat home" style="display:flex;align-items:center;gap:10px;flex:none;color:#003320">
+      <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}"><span style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.45);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.85),0 0 0 1px rgba(0,51,32,0.05),0 2px 6px rgba(0,51,32,0.04);display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 100 100" style="width:14px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#003320"></path></svg></span></sc-if>
+      <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:24px;font-weight:700;letter-spacing:-0.01em;color:#003320;-webkit-text-stroke:0.038em #003320;paint-order:stroke fill">Superchat</span></sc-if>
+    </a>
+
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <div style="margin:0 auto;display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:rgba(255,255,255,0.3);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.8),0 0 0 1px rgba(0,51,32,0.05),0 2px 8px rgba(0,51,32,0.04)">
+        <a href="Superchat%20Home.dc.html" title="/" aria-label="Features — go to home" onMouseEnter="{{ openMenu }}" onFocus="{{ openMenu }}" style="text-decoration:none;display:flex;align-items:center;gap:8px;height:40px;box-sizing:border-box;padding:0 14px 0 12px;border-radius:999px;background:{{ featBg }};transition:background-color .25s ease;font-family:inherit;font-size:15px;color:#003320;cursor:pointer;white-space:nowrap" style-hover="background:rgba(198,246,228,0.3)"><svg viewBox="0 0 24 24" style="width:19px;height:19px;flex:none" fill="none"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z" stroke="#003320" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Features</span><svg viewBox="0 0 12 12" aria-hidden="true" style="width:10px;height:10px;margin-left:-2px;flex:none;transform:{{ chevron }};transition:transform .4s cubic-bezier(.25,1,.5,1)"><path d="M2.5 4.5 L6 8 L9.5 4.5" stroke="#003320" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <sc-for list="{{ topLinks }}" as="l" hint-placeholder-count="3">
+          <a href="{{ l.href }}" title="{{ l.route }}" onMouseEnter="{{ closeMenu }}" style="display:flex;align-items:center;gap:8px;height:40px;box-sizing:border-box;padding:0 16px 0 12px;border-radius:999px;white-space:nowrap;font-size:15px;color:#003320;background:{{ l.bg }};transition:background-color .25s ease" style-hover="background:rgba(198,246,228,0.3);color:#003320"><svg viewBox="0 0 24 24" style="width:19px;height:19px;flex:none" fill="none"><path d="{{ l.icon }}" stroke="#003320" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>{{ l.name }}</span></a>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;flex:none">
+        <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="display:flex;align-items:center;height:40px;font-size:15px;font-weight:500;padding:0 18px;border-radius:999px;background:#003320;color:#F7FDFB;box-shadow:0 2px 6px rgba(0,51,32,0.08)" style-hover="background:#0B4A2F;color:#F7FDFB">Get the app</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+      <div style="margin:0 auto;display:flex;align-items:center;gap:2px;padding:5px;border-radius:999px;min-width:0;background:rgba(255,255,255,0.3);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.8),0 0 0 1px rgba(0,51,32,0.05),0 2px 8px rgba(0,51,32,0.04)">
+        <sc-for list="{{ mobSegs }}" as="s" hint-placeholder-count="3">
+          <a href="{{ s.href }}" aria-label="{{ s.name }}" style="display:flex;align-items:center;justify-content:center;gap:8px;height:40px;min-width:40px;box-sizing:border-box;padding:{{ s.pad }};border-radius:999px;font-size:15px;color:#003320;background:{{ s.bg }};flex:none"><svg viewBox="0 0 24 24" style="width:18px;height:18px;flex:none" fill="none"><path d="{{ s.icon }}" stroke="#003320" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><sc-if value="{{ s.on }}" hint-placeholder-val="{{ false }}"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:min(170px,calc(100vw - 260px))">{{ s.name }}</span></sc-if></a>
+        </sc-for>
+      </div>
+      <button onClick="{{ openMobile }}" aria-label="Open menu" style="width:40px;height:40px;border-radius:50%;border:none;padding:0;background:rgba(255,255,255,0.45);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.85),0 0 0 1px rgba(0,51,32,0.05),0 2px 6px rgba(0,51,32,0.04);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none"><svg viewBox="0 0 24 24" style="width:18px;height:18px;flex:none" fill="none"><path d="M5 7 H14 M5 12 H19 M5 17 H19" stroke="#003320" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+    </sc-if>
+  </nav>
+
+  <sc-if value="{{ showMega }}" hint-placeholder-val="{{ false }}">
+    <div onMouseEnter="{{ openMenu }}" style="position:absolute;left:50%;top:calc(100% - 8px);transform:translateX(-50%);width:min(1180px,calc(100vw - 32px));padding-top:8px">
+      <div style="background:#FFFFFF;border:1px solid rgba(2,43,26,0.10);border-radius:28px;box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 20px 48px rgba(2,43,26,0.14);padding:20px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) minmax(200px,230px);gap:0;row-gap:8px;align-items:start">
+        <sc-for list="{{ cats }}" as="c" hint-placeholder-count="5">
+          <div style="display:flex;flex-direction:column;gap:6px;min-width:0;padding:8px 10px 8px 12px;border-left:{{ c.sep }};border-radius:20px;background:{{ c.colBg }};box-shadow:{{ c.colRing }}">
+            <a href="{{ c.href }}" title="{{ c.route }}" onMouseEnter="{{ c.hIn }}" onMouseLeave="{{ c.hOut }}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px 8px 12px;border-radius:999px;background:{{ c.color }};border:1px solid rgba(2,43,26,0.10);font-size:13px;font-weight:600;letter-spacing:0.04em;color:{{ c.headFg }};margin-bottom:6px" style-hover="color:{{ c.headFg }}"><span style="display:flex;align-items:center;gap:7px"><sc-if value="{{ c.isActive }}" hint-placeholder-val="{{ false }}"><span aria-label="You are here" style="width:7px;height:7px;border-radius:50%;background:{{ c.headFg }};flex:none"></span></sc-if>{{ c.name }}</span><span style="display:flex;align-items:center;justify-content:flex-start;flex:none;width:24px;margin-right:-6px"><span style="display:block;height:2px;width:{{ c.shaft }};border-radius:2px;background:{{ c.headFg }};transition:width .35s cubic-bezier(.2,.8,.2,1)"></span><svg viewBox="0 0 8 10" style="width:6px;height:10px;margin-left:-3px" fill="none"><path d="M2 1.5 L6 5 L2 8.5" stroke="{{ c.headFg }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+            <sc-for list="{{ c.items }}" as="it" hint-placeholder-count="3">
+              <a href="{{ it.href }}" title="{{ it.route }}" onMouseEnter="{{ it.hIn }}" onMouseLeave="{{ it.hOut }}" style="display:flex;align-items:center;gap:8px;padding:6px;border-radius:14px;color:#022B1A;background:{{ it.bg }};transition:background-color .25s ease" style-hover="color:#022B1A">
+                <span style="position:relative;width:30px;height:30px;border-radius:9px;background:{{ c.tint }};border:1px solid rgba(2,43,26,0.10);display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:16px;height:16px" fill="none"><path d="{{ it.icon }}" stroke="#022B1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;font-size:14px;font-weight:500;line-height:1.2;text-wrap:balance">{{ it.name }}<sc-if value="{{ it.soon }}" hint-placeholder-val="{{ false }}"><span style="align-self:flex-start;font-size:9px;font-weight:600;letter-spacing:0.06em;padding:1px 6px;border-radius:999px;background:#FFF3C9;border:1px solid rgba(2,43,26,0.10)">SOON</span></sc-if></span>
+              </a>
+            </sc-for>
+            <a href="{{ c.blogHref }}" title="{{ c.blogRoute }}" style="display:flex;align-items:center;gap:8px;margin-top:4px;padding:10px 6px 6px;border-top:1.5px dashed #CFE3DA;border-radius:0 0 14px 14px;font-size:13px;font-weight:500;color:#2E5A46;background:{{ c.blogBg }}" style-hover="color:#022B1A">{{ c.name }} blog<svg viewBox="0 0 12 12" style="width:10px;height:10px" fill="none"><path d="M2 6 H10 M7 3 L10 6 L7 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          </div>
+        </sc-for>
+        <div style="position:relative;display:flex;flex-direction:column;gap:12px;min-width:0;padding:16px;border-radius:22px;background:#00E385;border:1px solid rgba(2,43,26,0.10);color:#022B1A;overflow:hidden">
+          <svg style="position:absolute;right:-10px;top:-8px;width:64px;overflow:visible;transform:rotate(8deg)" viewBox="0 0 200 180" fill="none"><path d="M100 20 C150 20 180 50 180 85 C180 120 150 148 100 148 C88 148 77 146 67 142 L35 162 L44 130 C28 118 20 102 20 85 C20 50 50 20 100 20 Z" fill="#F5C400" stroke="#022B1A" stroke-width="8" stroke-linejoin="round"></path><path d="M68 80 Q79 68 90 80 M110 80 Q121 68 132 80" stroke="#022B1A" stroke-width="8" stroke-linecap="round"></path><path d="M80 100 Q100 124 120 100 Z" fill="#022B1A"></path></svg>
+          <span style="align-self:flex-start;display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:5px 10px 5px 6px;border-radius:999px;background:#022B1A;color:#00E385"><svg viewBox="0 0 24 24" style="width:14px;height:14px" fill="#00E385"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"></path></svg>ON WHATSAPP</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:30px;font-weight:500;letter-spacing:-0.035em;line-height:1;padding-right:36px">Just text it.</span>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <span style="align-self:flex-end;max-width:90%;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:flex-end;gap:2px 6px;font-size:12.5px;line-height:1.3;padding:6px 8px 5px 10px;border-radius:12px 12px 4px 12px;background:#D9FDD3;border:1px solid rgba(2,43,26,0.12)"><span>book a table for 2 tonight</span><span style="display:flex;align-items:center;gap:3px;font-size:10px;line-height:1;color:#5B7A6C">19:02<svg viewBox="0 0 16 11" style="width:15px;height:10px" fill="none" stroke="#53BDEB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l3 3 6-7M6.5 8.5l.5.5 6-7"></path></svg></span></span>
+            <span style="position:relative;align-self:flex-start;max-width:90%;font-size:12.5px;line-height:1.3;padding:6px 10px;border-radius:12px 12px 12px 4px;background:#FFFFFF;border:1px solid rgba(2,43,26,0.12)"><span style="visibility:hidden">Done. 8pm at Zuma, table for 2.▍</span><span style="position:absolute;left:10px;right:10px;top:6px">{{ waText }}</span><sc-if value="{{ waTyping }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;top:0;bottom:0;display:flex;align-items:center;gap:3px"><sc-for list="{{ waDots }}" as="d" hint-placeholder-count="3"><span style="width:5px;height:5px;border-radius:50%;background:#5B7A6C;opacity:{{ d.o }};transform:translateY({{ d.y }});transition:opacity .15s,transform .15s"></span></sc-for></span></sc-if></span>
+          </div>
+          <a href="WhatsApp%20v2.dc.html" title="/whatsapp" style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:44px;box-sizing:border-box;padding:6px 6px 6px 12px;font-size:14px;font-weight:600;border-radius:999px;background:#022B1A;color:#F7FDFB;transition:background-color .2s" style-hover="background:#0B4A2F;color:#F7FDFB"><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Text Superchat</span><span style="width:28px;height:28px;flex:none;border-radius:50%;background:#00E385;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:16px" fill="none" stroke="#022B1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+        </div>
+        <div style="grid-column:1 / -1;margin-top:14px;padding:14px 12px 2px;border-top:1.5px dashed #CFE3DA;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+            <span style="font-size:15px;font-weight:500;color:#022B1A;margin-right:6px">Superchat lives on your phone.</span>
+            <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="display:flex;align-items:center;gap:10px;padding:7px 16px 7px 10px;border-radius:14px;background:#022B1A;color:#F7FDFB;border:1px solid rgba(2,43,26,0.10);transition:background-color .2s" style-hover="background:#0B4A2F;color:#F7FDFB"><svg viewBox="0 0 24 24" style="width:20px;height:20px" fill="#F7FDFB"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8s1.9.8 3.2.8c1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.4-.9-2.4-3.9zM14 5.3c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"></path></svg><span style="display:flex;flex-direction:column;line-height:1.05"><span style="font-size:10px">Download on the</span><span style="font-size:15px;font-weight:600">App Store</span></span></a>
+            <a href="https://play.google.com/store/apps/details?id=com.superxpense&amp;hl=en" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;padding:7px 16px 7px 10px;border-radius:14px;background:#022B1A;color:#F7FDFB;border:1px solid rgba(2,43,26,0.10);transition:background-color .2s" style-hover="background:#0B4A2F;color:#F7FDFB"><svg viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M4 2.5 L14 12 L4 21.5 Z" fill="#00E385"></path><path d="M4 2.5 L18 10 L14 12 Z" fill="#F5C400"></path><path d="M4 21.5 L18 14 L14 12 Z" fill="#F24E2A"></path><path d="M18 10 L21 12 L18 14 L14 12 Z" fill="#A9C4F7"></path></svg><span style="display:flex;flex-direction:column;line-height:1.05"><span style="font-size:10px">Get it on</span><span style="font-size:15px;font-weight:600">Google Play</span></span></a>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#2E5A46">
+            <img src="assets/avatars.png" alt="" style="height:28px;width:auto;display:block">
+            <span><strong style="color:#022B1A;font-weight:600">200,000+</strong> people getting it done</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ mobOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:1000;background:#022B1A;color:#F7FDFB;overflow-y:auto;display:flex;flex-direction:column">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 24px">
+        <a href="Superchat%20Home.dc.html" style="font-family:'PP Frama','Outfit',sans-serif;font-size:26px;font-weight:700;letter-spacing:-0.01em;color:#00E385;-webkit-text-stroke:0.038em #00E385;paint-order:stroke fill">Superchat</a>
+        <button onClick="{{ closeMobile }}" aria-label="Close menu" style="width:48px;height:48px;border-radius:50%;border:2px solid #F7FDFB;background:transparent;color:#F7FDFB;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+      </div>
+      <div style="display:flex;flex-direction:column;padding:8px 24px 24px">
+        <sc-for list="{{ cats }}" as="c" hint-placeholder-count="5">
+          <div style="border-bottom:1.5px solid #0B4A2F">
+            <button onClick="{{ c.toggle }}" style="font-family:'PP Frama','Outfit',sans-serif;width:100%;display:flex;align-items:center;gap:14px;padding:20px 0;border:none;background:transparent;color:#F7FDFB;font-family:inherit;font-size:30px;font-weight:500;letter-spacing:-0.03em;cursor:pointer;text-align:left">
+              <span style="width:18px;height:18px;border-radius:50%;background:{{ c.color }};border:2px solid #F7FDFB;flex:none"></span>
+              <span style="flex:1">{{ c.name }}</span>
+              <span style="width:36px;height:36px;border-radius:50%;border:2px solid #0B4A2F;display:flex;align-items:center;justify-content:center;font-size:22px;transform:{{ c.plusRot }};transition:transform .3s">+</span>
+            </button>
+            <sc-if value="{{ c.open }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:4px;padding:0 0 18px 32px">
+                <sc-for list="{{ c.items }}" as="it" hint-placeholder-count="3">
+                  <a href="{{ it.href }}" style="display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:14px;color:#F7FDFB;background:{{ it.mBg }}" style-hover="background:#0B4A2F;color:#F7FDFB">
+                    <span style="font-size:17px;font-weight:600">{{ it.name }}</span>
+                    <span style="font-size:14px;color:#B0F5D8">{{ it.desc }}</span>
+                  </a>
+                </sc-for>
+                <div style="display:flex;flex-wrap:wrap;gap:8px 20px;margin:6px 12px 0"><a href="{{ c.href }}" style="font-size:15px;font-weight:600;color:#00E385">See all {{ c.name }} →</a><a href="{{ c.blogHref }}" style="font-size:15px;font-weight:500;color:#B0F5D8">{{ c.name }} blog →</a></div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <div style="display:flex;flex-direction:column;gap:4px;padding:20px 0">
+          <sc-for list="{{ topLinks }}" as="l" hint-placeholder-count="3">
+            <a href="{{ l.href }}" style="font-size:20px;padding:10px 0;color:#F7FDFB">{{ l.name }}</a>
+          </sc-for>
+        </div>
+      </div>
+      <div style="margin-top:auto;padding:24px;display:flex;flex-direction:column;gap:12px;border-top:1.5px solid #0B4A2F">
+        <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="text-align:center;font-size:17px;font-weight:500;padding:16px;border-radius:999px;background:#00E385;color:#022B1A;border:2px solid #00E385;box-shadow:0 4px 0 #B0F5D8">Get the app</a>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:620},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;Money&quot;,&quot;Travel&quot;,&quot;Bookings&quot;,&quot;Shopping&quot;,&quot;Everyday&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;current&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">class Component extends DCLogic {
+  state = { open: false, mob: false, sec: null, w: typeof window !== 'undefined' ? window.innerWidth : 1200 };
+  // SITE MAP — single source of truth. route = production URL; file = built prototype page (null = not built yet).
+  CATS = [
+    { name: 'Money', route: '/money', file: 'Money.dc.html', color: '#00E385', tint: '#D9F8EA', hover: '#F1FCF7', headFg: '#022B1A',
+      blog: { route: '/money/blog', file: 'Money Blog.dc.html' }, items: [
+      { name: 'Send money', desc: 'Google rate. Home in minutes.', route: '/money/send-money', file: 'Money Send Money.dc.html', icon: 'M22 2 11 13 M22 2 15 22 11 13 2 9 22 2' },
+      { name: 'Wallet', desc: 'Pay bills and check balances in chat.', route: '/money/wallet', file: 'Money Wallet.dc.html', icon: 'M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1 M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4' },
+      { name: 'Expenses', desc: 'Duplicates flagged, spend less.', route: '/money/expenses', file: 'Money Expenses.dc.html', icon: 'M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8 M12 17.5v-11' } ] },
+    { name: 'Travel', route: '/travel', file: 'Travel.dc.html', color: '#3071E8', tint: '#E2ECFD', hover: '#F4F7FE', headFg: '#FFFFFF',
+      blog: { route: '/travel/blog', file: 'Travel Blog.dc.html' }, items: [
+      { name: 'Flight booking', desc: 'Found, compared, booked in one chat.', route: '/travel/flight-booking', file: 'Travel Flight Booking.dc.html', icon: 'M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z' },
+      { name: 'Hotel booking', desc: 'The right room, without the tabs.', route: '/travel/hotel-booking', file: 'Travel Hotel Booking.dc.html', icon: 'M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8 M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4 M12 4v6 M2 18h20' },
+      { name: 'Trip planner', desc: 'Flights, stays and plans sorted.', route: '/travel/trip-planner', file: 'Travel Trip Planner.dc.html', icon: 'M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.8A1 1 0 0 1 21 4.6v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8A1 1 0 0 1 3 19.4V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0z M15 5.8v15 M9 3.2v15' } ] },
+    { name: 'Bookings', route: '/bookings', file: 'Bookings.dc.html', color: '#F24E2A', tint: '#FFE7DE', hover: '#FFF5F1', headFg: '#FFFFFF',
+      blog: { route: '/bookings/blog', file: 'Bookings Blog.dc.html' }, items: [
+      { name: 'Restaurants', desc: 'Tables booked, even on busy nights.', route: '/bookings/restaurants', file: 'Bookings Restaurants.dc.html', icon: 'M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2 M7 2v20 M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3z M21 15v7' },
+      { name: 'Parking & rentals', desc: 'Park or rent a car by typing.', route: '/bookings/parking-rentals', file: 'Bookings Parking Rentals.dc.html', icon: 'M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2 M7 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0 M9 17h6 M15 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0' },
+      { name: 'Home services', desc: 'Cleaning and repairs, handled.', route: '/bookings/home-services', file: 'Bookings Home Services.dc.html', icon: 'M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8 M3 10a2 2 0 0 1 .7-1.5l7-6a2 2 0 0 1 2.6 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z' } ] },
+    { name: 'Shopping', route: '/shopping', file: 'Shopping.dc.html', color: '#F5C400', tint: '#FFF3C9', hover: '#FFFAEB', headFg: '#022B1A',
+      blog: { route: '/shopping/blog', file: 'Shopping Blog.dc.html' }, items: [
+      { name: 'Product search', desc: 'Find anything with text or a photo.', route: '/shopping/product-search', file: 'Shopping Product Search.dc.html', icon: 'M19 11a8 8 0 1 1-16 0a8 8 0 0 1 16 0z M21 21l-4.3-4.3' },
+      { name: 'AI shopping', desc: 'Always the better deal.', route: '/shopping/ai-shopping', file: 'Shopping AI Shopping.dc.html', icon: 'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z M3 6h18 M16 10a4 4 0 0 1-8 0' },
+      { name: 'AI ordering', desc: 'Order from your favourite stores.', route: '/shopping/ai-ordering', file: 'Shopping AI Ordering.dc.html', icon: 'M9 21a1 1 0 1 0-2 0a1 1 0 0 0 2 0 M20 21a1 1 0 1 0-2 0a1 1 0 0 0 2 0 M2 2h2l2.7 12.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 1.9-1.6L22 7H5.1' } ] },
+    { name: 'Everyday', route: '/everyday', file: 'Everyday.dc.html', color: '#A9C4F7', tint: '#EEF3FE', hover: '#F6F8FE', headFg: '#022B1A',
+      blog: { route: '/everyday/blog', file: 'Everyday Blog.dc.html' }, items: [
+      { name: 'Smart chat', desc: 'Your dependable personal assistant.', route: '/everyday/smart-chat', file: 'Everyday Smart Chat.dc.html', icon: 'M7.9 20A9 9 0 1 0 4 16.1L2 22z' },
+      { name: 'Reminders', desc: 'A nudge before anything is due.', route: '/everyday/reminders', file: 'Everyday Reminders.dc.html', icon: 'M10.3 21a2 2 0 0 0 3.4 0 M3.3 15.3A1 1 0 0 0 4 17h16a1 1 0 0 0 .7-1.7C19.4 14 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.4 6-2.7 7.3' },
+      { name: 'Email & calendar', desc: 'Inbox and schedule, handled.', route: '/everyday/email-calendar', file: 'Everyday Email Calendar.dc.html', icon: 'M22 7l-9 5.7a2 2 0 0 1-2 0L2 7 M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z' } ] }
+  ];
+  link = (x) => x && x.file ? encodeURI(x.file) : '#';
+  onResize = () => { const w = window.innerWidth; if ((w >= 1120) !== (this.state.w >= 1120)) this.setState({ w }); };
+  onKey = (e) => { if (e.key === 'Escape') this.setState({ open: false, mob: false }); };
+  barRef = React.createRef();
+  openMenu = () => { clearTimeout(this.ct); if (!this.state.open) this.setState({ open: true }); };
+  closeMenu = () => { clearTimeout(this.ct); if (this.state.open) this.setState({ open: false }); };
+  softClose = () => { clearTimeout(this.ct); this.ct = setTimeout(this.closeMenu, 180); };
+  prefetched = new Set();
+  onIntent = (e) => { const a = e.target.closest && e.target.closest('a[href]'); if (!a) return; const h = a.getAttribute('href'); if (!h || h[0] === '#' || /^https?:/.test(h) || this.prefetched.has(h)) return; this.prefetched.add(h); const l = document.createElement('link'); l.rel = 'prefetch'; l.href = h; document.head.appendChild(l); };
+  initSticky() {
+    const nb = this.barRef.current;
+    if (nb && nb.closest('[data-navbar]')) { this.setState({ isHome: true }); return; }
+    if (!nb) return; // homepage owns this behaviour (same code)
+    this.setState({ ownSticky: true });
+    const initLenis = () => { if (this.lenis || window.__scLenis) return; if (!window.Lenis) { this.lnT = setTimeout(initLenis, 150); return; } if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      this.lenis = window.__scLenis = new window.Lenis({ duration: 1.15, easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x)), smoothWheel: true, wheelMultiplier: 1, touchMultiplier: 1.2, prevent: (el) => el.closest && el.closest('[data-lenis-prevent]') });
+      const lr = (tm) => { this.lenis && this.lenis.raf(tm); this.lnRaf = requestAnimationFrame(lr); }; this.lnRaf = requestAnimationFrame(lr);
+      this.lnRO = new ResizeObserver(() => this.lenis && this.lenis.resize()); this.lnRO.observe(document.body);
+      document.addEventListener('click', this.lnClick = (ev) => { const a = ev.target.closest && ev.target.closest('a[href^="#"]'); if (!a) return; const id = a.getAttribute('href'); if (id.length < 2) return; const el = document.querySelector(id); if (el) { ev.preventDefault(); this.lenis.scrollTo(el, { offset: -20 }); } }); };
+    initLenis();
+    let lastY = scrollY, fixed = false, shown = false;
+    this.navS = () => { const y = scrollY, dy = y - lastY; lastY = y;
+      const tt = this.tt || (this.tt = document.querySelector('[data-totop]'));
+      if (tt) { const on = y > innerHeight * 1.2; if (tt._on !== on) { tt._on = on; tt.style.opacity = on ? 1 : 0; tt.style.transform = on ? 'none' : 'translateY(8px)'; tt.style.pointerEvents = on ? 'auto' : 'none'; } }
+      if (y < 140) { if (fixed) { fixed = false; shown = false; nb.style.position = ''; nb.style.transform = ''; nb.style.background = ''; nb.style.boxShadow = ''; nb.style.backdropFilter = nb.style.webkitBackdropFilter = ''; } return; }
+      if (!fixed) { fixed = true; nb.style.transition = 'none'; nb.style.position = 'fixed'; nb.style.transform = 'translateY(-110%)'; nb.style.background = 'rgba(247,253,251,0.9)'; nb.style.backdropFilter = nb.style.webkitBackdropFilter = 'blur(14px)'; nb.style.boxShadow = '0 1px 0 rgba(2,43,26,0.06)'; nb.offsetHeight; nb.style.transition = 'transform .45s cubic-bezier(.22,1,.36,1)'; }
+      if (Math.abs(dy) < 4) return;
+      const maxY = document.documentElement.scrollHeight - innerHeight;
+      if (dy < 0) { nb._up = (nb._up || 0) - dy; } else nb._up = 0;
+      if (y > maxY - 160 && dy < 0 && nb._up < 120) return;
+      const want = dy < 0 && nb._up > 40; if (dy > 0 && shown) { shown = false; nb.style.transform = 'translateY(-110%)'; if (this.state.open) this.setState({ open: false }); return; }
+      if (want && !shown) { shown = true; nb.style.transform = 'none'; } };
+    addEventListener('scroll', this.navS, { passive: true });
+  }
+  componentDidMount() { this.waT = setInterval(() => { if (this.state.open) this.setState(s => ({ wa: (s.wa || 0) + 1 })); else if (this.state.wa) this.setState({ wa: 0 }); }, 90); window.addEventListener('resize', this.onResize); window.addEventListener('keydown', this.onKey); this.onResize(); this.initSticky();
+    const root = this.barRef.current; if (root) { root.addEventListener('mouseover', this.onIntent, { passive: true }); root.addEventListener('touchstart', this.onIntent, { passive: true }); } }
+  componentWillUnmount() { clearInterval(this.waT); if (this.navS) removeEventListener('scroll', this.navS); clearTimeout(this.lnT); cancelAnimationFrame(this.lnRaf); if (this.lnRO) this.lnRO.disconnect(); if (this.lnClick) document.removeEventListener('click', this.lnClick); if (this.lenis) { this.lenis.destroy(); if (window.__scLenis === this.lenis) window.__scLenis = null; } const root = this.barRef.current; if (root) { root.removeEventListener('mouseover', this.onIntent); root.removeEventListener('touchstart', this.onIntent); } window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); clearTimeout(this.ct); document.body.style.overflow = ''; }
+  renderVals() {
+    const desktop = this.state.w >= 1120, active = this.props.active, cur = this.props.current || '';
+    const openIdx = this.CATS.findIndex(c => c.name === active);
+    const ac = this.CATS[openIdx];
+    const BLOG_I = 'M12 7v14 M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z';
+    const top = (ac
+      ? [...ac.items.map(it => ({ name: it.name, icon: it.icon, href: this.link(it), route: it.route, on: cur === it.route })), { name: 'Blog', blog: true, icon: BLOG_I, href: this.link(ac.blog), route: ac.blog.route, on: cur.startsWith(ac.blog.route) }]
+      : [{ name: 'Send money', icon: this.CATS[0].items[0].icon, href: 'Money%20Send%20Money.dc.html', route: '/money/send-money' }, { name: 'Security', icon: 'M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z M9 12l2 2 4-4', href: 'Security.dc.html', route: '/security', on: cur === '/security' }, { name: 'Blog', blog: true, icon: BLOG_I, href: 'Blog.dc.html', route: '/blog', on: cur === '/blog' }]
+    ).map(l => ({ ...l, bg: l.on ? 'rgba(198,246,228,0.8)' : 'transparent' }));
+    return {
+      barRef: this.barRef, ownSticky: !!this.state.ownSticky,
+      toTop: () => { if (this.lenis) this.lenis.scrollTo(0, { duration: 1.6 }); else window.scrollTo({ top: 0, behavior: 'smooth' }); },
+      topLinks: top,
+      mobSegs: (() => {
+        const VI = { Money: 'M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6', Travel: 'M12 22a10 10 0 1 0 0-20a10 10 0 0 0 0 20z M2 12h20 M12 2a15 15 0 0 1 4 10a15 15 0 0 1-4 10a15 15 0 0 1-4-10a15 15 0 0 1 4-10z', Bookings: 'M8 2v4 M16 2v4 M3 10h18 M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z M9 16l2 2 4-4', Shopping: 'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z M3 6h18 M16 10a4 4 0 0 1-8 0', Everyday: 'M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8z M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M6.3 17.7l-1.4 1.4 M19.1 4.9l-1.4 1.4' };
+        const HOME_I = 'M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8 M3 10a2 2 0 0 1 .7-1.5l7-6a2 2 0 0 1 2.6 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z';
+        const items = top.filter(l => !l.blog);
+        let segs;
+        if (ac) {
+          if (items.some(l => l.on)) segs = items;
+          else { const b = cur.startsWith(ac.blog.route); segs = [{ name: b ? ac.name + ' blog' : ac.name, icon: b ? BLOG_I : VI[ac.name], href: b ? this.link(ac.blog) : this.link(ac), on: true }, ...items.slice(0, 2)]; }
+        } else segs = [{ name: 'Home', icon: HOME_I, href: 'Superchat%20Home.dc.html', on: !!this.state.isHome }, ...items.slice(0, 2)];
+        return segs.map(s => ({ ...s, bg: s.on ? 'rgba(198,246,228,0.55)' : 'transparent', pad: s.on ? '0 14px 0 11px' : '0' }));
+      })(),
+      desktop, mobile: !desktop,
+      showMega: desktop && this.state.open,
+      ...(() => { const msg = 'Done. 8pm at Zuma, table for 2.', t = (this.state.wa || 0) % 70, k = Math.floor((this.state.wa || 0) / 3) % 3, n = Math.max(0, Math.min(msg.length, t - 14));
+        return { waTyping: t < 14, waShow: t >= 14, waText: t < 14 ? '' : msg.slice(0, n) + (n < msg.length ? '▍' : ''), waDots: [0, 1, 2].map(i => ({ o: i === k ? 1 : .35, y: i === k ? '-2px' : '0px' })) }; })(),
+      mobOpen: !desktop && this.state.mob,
+      prompts: [
+        { text: 'Send 1,000 AED to Amma', color: '#00E385', tint: '#D9F8EA' },
+        { text: 'Cheapest flight to Manila Friday', color: '#3071E8', tint: '#E2ECFD' },
+        { text: 'Table for 4 tonight, JBR', color: '#F24E2A', tint: '#FFE7DE' },
+        { text: 'Pay my DEWA bill', color: '#F5C400', tint: '#FFF3C9' }
+      ],
+      featBg: this.state.open ? 'rgba(198,246,228,0.3)' : 'transparent',
+      chevron: this.state.open ? 'rotate(180deg)' : 'none',
+      openMenu: this.openMenu,
+      closeMenu: this.closeMenu,
+      toggleMenu: () => this.setState(s => ({ open: !s.open })),
+      softClose: this.softClose,
+      openMobile: () => { document.body.style.overflow = 'hidden'; this.setState({ mob: true }); },
+      closeMobile: () => { document.body.style.overflow = ''; this.setState({ mob: false }); },
+      cats: this.CATS.map((c, i, A) => { const sub = (k) => cur && (A[k].items.some(it => it.route === cur) || A[k].blog.route === cur), hl = () => false; return { ...c, href: this.link(c), blogHref: this.link(c.blog), blogRoute: c.blog.route, upper: c.name.toUpperCase(), open: (this.state.sec == null ? Math.max(0, openIdx) : this.state.sec) === i,
+        plusRot: (this.state.sec == null ? Math.max(0, openIdx) : this.state.sec) === i ? 'rotate(45deg)' : 'none',
+        shaft: this.state.hc === i || active === c.name ? '19px' : '8px', hIn: () => this.setState({ hc: i }), hOut: () => this.setState({ hc: -1 }), sep: i === 0 || hl(i) || hl(i - 1) ? '1.5px solid transparent' : '1.5px dashed #CFE3DA',
+        isActive: cur === c.route, colBg: hl(i) ? c.hover : 'transparent', colRing: hl(i) ? 'inset 0 0 0 1px rgba(2,43,26,0.06)' : 'none',
+        blogBg: cur === c.blog.route ? c.hover : 'transparent',
+        toggle: () => this.setState(s => { const o = s.sec == null ? Math.max(0, openIdx) : s.sec; return { sec: o === i ? -1 : i }; }),
+        items: c.items.map((it, j) => { const key = i + '-' + j, on = cur === it.route; return { ...it, href: this.link(it), on, bg: this.state.hi === key || on ? c.hover : 'transparent', mBg: on ? '#0B4A2F' : 'transparent', hIn: () => this.setState({ hi: key }), hOut: () => this.setState(s => (s.hi === key ? { hi: null } : null)) }; }) }; })
+    };
+  }
+}</script>
+</body>
+</html>

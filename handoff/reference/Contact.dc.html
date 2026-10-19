@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input,textarea{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+</style>
+</helmet>
+<section data-screen-label="01 Contact hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:clamp(56px,8vw,88px)">
+  <dc-import name="Nav" current="/contact" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:1200px;margin:32px auto 0;padding:0 24px;display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#D9F8EA;color:#1B7236">CONTACT</span>
+        <h1 style="margin:0;font-weight:500;font-size:clamp(48px,7vw,96px);line-height:0.98;letter-spacing:-0.04em;max-width:9ch;text-wrap:balance">Talk to a real <span style="color:#1B7236">person.</span></h1>
+      </div>
+      <p style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:#2E5A46;max-width:32ch;text-wrap:pretty">Questions, feedback or a partnership idea. Pick the fastest way and we'll get back to you.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px">
+      <sc-for list="{{ channels }}" as="c" hint-placeholder-count="4">
+        <a href="{{ c.href }}" style="display:flex;flex-direction:column;gap:12px;padding:24px;border-radius:28px;background:{{ c.bg }};border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;color:#022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 3px 0 #022B1A;color:#022B1A">
+          <span style="width:48px;height:48px;border-radius:50%;background:{{ c.dot }};border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:22px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ c.icon }}"></path></svg></span>
+          <h3 style="margin:6px 0 0;font-weight:500;font-size:26px;line-height:1.05;letter-spacing:-0.025em">{{ c.t }}</h3>
+          <span style="font-size:15px;line-height:1.45">{{ c.d }}</span>
+          <span style="margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;font-size:14px;font-weight:600"><span>{{ c.cta1 }}</span><span>{{ c.cta2 }}</span></span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Contact form" style="background:#022B1A;color:#F7FDFB;padding:clamp(64px,9vw,110px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:clamp(40px,6vw,80px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#25D366">SEND A MESSAGE</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.035em;color:#F7FDFB;max-width:11ch;text-wrap:balance">We usually reply within a day.</h2>
+      <p style="margin:0;font-size:18px;line-height:1.5;color:#B0F5D8;max-width:36ch">Already a user? The fastest help is inside Superchat. Just type "talk to support".</p>
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:12px;border-top:1.5px dashed #2E5A46">
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1.5px dashed #2E5A46;font-size:15px"><span style="color:#B0F5D8">Company</span><span>Super Chat AI Technology Limited</span></div>
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1.5px dashed #2E5A46;font-size:15px"><span style="color:#B0F5D8">Registered</span><span>Dubai International Financial Centre (DIFC), No. 13217</span></div>
+        <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1.5px dashed #2E5A46;font-size:15px"><span style="color:#B0F5D8">Based in</span><span>Dubai, United Arab Emirates</span></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <sc-for list="{{ socials }}" as="s" hint-placeholder-count="4">
+          <a href="{{ s.href }}" aria-label="{{ s.name }}" style="font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;border:1.5px solid #3E9A5E;color:#F7FDFB" style-hover="background:#0B4A2F;color:#F7FDFB">{{ s.name }}</a>
+        </sc-for>
+      </div>
+    </div>
+    <div style="padding:clamp(22px,3vw,32px);border-radius:32px;background:#F7FDFB;color:#022B1A;border:2px solid #022B1A;box-shadow:0 8px 0 #25D366">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:14px;font-weight:600">What's it about?</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ topics }}" as="t" hint-placeholder-count="5">
+                <button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.on }}" style="font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;border:2px solid #022B1A;background:{{ t.bg }};color:#022B1A;cursor:pointer;transition:background .2s">{{ t.name }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Name<input required="" value="{{ name }}" onChange="{{ setName }}" placeholder="Sara Ahmed" style="font-size:16px;font-weight:400;padding:14px 16px;border-radius:16px;border:2px solid #022B1A;background:#FFFFFF;color:#022B1A;outline:none" style-focus="box-shadow:0 0 0 4px #B0F5D8"></input></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Email<input required="" type="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="sara@email.com" style="font-size:16px;font-weight:400;padding:14px 16px;border-radius:16px;border:2px solid #022B1A;background:#FFFFFF;color:#022B1A;outline:none" style-focus="box-shadow:0 0 0 4px #B0F5D8"></input></label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600">Message<textarea required="" rows="5" value="{{ msg }}" onChange="{{ setMsg }}" placeholder="{{ msgPh }}" style="font-size:16px;font-weight:400;line-height:1.5;padding:14px 16px;border-radius:16px;border:2px solid #022B1A;background:#FFFFFF;color:#022B1A;outline:none;resize:vertical" style-focus="box-shadow:0 0 0 4px #B0F5D8"></textarea></label>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+            <span style="font-size:13px;color:#2E5A46;max-width:30ch">By sending, you agree to our <a href="Legal.dc.html?doc=privacy" style="text-decoration:underline;text-underline-offset:3px">Privacy Policy</a>.</span>
+            <button type="submit" style="font-size:17px;font-weight:600;padding:15px 28px;border-radius:999px;border:2px solid #022B1A;background:#25D366;color:#022B1A;box-shadow:0 4px 0 #022B1A;cursor:pointer;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A">Send message</button>
+          </div>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:20px 0">
+          <span style="width:60px;height:60px;border-radius:50%;background:#25D366;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:28px" fill="none" stroke="#022B1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"></path></svg></span>
+          <h3 style="margin:0;font-weight:500;font-size:34px;line-height:1.05;letter-spacing:-0.03em">Thanks, {{ firstName }}. It's with us.</h3>
+          <span style="font-size:17px;line-height:1.5;color:#2E5A46">We'll reply to {{ email }} within one working day.</span>
+          <button onClick="{{ reset }}" style="font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;border:2px solid #022B1A;background:transparent;color:#022B1A;cursor:pointer">Send another</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Contact more" style="background:#F7FDFB;padding:clamp(56px,8vw,88px) 24px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px">
+    <a href="Security.dc.html" style="display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:28px;background:#D9F8EA;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 3px 0 #022B1A;color:#022B1A">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#1B7236">SECURITY</span>
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.025em;line-height:1.1">How we keep your data safe →</span>
+    </a>
+    <a href="Legal.dc.html?doc=terms" style="display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 3px 0 #022B1A;color:#022B1A">
+      <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#1B7236">LEGAL</span>
+      <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.025em;line-height:1.1">Terms of Use and Privacy →</span>
+    </a>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { topic: 'General', name: '', email: '', msg: '', sent: false };
+  CH() { return [
+        { t: 'Chat on WhatsApp', d: 'Message Superchat directly. Fastest for quick questions.', cta: 'Open WhatsApp →', href: 'WhatsApp%20v2.dc.html', bg: '#D9F8EA', dot: '#25D366', icon: 'M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z' },
+        { t: 'General enquiries', d: 'Product questions, feedback and everything else.', cta: 'info@superchat.ai', href: 'mailto:info@superchat.ai', bg: '#FFFFFF', dot: '#B0F5D8', icon: 'M3 6h18v12H3zM3 7l9 7 9-7' },
+        { t: 'Security', d: 'Report a vulnerability or request due-diligence material.', cta: 'security@superchat.ai', href: 'mailto:security@superchat.ai', bg: '#E2ECFD', dot: '#A9C4F7', icon: 'M12 3l8 3v6c0 4.5-3.4 8-8 9c-4.6-1-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5' },
+        { t: 'Complaints', d: 'Something went wrong? We’ll look into it properly.', cta: 'central.admin@superchat.ai', href: 'mailto:central.admin@superchat.ai', bg: '#FFF3C9', dot: '#F5C400', icon: 'M12 8v5M12 16.5v.5M10.3 3.9L2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z' }
+      ]; }
+  renderVals() {
+    const S = this.state;
+    const PH = { General: 'Tell us what’s on your mind…', Support: 'What happened, and roughly when?', Partnerships: 'Who you are and what you have in mind…', Press: 'Your outlet and deadline…', Complaint: 'What went wrong, and what would put it right?' };
+    return {
+      channels: this.CH().map(c => { const i = c.cta.indexOf('@'); return { ...c, cta1: i > 0 ? c.cta.slice(0, i) : c.cta, cta2: i > 0 ? c.cta.slice(i) : '' }; }),
+      socials: [['LinkedIn', 'https://www.linkedin.com/company/superchatai0/'], ['Instagram', 'https://www.instagram.com/getsuperchat/'], ['X', 'https://x.com/asksuperchat'], ['YouTube', 'https://www.youtube.com/@asksuperchat']].map(([name, href]) => ({ name, href })),
+      topics: Object.keys(PH).map(name => ({ name, on: S.topic === name, bg: S.topic === name ? '#25D366' : '#FFFFFF', pick: () => this.setState({ topic: name }) })),
+      msgPh: PH[S.topic], name: S.name, email: S.email, msg: S.msg,
+      setName: e => this.setState({ name: e.target.value }), setEmail: e => this.setState({ email: e.target.value }), setMsg: e => this.setState({ msg: e.target.value }),
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false, msg: '' }),
+      sent: S.sent, notSent: !S.sent, firstName: (S.name.trim().split(' ')[0]) || 'there'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#10306A}
+</style>
+</helmet>
+<section data-screen-label="01 Reminders hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:clamp(64px,10vw,100px)">
+  <dc-import name="Nav" active="Everyday" current="/everyday/reminders" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:1200px;margin:24px auto 0;padding:0 24px;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;font-size:14px;color:#2E5A46"><a href="Everyday.dc.html" style="color:#2E5A46" style-hover="color:#022B1A">Everyday</a><span>/</span><span style="color:#022B1A;font-weight:600" aria-current="page">Reminders</span></nav>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:56px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <span style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px 6px 6px;border-radius:999px;background:#022B1A;color:#E2ECFD"><span style="width:20px;height:20px;border-radius:50%;background:#F5C400;border:2px solid #E2ECFD"></span>REMINDERS</span>
+        <h1 style="margin:0;font-weight:500;font-size:clamp(46px,6.2vw,88px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">Never miss a due date again.</h1>
+        <p style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:#2E5A46;max-width:36ch;text-wrap:pretty">Bills, renewals, appointments and the small stuff. Superchat spots the dates for you and nudges you before anything is due.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#A9C4F7;color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A">Set a reminder</a>
+          <a href="#try" style="font-size:17px;font-weight:500;padding:16px 28px;border-radius:999px;background:#FFFFFF;color:#022B1A;border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;transition:transform .15s,box-shadow .15s" style-hover="transform:translateY(2px);box-shadow:0 2px 0 #022B1A;color:#022B1A">See what’s coming</a>
+        </div>
+      </div>
+      <div style="position:relative;padding:12px">
+        <div style="background:#FFF3C9;border:2px solid #022B1A;border-radius:36px;box-shadow:0 8px 0 #022B1A;padding:clamp(18px,3vw,28px)">
+          <div style="background:#FFFFFF;border:2px solid #022B1A;border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1.5px solid #D6EDE3">
+              <span style="width:34px;height:34px;border-radius:50%;background:#A9C4F7;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 100 100" style="width:14px"><path d="M45 0 L95 0 L62 44 L98 44 L55 100 L5 100 L38 56 L2 56 Z" fill="#022B1A"></path></svg></span>
+              <span style="display:flex;flex-direction:column"><span style="font-size:15px;font-weight:600">Superchat</span><span style="font-size:12px;color:#10306A">Always on</span></span>
+            </div>
+            <div style="align-self:flex-end;max-width:85%;background:#E2ECFD;border:1.5px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">Remind me before my car registration runs out</div>
+            <div style="align-self:flex-start;width:min(320px,94%);border:2px solid #022B1A;border-radius:20px;overflow:hidden">
+              <div style="padding:10px 16px;background:#A9C4F7;color:#022B1A;font-size:12px;font-weight:600;letter-spacing:0.08em;border-bottom:2px solid #022B1A">REMINDER SET</div>
+              <div style="padding:14px 16px 4px;font-family:'PP Frama','Outfit',sans-serif;font-size:24px;font-weight:500;letter-spacing:-0.02em;line-height:1.1">Car registration renewal</div>
+              <div style="padding:10px 16px 12px;display:flex;flex-direction:column;gap:8px;font-size:14px">
+                <div style="display:flex;justify-content:space-between;gap:12px"><span style="color:#2E5A46">Expires</span><span style="font-weight:600">14 Nov</span></div>
+                <div style="display:flex;justify-content:space-between;gap:12px"><span style="color:#2E5A46">First nudge</span><span style="font-weight:600">31 Oct</span></div>
+                <div style="display:flex;justify-content:space-between;gap:12px"><span style="color:#2E5A46">Then</span><span style="font-weight:600">7 Nov and 13 Nov</span></div>
+                <div style="display:flex;justify-content:space-between;gap:12px"><span style="color:#2E5A46">Renew in</span><span style="font-weight:600;color:#10306A">2 minutes, in chat</span></div>
+              </div>
+              <div style="padding:0 16px 14px"><span style="display:block;text-align:center;font-size:15px;font-weight:600;padding:11px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A">Renew it now instead</span></div>
+            </div>
+          </div>
+        </div>
+        <div data-sfloat="0" style="position:absolute;right:-4px;top:-8px;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 4px 0 #A9C4F7;font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#A9C4F7;border:2px solid #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:12px;color:#022B1A">✓</span>Found on your last receipt</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="try" data-screen-label="02 Reminders demo" style="background:#F7FDFB;padding:clamp(24px,4vw,40px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#E2ECFD">TRY IT</span>
+        <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance">Everything due, in one place.</h2>
+      </div>
+      <p style="margin:0;font-size:19px;line-height:1.45;color:#2E5A46;max-width:34ch">Three kinds of reminders. Change it and see what’s coming up.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <sc-for list="{{ modes }}" as="m" hint-placeholder-count="3">
+        <button onClick="{{ m.pick }}" style="padding:12px 22px;border-radius:999px;border:2px solid #022B1A;background:{{ m.bg }};color:{{ m.fg }};box-shadow:{{ m.shadow }};transform:{{ m.lift }};font-size:17px;font-weight:500;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s">{{ m.name }}</button>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:20px;align-items:stretch">
+      <div style="border-radius:32px;background:#E2ECFD;border:2px solid #022B1A;padding:clamp(22px,3.5vw,36px);display:flex;flex-direction:column;gap:14px">
+        <div style="align-self:flex-end;max-width:90%;background:#FFFFFF;border:2px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">{{ sel.ask }}</div>
+        <div style="align-self:flex-start;max-width:92%;background:#022B1A;color:#F7FDFB;border-radius:18px 18px 18px 4px;padding:14px 16px;font-size:16px;line-height:1.45">{{ sel.reply }}</div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px;padding-top:10px">
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#10306A">WHAT IT DID</span>
+          <sc-for list="{{ sel.why }}" as="w" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:12px;font-size:16px;line-height:1.4"><span style="width:24px;height:24px;border-radius:50%;background:#FFFFFF;border:2px solid #022B1A;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">✓</span>{{ w }}</div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ opts }}" as="o" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 18px;border-radius:24px;border:2px solid #022B1A;background:{{ o.bg }};color:{{ o.fg }};box-shadow:{{ o.shadow }};transition:background .3s,box-shadow .3s">
+            <span style="font-family:'PP Frama','Outfit',sans-serif;width:40px;height:40px;border-radius:50%;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;background:{{ o.numBg }};color:#022B1A">{{ o.rank }}</span>
+            <span style="display:flex;flex-direction:column;gap:4px;min-width:0">
+              <span style="font-size:18px;font-weight:600">{{ o.t }}</span>
+              <span style="font-size:14px">{{ o.sub }}</span>
+              <span style="font-size:13px;font-weight:600;color:{{ o.tagC }}">{{ o.tag }}</span>
+            </span>
+            <span style="display:flex;flex-direction:column;align-items:flex-end;text-align:right"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:26px;font-weight:500;letter-spacing:-0.03em;line-height:1">{{ o.price }}</span><span style="font-size:12px">{{ o.unit }}</span></span>
+          </div>
+        </sc-for>
+        <span style="font-size:12px;color:#2E5A46;text-align:center">Sample dates and amounts, for illustration.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 Reminders capabilities" style="background:#E2ECFD;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,5vw,48px)">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:15ch;text-wrap:balance">Just say it. It remembers for you.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:20px">
+      <sc-for list="{{ caps }}" as="c" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A">
+          <span style="align-self:flex-start;max-width:100%;background:#E2ECFD;border:1.5px solid #022B1A;border-radius:18px 18px 4px 18px;padding:10px 14px;font-size:15px;line-height:1.35">“{{ c.say }}”</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:24px;font-weight:500;letter-spacing:-0.02em">{{ c.t }}</span>
+          <span style="font-size:16px;line-height:1.45;color:#2E5A46">{{ c.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Reminders trust" style="position:relative;background:#022B1A;color:#F7FDFB;padding:clamp(72px,12vw,120px) clamp(18px,5vw,24px);overflow:hidden">
+  <svg style="position:absolute;right:-40px;top:60px;width:260px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#A9C4F7" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(32px,5vw,56px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#A9C4F7;color:#022B1A">NO SURPRISES</span>
+      <h2 style="margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance;color:#F7FDFB">Late fees, gone.</h2>
+      <p style="margin:0;font-size:18px;line-height:1.5;color:#E2ECFD;max-width:40ch">Superchat finds the dates in your bills and receipts and warns you early, so nothing sneaks up.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px">
+      <sc-for list="{{ trust }}" as="t" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:24px;background:#0B4A2F;border:2px solid #1B7236">
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em">{{ t.t }}</span>
+          <span style="font-size:15px;line-height:1.45;color:#B0F5D8">{{ t.d }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 Reminders FAQ" style="background:#F7FDFB;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px) clamp(48px,7vw,80px)">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <h2 style="margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Good questions.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div style="border-radius:24px;border:2px solid #022B1A;background:{{ f.bg }};overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;border:none;background:transparent;font-size:clamp(18px,1.8vw,21px);font-weight:500;color:#022B1A;text-align:left;cursor:pointer">
+            <span style="flex:1">{{ f.q }}</span>
+            <span style="width:36px;height:36px;border-radius:50%;border:2px solid #022B1A;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transform:{{ f.rot }};transition:transform .4s cubic-bezier(.2,.8,.2,1)">+</span>
+          </button>
+          <div aria-hidden="{{ f.closed }}" style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)"><div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.5;color:#2E5A46;max-width:60ch;opacity:{{ f.fop }};transform:{{ f.fty }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)">{{ f.a }}</p></div></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 More in Everyday" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(32px,3.6vw,48px);line-height:1;letter-spacing:-0.035em">More in Everyday</h2>
+      <a href="Everyday.dc.html" style="font-size:16px;font-weight:600;color:#10306A" style-hover="color:#022B1A">All of Everyday →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
+      <a href="Everyday%20Smart%20Chat.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#E2ECFD;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">SMART CHAT</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Ask anything, get it done →</span></a>
+      <a href="Everyday%20Email%20Calendar.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#D9F8EA;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">EMAIL &amp; CALENDAR</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Inbox and schedule, handled →</span></a>
+      <a href="Everyday%20Blog.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#022B1A;border:2px solid #022B1A;color:#F7FDFB;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #A9C4F7;color:#F7FDFB"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#E2ECFD">EVERYDAY BLOG</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Guides to a lighter to-do list →</span></a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { m: 0, faq: 0 };
+  D = {"top":"Next up","modes":[{"name":"Bills","ask":"What bills are due this month?","reply":"Four bills, AED 1,214 in total. DEWA is next, on Friday. Want me to pay it now?","why":["Read due dates from your bills","Sorted by what’s due first","Totalled for the month"],"opts":[["DEWA","Due Fri 3 Oct","AED 420","electricity & water","Due soon"],["du home internet","Due 9 Oct","AED 389","monthly","Next week"],["Salik","Balance running low","AED 100","top-up","When low"],["Credit card","Due 22 Oct","AED 305","minimum","Later"]]},{"name":"Renewals","ask":"Anything I need to renew soon?","reply":"Your car registration is up on 14 Nov, and your Emirates ID in January. I’ll remind you two weeks before each.","why":["Spotted dates from receipts and emails","Two-week warning on each","Links to renew in chat"],"opts":[["Car registration","Expires 14 Nov","6 wks","to go","Two-week nudge"],["Car insurance","Renews 14 Nov","6 wks","to go","Compare first"],["Emirates ID","Expires 20 Jan","4 mths","to go","Later"],["Gym membership","Renews 1 Feb","4 mths","to go","Auto-renews"]]},{"name":"Everyday","ask":"Remind me to call Mum on Sundays and water the plants every 3 days","reply":"Done. Mum every Sunday at 11am, plants every 3 days at 8am. The first one is tomorrow.","why":["Set repeating reminders","Picked times that suit your day","Quiet hours respected"],"opts":[["Water the plants","Tomorrow, 8am","3 days","repeats every","Tomorrow"],["Call Mum","Sun, 11am","7 days","repeats every","Sunday"],["Take out recycling","Tue, 8pm","7 days","repeats every","Tuesday"],["Change the AC filter","1 Dec","3 mths","repeats every","Later"]]}],"caps":[["Remind me when I get home","Time or place","Nudges at the right time, or the right place."],["Remind the whole family","Shared reminders","Everyone gets the nudge, and sees when it’s done."],["Just pay it when it’s due","Turns into action","Pay, renew or book from the reminder itself."],["Snooze until tonight","Snooze in a word","Push it back without opening anything."],["What’s on this week?","A weekly summary","Everything due, every Sunday evening."],["Stop reminding me about that","Easy to change","Edit or cancel any reminder in one message."]],"trust":[["Early warnings","Nudges well before the deadline, not on the day."],["Quiet hours","No pings while you’re asleep."],["You stay in control","Nothing is paid without your OK."],["People on support","Real people, 24 hours a day, right inside the chat."]],"faqs":[["How does it know my due dates?","From bills, receipts and emails you share, or just tell it. You can see and edit every reminder."],["Can it pay bills too?","Yes. Pay straight from the reminder, after you confirm."],["Can I share reminders?","Yes. Add family or flatmates and everyone gets the nudge."],["Will it spam me?","No. You choose how early and how often, and quiet hours are respected."]]};
+  componentDidMount() {
+    const loop = (t) => { this.raf = requestAnimationFrame(loop); document.querySelectorAll('[data-sfloat]').forEach(el => { const i = +el.dataset.sfloat; el.style.transform = `translateY(${Math.sin(t / 900 + i) * 6}px) rotate(${Math.sin(t / 1300 + i) * 3}deg)`; }); };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const s = this.D.modes[this.state.m];
+    return {
+      modes: this.D.modes.map((m, i) => { const on = i === this.state.m; return { name: m.name, bg: on ? '#022B1A' : '#FFFFFF', fg: on ? '#F7FDFB' : '#022B1A', shadow: on ? '0 5px 0 #A9C4F7' : '0 3px 0 #022B1A', lift: on ? 'translateY(-3px)' : 'none', pick: () => this.setState({ m: i }) }; }),
+      sel: s,
+      opts: s.opts.map(([t, sub, price, unit, tag], i) => { const top = i === 0; return { t, sub, price, unit, rank: i + 1, tag: top ? (this.D.top || 'Superchat’s pick') : tag, tagC: top ? '#A9C4F7' : '#10306A', bg: top ? '#022B1A' : '#FFFFFF', fg: top ? '#F7FDFB' : '#022B1A', shadow: top ? '0 6px 0 #A9C4F7' : 'none', numBg: top ? '#A9C4F7' : '#E2ECFD' }; }),
+      caps: this.D.caps.map(([say, t, d]) => ({ say, t, d })),
+      trust: this.D.trust.map(([t, d]) => ({ t, d })),
+      faqs: this.D.faqs.map(([q, a], i) => ({ q, a, open: this.state.faq === i, closed: !(this.state.faq === i), rows: (this.state.faq === i) ? '1fr' : '0fr', fop: (this.state.faq === i) ? 1 : 0, fty: (this.state.faq === i) ? 'none' : 'translateY(-6px)', rot: this.state.faq === i ? 'rotate(45deg)' : 'none', bg: this.state.faq === i ? '#FFFFFF' : '#F7FDFB', toggle: () => this.setState(st => ({ faq: st.faq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

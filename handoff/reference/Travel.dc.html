@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif}
+button,input{font-family:inherit}
+h1,h2,h3,[style*="font-family:'PP Frama','Outfit',sans-serif"]{-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent;text-size-adjust:100%}
+html{overflow-x:clip}
+img,svg{max-width:none}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#3071E8}
+</style>
+</helmet>
+<section data-screen-label="01 Travel hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:110px">
+  <dc-import name="Nav" active="Travel" current="/travel" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="position:relative;max-width:1200px;margin:clamp(20px,4vw,44px) auto 0;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:clamp(36px,5vw,52px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;max-width:900px">
+      <span style="display:flex;align-items:center;gap:12px;max-width:100%;padding:6px 18px 6px 6px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.1);font-size:14px;font-weight:600;letter-spacing:0.06em;color:#022B1A"><span style="width:30px;height:30px;border-radius:50%;background:#3071E8;border:1px solid rgba(2,43,26,0.10);flex:none"></span>TRAVEL · FLIGHTS, HOTELS, PLANS</span>
+      <h1 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(48px,7.4vw,104px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">Your trip, sorted in one message.</h1>
+      <p style="margin:0;font-size:clamp(18px,1.6vw,21px);line-height:1.45;color:#2E5A46;max-width:38ch;text-wrap:pretty">Say where and when. Superchat finds the flight, holds the room and plans the days, while you get on with yours.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px">
+        <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="display:inline-flex;align-items:center;justify-content:space-between;gap:14px;height:56px;box-sizing:border-box;padding:0 8px 0 26px;border-radius:28px;font-size:17px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;transition:filter .2s,transform .15s;background:#3071E8;color:#FFFFFF" style-hover="filter:brightness(1.06);color:#FFFFFF" style-active="transform:scale(.98)"><span>Plan my trip</span><span style="width:40px;height:40px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:17px" fill="none" stroke="#3071E8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 H19 M13 6 L19 12 L13 18"></path></svg></span></a>
+        <a href="#plan" style="display:inline-flex;align-items:center;justify-content:space-between;gap:14px;height:56px;box-sizing:border-box;padding:0 8px 0 26px;border-radius:28px;font-size:17px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap;transition:background .2s,transform .15s;background:#FFFFFF;color:#022B1A;box-shadow:inset 0 0 0 1px rgba(2,43,26,0.12)" style-hover="background:#F3F7F5;color:#022B1A" style-active="transform:scale(.98)"><span>See it work</span><span style="width:40px;height:40px;border-radius:50%;background:#EEF3F0;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:17px" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5 V19 M6 13 L12 19 L18 13"></path></svg></span></a>
+      </div>
+    </div>
+
+    <div style="position:relative;padding:28px 18px 0;width:min(880px,100%);box-sizing:border-box">
+      <div style="position:relative;height:clamp(460px,118vw,560px);border-radius:clamp(30px,6vw,40px);background:#A9C4F7;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 24px 60px rgba(2,43,26,0.12);overflow:hidden">
+        <svg data-tcloud="0" style="position:absolute;left:6%;top:150px;width:110px" viewBox="0 0 120 50" fill="none"><path d="M18 44 H104 A14 14 0 0 0 100 17 A20 20 0 0 0 62 10 A16 16 0 0 0 34 22 A12 12 0 0 0 18 44 Z" fill="#FFFFFF" stroke="#022B1A" stroke-width="3" stroke-linejoin="round"></path></svg>
+        <svg data-tcloud="1" style="position:absolute;right:5%;top:210px;width:84px" viewBox="0 0 120 50" fill="none"><path d="M18 44 H104 A14 14 0 0 0 100 17 A20 20 0 0 0 62 10 A16 16 0 0 0 34 22 A12 12 0 0 0 18 44 Z" fill="#FFFFFF" stroke="#022B1A" stroke-width="3" stroke-linejoin="round"></path></svg>
+        <svg style="position:absolute;left:0;top:0;width:100%;height:230px" viewBox="0 0 500 230" preserveAspectRatio="none" fill="none">
+          <path data-mroute="1" d="M70 170 C150 40 330 20 430 90" stroke="#022B1A" stroke-width="3" stroke-dasharray="3 11" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+        </svg>
+        <div style="position:absolute;left:calc(14% - 14px);top:126px;display:flex;flex-direction:column;align-items:center;gap:4px;z-index:2">
+          <span style="font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:#022B1A;color:#F7FDFB">DXB</span>
+          <svg viewBox="0 0 24 30" style="width:24px"><path d="M12 29 C12 29 2 17 2 11 A10 10 0 0 1 22 11 C22 17 12 29 12 29Z" fill="#022B1A"></path><circle cx="12" cy="11" r="4" fill="#3071E8"></circle></svg>
+        </div>
+        <div style="position:absolute;left:calc(86% - 14px);top:46px;display:flex;flex-direction:column;align-items:center;gap:4px;z-index:2">
+          <span style="font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:#F5C400;color:#022B1A;border:1.5px solid #022B1A">Anywhere</span>
+          <svg viewBox="0 0 24 30" style="width:24px"><path d="M12 29 C12 29 2 17 2 11 A10 10 0 0 1 22 11 C22 17 12 29 12 29Z" fill="#F5C400" stroke="#022B1A" stroke-width="2"></path><circle cx="12" cy="11" r="4" fill="#FFFFFF"></circle></svg>
+        </div>
+        <svg data-mplane="1" style="position:absolute;left:0;top:0;width:46px;overflow:visible;z-index:3" viewBox="0 0 140 90" fill="none"><path d="M6 44 L132 6 L96 84 L70 58 L52 74 L52 52 Z" fill="#FFFFFF" stroke="#022B1A" stroke-width="6" stroke-linejoin="round"></path><path d="M52 52 L132 6" stroke="#022B1A" stroke-width="5"></path></svg>
+        <img src="assets/travel-phone-trip.svg" alt="Superchat booking a trip" style="position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);z-index:2;display:block;height:calc(100% - 96px);width:auto;max-width:74%;object-fit:contain;object-position:bottom">
+      </div>
+      <div data-mfloat="4" style="position:absolute;left:-6px;top:54%;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.14);font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#3071E8;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;font-size:12px;color:#FFFFFF">✓</span>Seat 14A, window</div>
+      <div data-mfloat="5" style="position:absolute;right:-6px;top:76%;z-index:4;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#022B1A;color:#F7FDFB;border:1px solid rgba(2,43,26,0.10);box-shadow:0 0 0 1px rgba(2,43,26,0.06),0 14px 36px rgba(2,43,26,0.14);font-size:15px;font-weight:600;white-space:nowrap"><span style="width:26px;height:26px;border-radius:50%;background:#F5C400;border:2px solid #F7FDFB;display:flex;align-items:center;justify-content:center;font-size:12px;color:#022B1A">★</span>Hotel held, free cancel</div>
+      <svg data-mfloat="3" style="position:absolute;right:-20px;top:-10px;width:100px;overflow:visible;z-index:4" viewBox="0 0 200 180" fill="none"><path d="M100 20 C150 20 180 50 180 85 C180 120 150 148 100 148 C88 148 77 146 67 142 L35 162 L44 130 C28 118 20 102 20 85 C20 50 50 20 100 20 Z" fill="#F5C400" stroke="#022B1A" stroke-width="6" stroke-linejoin="round"></path><path d="M68 80 Q79 68 90 80 M110 80 Q121 68 132 80" stroke="#022B1A" stroke-width="6" stroke-linecap="round"></path><path d="M80 100 Q100 124 120 100 Z" fill="#022B1A"></path></svg>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Six tabs or one chat" data-sixtabs="1" style="background:#F7FDFB;padding:clamp(64px,10vw,100px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,5vw,48px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">Six tabs, or one message.</h2>
+      <p style="margin:0;font-size:19px;line-height:1.45;color:#2E5A46;max-width:34ch;text-wrap:pretty">Every tab you’d open to plan a trip is a job Superchat does for you. Watch them close.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:20px;align-items:stretch">
+      <div style="border-radius:32px;background:#FFE7DE;border:2px solid #022B1A;padding:clamp(18px,3vw,28px);display:flex;flex-direction:column;gap:18px;min-width:0">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#FFFFFF;border:1.5px solid #022B1A">THE OLD WAY</span>
+          <span style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:32px;font-weight:500;letter-spacing:-0.03em;line-height:1">{{ tabsOpen }}</span><span style="font-size:14px;font-weight:600;color:#B8391C">{{ tabsLabel }}</span></span>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;background:#FFFFFF;border:2px solid #022B1A;border-radius:20px;box-shadow:0 6px 0 #022B1A;overflow:hidden;min-height:340px">
+          <div style="display:flex;align-items:flex-end;gap:4px;padding:10px 10px 0;background:#EDE3DC;border-bottom:2px solid #022B1A;min-height:44px">
+            <span style="display:flex;gap:5px;padding:0 6px 12px 2px;flex:none"><span style="width:10px;height:10px;border-radius:50%;background:#F24E2A;border:1.5px solid #022B1A"></span><span style="width:10px;height:10px;border-radius:50%;background:#F5C400;border:1.5px solid #022B1A"></span><span style="width:10px;height:10px;border-radius:50%;background:#00E385;border:1.5px solid #022B1A"></span></span>
+            <sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="6">
+              <span style="display:flex;align-items:center;gap:6px;flex:{{ tb.flex }};min-width:0;max-width:{{ tb.maxW }};opacity:{{ tb.op }};overflow:hidden;padding:8px 8px;border:2px solid #022B1A;border-bottom:none;border-radius:10px 10px 0 0;background:{{ tb.bg }};margin-bottom:-2px;transition:flex .45s,max-width .45s,opacity .3s,padding .45s,background .2s"><span style="width:9px;height:9px;border-radius:50%;background:{{ tb.c }};border:1.5px solid #022B1A;flex:none"></span><span style="flex:1;min-width:0;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tb.t }}</span><span style="font-size:13px;line-height:1;color:{{ tb.xC }};font-weight:700;flex:none">×</span></span>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1.5px solid #EDE3DC"><span style="flex:1;min-width:0;font-size:13px;color:#6B8F80;padding:6px 12px;border-radius:999px;background:#F7FDFB;border:1.5px solid #D6EDE3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ url }}</span></div>
+          <div style="flex:1;padding:20px;display:flex;flex-direction:column;gap:12px;justify-content:center">
+            <sc-if value="{{ anyOpen }}" hint-placeholder-val="{{ true }}">
+              <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(22px,2.4vw,28px);font-weight:500;letter-spacing:-0.02em;line-height:1.1">{{ pageTitle }}</span>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <sc-for list="{{ rows }}" as="r" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1.5px solid #EDE3DC"><span style="width:28px;height:28px;border-radius:8px;background:{{ pageC }};border:1.5px solid #022B1A;flex:none;opacity:.8"></span><span style="flex:1;display:flex;flex-direction:column;gap:6px"><span style="height:8px;border-radius:4px;background:#D6CFC9;width:{{ r.w1 }}"></span><span style="height:8px;border-radius:4px;background:#EDE3DC;width:{{ r.w2 }}"></span></span><span style="font-size:13px;font-weight:600;color:#B8391C">{{ r.tag }}</span></div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ allClosed }}" hint-placeholder-val="{{ false }}">
+              <span style="font-family:'PP Frama','Outfit',sans-serif;text-align:center;font-size:clamp(24px,2.6vw,32px);font-weight:500;letter-spacing:-0.02em;color:#6B8F80">Nothing left to compare.</span>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+      <div style="border-radius:32px;background:#3071E8;color:#FFFFFF;border:2px solid #022B1A;padding:clamp(18px,3vw,28px);display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#FFFFFF">WITH SUPERCHAT</span>
+          <span style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:32px;font-weight:500;letter-spacing:-0.03em;line-height:1">1</span><span style="font-size:14px;font-weight:600;color:#E2ECFD">message</span></span>
+        </div>
+        <div style="align-self:flex-end;max-width:88%;background:#FFFFFF;color:#022B1A;border:2px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">Manila next Friday, back Tuesday. Cheapest direct, window seat, hotel in Makati.</div>
+        <div style="align-self:flex-start;width:min(100%,380px);background:#022B1A;color:#F7FDFB;border-radius:18px 18px 18px 4px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:12px;font-weight:600;letter-spacing:0.08em;color:#A9C4F7">{{ workLabel }}</span>
+          <sc-for list="{{ chips }}" as="ch" hint-placeholder-count="6">
+            <span style="display:flex;align-items:center;gap:10px;font-size:15px;line-height:1.3;opacity:{{ ch.op }};transform:{{ ch.tf }};transition:opacity .35s,transform .35s"><span style="width:20px;height:20px;border-radius:50%;background:{{ ch.c }};border:1.5px solid #F7FDFB;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#022B1A;flex:none">✓</span>{{ ch.t }}</span>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;opacity:{{ replyOp }};transform:{{ replyTf }};transition:opacity .4s,transform .4s">
+          <div style="align-self:flex-start;max-width:90%;background:#022B1A;color:#F7FDFB;border-radius:18px 18px 18px 4px;padding:12px 16px;font-size:16px;line-height:1.4">1,980 AED return, lands 11:40pm, seat 14A. Room in Makati at 390 a night, free cancellation. Book both?</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;opacity:{{ doneOp }};transform:{{ doneTf }};transition:opacity .4s,transform .4s">
+          <div style="align-self:flex-end;background:#FFFFFF;color:#022B1A;border:2px solid #022B1A;border-radius:18px 18px 4px 18px;padding:10px 16px;font-size:16px">Yes</div>
+          <div style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:8px 12px;border-radius:14px;background:#F5C400;color:#022B1A;border:2px solid #022B1A"><span style="width:10px;height:10px;border-radius:50%;background:#00E385;border:1.5px solid #022B1A"></span>Flight and hotel booked in 40 seconds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plan" data-screen-label="03 Plan it" style="position:relative;background:#E2ECFD;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px);overflow:hidden">
+  <svg style="position:absolute;right:-40px;top:60px;width:220px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#3071E8" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:clamp(28px,4vw,48px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#022B1A;color:#A9C4F7">TRY IT</span>
+        <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(44px,5.6vw,80px);line-height:1;letter-spacing:-0.035em;max-width:11ch;text-wrap:balance">Where are you off to?</h2>
+        <p style="margin:0;font-size:19px;line-height:1.45;color:#2E5A46;max-width:34ch">Pick a place and a length of stay. This is the reply you’d get.</p>
+      </div>
+      <div style="background:#FFFFFF;border:2px solid #022B1A;border-radius:32px;box-shadow:0 8px 0 #022B1A;padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:18px">
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#10306A">FROM DUBAI TO</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px">
+          <sc-for list="{{ dests }}" as="d" hint-placeholder-count="8">
+            <button onClick="{{ d.pick }}" style="display:flex;align-items:center;gap:10px;font-family:inherit;padding:10px 12px;border-radius:16px;border:2px solid #022B1A;background:{{ d.bg }};color:{{ d.fg }};cursor:pointer;box-shadow:{{ d.shadow }};transform:{{ d.lift }};transition:transform .2s,box-shadow .2s,background .2s"><span style="width:22px;height:22px;border-radius:50%;background:{{ d.dot }};border:2px solid #022B1A;flex:none"></span><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1"><span style="font-size:15px;font-weight:600">{{ d.city }}</span><span style="font-size:11px;opacity:.75">{{ d.code }}</span></span></button>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#10306A;margin-right:6px">NIGHTS</span>
+          <sc-for list="{{ nights }}" as="n" hint-placeholder-count="4">
+            <button onClick="{{ n.pick }}" style="font-family:inherit;font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;border:2px solid #022B1A;background:{{ n.bg }};color:#022B1A;cursor:pointer">{{ n.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+      <div style="align-self:flex-end;max-width:88%;background:#FFFFFF;border:2px solid #022B1A;border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:16px;line-height:1.4">{{ ask }}</div>
+      <div style="position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;border-radius:28px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 8px 0 #3071E8">
+        <div style="padding:clamp(20px,3vw,28px);display:flex;flex-direction:column;gap:18px;border-right:2px dashed #3E6B57;min-width:0">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+            <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#A9C4F7">BOARDING PASS, HELD FOR YOU</span>
+            <span style="font-size:13px;font-weight:600;color:#B0F5D8">{{ dateLine }}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="display:flex;flex-direction:column"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(40px,6vw,64px);font-weight:500;letter-spacing:-0.04em;line-height:1">DXB</span><span style="font-size:13px;color:#B0F5D8">Dubai</span></span>
+            <span style="flex:1;min-width:30px;display:flex;align-items:center;gap:6px"><span style="flex:1;border-top:2px dashed #3E6B57"></span><svg viewBox="0 0 140 90" style="width:28px;flex:none" fill="none"><path d="M6 44 L132 6 L96 84 L70 58 L52 74 L52 52 Z" fill="#3071E8" stroke="#F7FDFB" stroke-width="7" stroke-linejoin="round"></path></svg><span style="flex:1;border-top:2px dashed #3E6B57"></span></span>
+            <span style="display:flex;flex-direction:column;align-items:flex-end"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(40px,6vw,64px);font-weight:500;letter-spacing:-0.04em;line-height:1">{{ code }}</span><span style="font-size:13px;color:#B0F5D8">{{ city }}</span></span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;padding-top:14px;border-top:1.5px solid #0B4A2F">
+            <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.08em;color:#A9C4F7">FLIGHT TIME</span><span style="font-size:17px;font-weight:600">{{ dur }}</span></span>
+            <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.08em;color:#A9C4F7">SEAT</span><span style="font-size:17px;font-weight:600">14A, window</span></span>
+            <span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.08em;color:#A9C4F7">STAY</span><span style="font-size:17px;font-weight:600">{{ stay }}</span></span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ plan }}" as="p" hint-placeholder-count="3">
+              <span style="display:flex;align-items:center;gap:8px;font-size:14px;padding:6px 12px 6px 6px;border-radius:999px;background:#0B4A2F;color:#F7FDFB"><span style="width:18px;height:18px;border-radius:50%;background:{{ p.c }};border:1.5px solid #F7FDFB;flex:none"></span>{{ p.t }}</span>
+            </sc-for>
+          </div>
+        </div>
+        <div style="padding:clamp(18px,3vw,26px);display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:14px;min-width:120px">
+          <span style="font-size:11px;font-weight:600;letter-spacing:0.08em;color:#A9C4F7;writing-mode:vertical-rl;transform:rotate(180deg)">SUPERCHAT</span>
+          <span style="display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font-size:11px;font-weight:600;letter-spacing:0.08em;color:#A9C4F7">FROM</span><span data-tween="{{ fare }}" data-dec="0" style="font-family:'PP Frama','Outfit',sans-serif;font-size:32px;font-weight:500;letter-spacing:-0.03em;line-height:1">{{ fareTxt }}</span><span style="font-size:12px;color:#B0F5D8">AED return</span></span>
+          <span style="font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px;background:#3071E8;color:#FFFFFF;white-space:nowrap">Confirm?</span>
+        </div>
+        <span style="position:absolute;right:calc(120px + clamp(18px,3vw,26px) * 2 - 14px);top:-14px;width:26px;height:26px;border-radius:50%;background:#F7FDFB;border:2px solid #022B1A;clip-path:inset(50% 0 0 0)"></span>
+        <span style="position:absolute;right:calc(120px + clamp(18px,3vw,26px) * 2 - 14px);bottom:-14px;width:26px;height:26px;border-radius:50%;background:#F7FDFB;border:2px solid #022B1A;clip-path:inset(0 0 50% 0)"></span>
+      </div>
+      <span style="font-size:12px;color:#2E5A46;text-align:center">Sample fares and flight times, for illustration. Live prices come from airlines and hotels in the app.</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Trip timeline" style="background:#F7FDFB;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,5vw,56px)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance">One chat, from idea to home.</h2>
+      <p style="margin:0;font-size:19px;line-height:1.45;color:#2E5A46;max-width:32ch">Every step of the trip lives in the same thread. Nothing to forward, nothing to find.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:20px 0">
+      <sc-for list="{{ stops }}" as="st" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:16px;padding-right:16px;min-width:0">
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="font-family:'PP Frama','Outfit',sans-serif;width:52px;height:52px;border-radius:50%;background:{{ st.c }};color:{{ st.fg }};border:2px solid #022B1A;box-shadow:0 4px 0 #022B1A;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600;flex:none">{{ st.n }}</span>
+            <span style="flex:1;border-top:2px dashed #A9C4F7"></span>
+          </div>
+          <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#10306A">{{ st.stage }}</span>
+          <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:26px;font-weight:500;letter-spacing:-0.02em;line-height:1.1">{{ st.t }}</span>
+          <span style="font-size:16px;line-height:1.45;color:#2E5A46">{{ st.d }}</span>
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:20px;background:#FFFFFF;border:2px solid #022B1A">
+            <span style="align-self:flex-end;max-width:92%;font-size:14px;line-height:1.35;padding:8px 12px;border-radius:14px 14px 4px 14px;background:#E2ECFD;border:1.5px solid #022B1A">{{ st.q }}</span>
+            <span style="align-self:flex-start;max-width:92%;font-size:14px;line-height:1.35;padding:8px 12px;border-radius:14px 14px 14px 4px;background:#022B1A;color:#F7FDFB">{{ st.a }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 Travel together" style="position:relative;background:#3071E8;color:#FFFFFF;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px);overflow:hidden">
+  <svg style="position:absolute;left:-50px;bottom:40px;width:240px" viewBox="0 0 300 100" fill="none"><path d="M6 70 C40 10 80 10 104 50 S164 96 196 40 S262 6 294 30" stroke="#F5C400" stroke-width="6" stroke-linecap="round"></path></svg>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(32px,5vw,56px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;border-radius:999px;background:#F5C400;color:#022B1A;border:1.5px solid #022B1A">GROUP TRIPS</span>
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:13ch;text-wrap:balance;color:#FFFFFF">Travelling together, minus the chaos.</h2>
+      <p style="margin:0;font-size:19px;line-height:1.45;color:#E2ECFD;max-width:36ch">Bring your travel companions into one thread. Everyone has a say, Superchat books what the group agrees on.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
+        <div style="display:flex;align-items:center;gap:12px;font-size:17px"><span style="width:24px;height:24px;border-radius:50%;background:#F5C400;color:#022B1A;border:2px solid #022B1A;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">✓</span>Dates that work for everyone</div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:17px"><span style="width:24px;height:24px;border-radius:50%;background:#F5C400;color:#022B1A;border:2px solid #022B1A;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">✓</span>Seats together, rooms side by side</div>
+        <div style="display:flex;align-items:center;gap:12px;font-size:17px"><span style="width:24px;height:24px;border-radius:50%;background:#F5C400;color:#022B1A;border:2px solid #022B1A;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex:none">✓</span>One plan everyone can see</div>
+      </div>
+    </div>
+    <div style="background:#FFFFFF;color:#022B1A;border:2px solid #022B1A;border-radius:32px;box-shadow:0 10px 0 #022B1A;padding:22px;display:flex;flex-direction:column;gap:12px;max-width:520px;width:100%;justify-self:center">
+      <div style="display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1.5px solid #D6EDE3">
+        <span style="display:flex"><span style="width:30px;height:30px;border-radius:50%;background:#F5C400;border:2px solid #022B1A"></span><span style="width:30px;height:30px;border-radius:50%;background:#F24E2A;border:2px solid #022B1A;margin-left:-10px"></span><span style="width:30px;height:30px;border-radius:50%;background:#A9C4F7;border:2px solid #022B1A;margin-left:-10px"></span><span style="width:30px;height:30px;border-radius:50%;background:#00E385;border:2px solid #022B1A;margin-left:-10px"></span></span>
+        <span style="display:flex;flex-direction:column"><span style="font-size:15px;font-weight:600">Georgia, Oct long weekend</span><span style="font-size:12px;color:#2E5A46">You, Aisha, Omar, Superchat</span></span>
+      </div>
+      <sc-for list="{{ group }}" as="g" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:4px;align-self:{{ g.side }};max-width:86%;align-items:{{ g.side }}">
+          <span style="font-size:12px;font-weight:600;color:{{ g.nameC }}">{{ g.who }}</span>
+          <span style="font-size:15px;line-height:1.4;padding:10px 14px;border-radius:{{ g.radius }};background:{{ g.bg }};color:{{ g.fg }};border:1.5px solid #022B1A">{{ g.t }}</span>
+        </div>
+      </sc-for>
+      <div style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:8px 12px;border-radius:14px;background:#F7FDFB;border:1.5px solid #022B1A"><span style="width:10px;height:10px;border-radius:50%;background:#3071E8;border:1.5px solid #022B1A"></span>3 seats, 2 rooms, booked for the group</div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 Travel voices" style="background:#F7FDFB;padding:clamp(72px,11vw,110px) clamp(18px,5vw,24px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <h2 style="align-self:center;text-align:center;font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(40px,5vw,68px);line-height:1;letter-spacing:-0.035em;max-width:14ch;text-wrap:balance">Postcards from people who asked.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:28px">
+      <sc-for list="{{ voices }}" as="v" hint-placeholder-count="3">
+        <div style="padding:8px;border-radius:20px;border:2px solid #022B1A;box-shadow:0 6px 0 #022B1A;background:repeating-linear-gradient(135deg,#3071E8 0 12px,#FFFFFF 12px 24px,#F24E2A 24px 36px,#FFFFFF 36px 48px);transform:rotate({{ v.rot }})">
+          <div style="position:relative;height:100%;box-sizing:border-box;background:#FFFFFF;border-radius:12px;padding:28px 24px 24px;display:flex;flex-direction:column;gap:24px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+              <span style="font-size:13px;font-weight:600;letter-spacing:0.08em;color:#10306A;padding-top:6px">GREETINGS FROM</span>
+              <span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:66px;height:76px;flex:none;border:2px dashed #022B1A;border-radius:6px;background:{{ v.bg }};transform:rotate(4deg)"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em;line-height:1">{{ v.code }}</span><span style="font-size:11px;font-weight:600;letter-spacing:0.06em">AIRMAIL</span></span>
+            </div>
+            <span style="font-size:clamp(20px,1.9vw,24px);font-weight:500;line-height:1.25;letter-spacing:-0.02em;flex:1">“{{ v.q }}”</span>
+            <div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:1.5px dashed #A9C4F7"><span style="font-size:17px;font-weight:600">{{ v.n }}</span><span style="font-size:14px;color:#2E5A46">{{ v.r }}</span></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06b Travel products" style="background:#F7FDFB;padding:0 clamp(18px,5vw,24px) clamp(56px,8vw,88px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <h2 style="align-self:center;text-align:center;font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Start anywhere.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
+      <a href="Travel%20Flight%20Booking.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#E2ECFD;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">FLIGHT BOOKING</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Found, compared, booked in one chat →</span></a>
+      <a href="Travel%20Hotel%20Booking.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#FFF3C9;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">HOTEL BOOKING</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">The right room, without the tabs →</span></a>
+      <a href="Travel%20Trip%20Planner.dc.html" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:28px;border-radius:28px;background:#A9C4F7;border:2px solid #022B1A;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em">TRIP PLANNER</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-top:auto">Every day planned, every table booked →</span></a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06c From the Travel blog" style="background:#F7FDFB;padding:0 clamp(18px,5vw,24px) clamp(48px,7vw,80px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">From the Travel blog</h2>
+      <a href="Travel%20Blog.dc.html" style="font-size:16px;font-weight:600;color:#3071E8" style-hover="color:#022B1A">All articles →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+        <a href="{{ p.href }}" style="display:flex;flex-direction:column;border-radius:28px;border:2px solid #022B1A;overflow:hidden;background:#FFFFFF;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px);box-shadow:0 6px 0 #022B1A;color:#022B1A">
+          <span style="display:flex;align-items:flex-end;height:140px;padding:20px;background:{{ p.color }};color:{{ p.ink }};border-bottom:2px solid #022B1A"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:60px;font-weight:500;letter-spacing:-0.05em;line-height:0.9">{{ p.kicker }}</span></span>
+          <span style="display:flex;flex-direction:column;gap:10px;padding:20px 22px 24px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em;color:#10306A">{{ p.catUp }}</span><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:22px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">{{ p.title }}</span></span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="07 Travel FAQ" style="background:#F7FDFB;padding:clamp(48px,7vw,80px) clamp(18px,5vw,24px) clamp(80px,12vw,120px)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:clamp(28px,5vw,64px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <h2 style="font-family:'PP Frama','Outfit',sans-serif;margin:0;font-weight:500;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-0.035em">Good questions.</h2>
+      <div style="display:flex;gap:14px;align-items:flex-start;padding:20px;border-radius:24px;background:#E2ECFD;border:2px solid #022B1A;max-width:380px">
+        <span style="width:40px;height:40px;border-radius:12px;background:#3071E8;border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:20px" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span>
+        <span style="font-size:16px;line-height:1.45">Your passport details and trip history stay in the UAE, on encrypted servers. We never sell your data.</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div style="border-radius:24px;border:2px solid #022B1A;background:{{ f.bg }};overflow:hidden">
+          <button onClick="{{ f.toggle }}" style="width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;border:none;background:transparent;font-family:inherit;font-size:clamp(18px,1.8vw,21px);font-weight:500;color:#022B1A;text-align:left;cursor:pointer">
+            <span style="flex:1">{{ f.q }}</span>
+            <span style="width:36px;height:36px;border-radius:50%;border:2px solid #022B1A;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transform:{{ f.rot }};transition:transform .4s cubic-bezier(.2,.8,.2,1)">+</span>
+          </button>
+          <div aria-hidden="{{ f.closed }}" style="display:grid;grid-template-rows:{{ f.rows }};transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)"><div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.5;color:#2E5A46;max-width:60ch;opacity:{{ f.fop }};transform:{{ f.fty }};transition:opacity .35s,transform .45s cubic-bezier(.2,.8,.2,1)">{{ f.a }}</p></div></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { dest: 'MNL', nights: 5, faq: 0, tick: 0, posts: [] };
+  TABS = [
+    { t: 'Flights DXB to MNL', c: '#3071E8', url: 'flights-compare.com/dxb-mnl?sort=cheapest', title: '14 results. Prices may change.', done: '14 fares compared', tags: ['2,140', '1,980', '2,310'] },
+    { t: 'Baggage allowance rules', c: '#F5C400', url: 'airline.com/help/baggage/economy', title: 'Checked baggage, economy class', done: '23kg bag included', tags: ['20kg?', '23kg?', '30kg?'] },
+    { t: 'Seat map, row 14', c: '#A9C4F7', url: 'seatguru-ish.com/a321/seat-map', title: 'Pick a seat, fees may apply', done: 'Window seat, 14A', tags: ['+45', '+60', '+85'] },
+    { t: 'Hotel reviews, Makati', c: '#F24E2A', url: 'hotel-reviews.com/makati?page=4', title: 'Page 4 of 31 reviews', done: '30 hotels checked', tags: ['4.1', '3.8', '4.4'] },
+    { t: 'Philippines entry rules', c: '#00E385', url: 'travel-rules.gov/entry/philippines', title: 'Entry requirements by passport', done: 'Entry rules checked for you', tags: ['PDF', 'PDF', 'PDF'] },
+    { t: 'AED to PHP converter', c: '#F24E2A', url: 'currency-convert.com/aed-php', title: '1 AED equals… it depends', done: 'Everything priced in AED', tags: ['15.4', '15.6', '15.2'] }
+  ];
+  D = [
+    { code: 'MNL', city: 'Manila', dur: '9h 05m', fare: 2150, dot: '#F5C400', plan: ['Airport pickup booked', 'Intramuros walk, day 2', 'Dinner in BGC'] },
+    { code: 'BOM', city: 'Mumbai', dur: '3h 10m', fare: 1180, dot: '#F24E2A', plan: ['Cab from arrivals', 'Marine Drive at sunset', 'Colaba lunch table'] },
+    { code: 'LHR', city: 'London', dur: '7h 40m', fare: 3450, dot: '#3071E8', plan: ['Heathrow Express tickets', 'Borough Market, day 1', 'West End show, day 3'] },
+    { code: 'CAI', city: 'Cairo', dur: '3h 55m', fare: 1390, dot: '#00E385', plan: ['Visa checklist sent', 'Giza at sunrise', 'Nile dinner cruise'] },
+    { code: 'IST', city: 'Istanbul', dur: '4h 50m', fare: 1690, dot: '#F24E2A', plan: ['eSIM ready on landing', 'Bosphorus ferry', 'Kadıköy food walk'] },
+    { code: 'CMB', city: 'Colombo', dur: '4h 35m', fare: 1250, dot: '#F5C400', plan: ['Driver to Galle', 'Beach stay, 2 nights', 'Tea country day trip'] },
+    { code: 'TBS', city: 'Tbilisi', dur: '3h 20m', fare: 990, dot: '#A9C4F7', plan: ['Old Town hotel', 'Kazbegi day tour', 'Wine tasting, day 3'] },
+    { code: 'KHI', city: 'Karachi', dur: '2h 05m', fare: 820, dot: '#00E385', plan: ['Family pickup noted', 'Return on Sunday', 'Gifts reminder set'] }
+  ];
+  componentDidMount() {
+    import(new URL('blog-travel.js', location.href).href).then(m => this.setState({ posts: m.POSTS.slice(0, 3) }));
+    this.tabTimer = setInterval(() => { const el = document.querySelector('[data-sixtabs]'); if (!el) return; const r = el.getBoundingClientRect(); if (r.top < innerHeight * 0.8 && r.bottom > 0) this.setState(s => ({ tick: (s.tick + 1) % 15 })); }, 750);
+    const loop = (t) => {
+      this.raf = requestAnimationFrame(loop);
+      const route = document.querySelector('[data-mroute]'), plane = document.querySelector('[data-mplane]');
+      if (route && plane && route.getTotalLength) {
+        const L = route.getTotalLength(), q = (t % 4200) / 4200, e = q < 0.5 ? 2 * q * q : 1 - Math.pow(-2 * q + 2, 2) / 2;
+        const p = route.getPointAtLength(e * L), p2 = route.getPointAtLength(Math.min(L, e * L + 2));
+        const svg = route.ownerSVGElement, bw = svg.clientWidth / 500, bh = svg.clientHeight / 230;
+        const ang = Math.atan2((p2.y - p.y) * bh, (p2.x - p.x) * bw) * 180 / Math.PI;
+        plane.style.transform = `translate(${p.x * bw - 23}px, ${p.y * bh - 15}px) rotate(${ang + 16}deg)`;
+        plane.style.opacity = q < 0.06 ? q / 0.06 : q > 0.92 ? (1 - q) / 0.08 : 1;
+      }
+      document.querySelectorAll('[data-tcloud]').forEach(el => { const i = +el.dataset.tcloud; el.style.transform = `translateX(${Math.sin(t / 2600 + i * 2) * 18}px)`; });
+      document.querySelectorAll('[data-tween]').forEach(el => {
+        const target = +el.dataset.tween || 0;
+        if (el._v == null) { el._v = target; return; }
+        el._v += (target - el._v) * 0.14;
+        if (Math.abs(target - el._v) < 0.5) el._v = target;
+        const txt = Math.round(el._v).toLocaleString('en-US');
+        if (el.textContent !== txt) el.textContent = txt;
+      });
+      document.querySelectorAll('[data-mfloat]').forEach(el => {
+        const i = +el.dataset.mfloat;
+        el.style.transform = `translateY(${Math.sin(t / 900 + i * 1.3) * 8}px) rotate(${Math.sin(t / 1300 + i) * 4}deg)`;
+      });
+    };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); clearInterval(this.tabTimer); }
+  renderVals() {
+    const d = this.D.find(x => x.code === this.state.dest), n = this.state.nights;
+    const planColors = ['#00E385', '#F5C400', '#A9C4F7'];
+    const step = Math.min(this.state.tick, 9), closed = Math.min(step, 6), ai = Math.min(closed, 5), at = this.TABS[ai], open = 6 - closed;
+    return {
+      posts: this.state.posts.map(p => ({ ...p, catUp: p.cat.toUpperCase(), href: 'Travel%20Article.dc.html?p=' + p.slug })),
+      tabs: this.TABS.map((x, i) => { const gone = i < closed, act = i === ai && !gone; return { t: x.t, c: x.c, flex: gone ? '0 0 0px' : '1 1 0px', maxW: gone ? '0px' : '160px', op: gone ? 0 : 1, bg: act ? '#FFFFFF' : '#F4ECE6', xC: act ? '#F24E2A' : '#6B8F80' }; }),
+      tabsOpen: open, tabsLabel: open === 1 ? 'tab open' : 'tabs open',
+      anyOpen: open > 0, allClosed: open === 0,
+      url: open ? at.url : 'New tab', pageTitle: at.title, pageC: at.c,
+      rows: at.tags.map((tag, i) => ({ tag, w1: ['70%', '55%', '80%'][i], w2: ['45%', '65%', '35%'][i] })),
+      workLabel: closed < 6 ? 'ON IT…' : 'DONE',
+      chips: this.TABS.map((x, i) => ({ t: x.done, c: x.c, op: i < closed ? 1 : 0.18, tf: i < closed ? 'none' : 'translateX(-6px)' })),
+      replyOp: step >= 7 ? 1 : 0, replyTf: step >= 7 ? 'none' : 'translateY(8px)',
+      doneOp: step >= 8 ? 1 : 0, doneTf: step >= 8 ? 'none' : 'translateY(8px)',
+      dests: this.D.map(x => { const on = x.code === this.state.dest; return { ...x, bg: on ? '#022B1A' : '#FFFFFF', fg: on ? '#F7FDFB' : '#022B1A', shadow: on ? '0 5px 0 #3071E8' : '0 3px 0 #022B1A', lift: on ? 'translateY(-3px)' : 'none', pick: () => this.setState({ dest: x.code }) }; }),
+      nights: [3, 5, 7, 10].map(v => ({ label: `${v} nights`, bg: n === v ? '#A9C4F7' : '#FFFFFF', pick: () => this.setState({ nights: v }) })),
+      ask: `${d.city} next Thursday, ${n} nights. Window seat, hotel near the centre.`,
+      code: d.code, city: d.city, dur: `${d.dur}, direct`, stay: `${n} nights, centre`,
+      dateLine: 'Thu, 8 Oct',
+      fare: d.fare, fareTxt: d.fare.toLocaleString('en-US'),
+      plan: d.plan.map((t, i) => ({ t, c: planColors[i] })),
+      stops: [
+        { stage: 'BEFORE YOU GO', t: 'Tell it the vibe', d: 'A day by day plan built around what you like.', q: '4 days in Istanbul, food and walks', a: 'Plan ready. Tables booked for 2 nights.', c: '#A9C4F7', fg: '#022B1A' },
+        { stage: 'FLIGHTS', t: 'Compared, then booked', d: 'Every airline checked on price and timing. Seat and bags remembered.', q: 'Cheapest direct to Manila Friday', a: '1,980 AED return, window seat. Booked.', c: '#3071E8', fg: '#FFFFFF' },
+        { stage: 'STAY', t: 'A room you’ll like', d: 'Filtered by what you care about, free cancellation flagged.', q: 'Near Galata, under 500 a night', a: 'Held a 4 star, 460 AED, free cancel.', c: '#F5C400', fg: '#022B1A' },
+        { stage: 'ON THE WAY', t: 'Changes handled', d: 'Delays and gate changes land in your chat, rebooking included.', q: 'My flight’s delayed, options?', a: 'Moved you to the 14:10, same seat.', c: '#F24E2A', fg: '#FFFFFF' },
+        { stage: 'COMING HOME', t: 'Landing, sorted', d: 'Pickup booked and tracked against your flight.', q: 'Car when I land on Sunday', a: 'Booked. Driver tracks your flight.', c: '#00E385', fg: '#022B1A' }
+      ].map((x, i) => ({ ...x, n: i + 1 })),
+      group: [
+        { who: 'Aisha', t: 'Tbilisi works for me, but not before Thursday', me: 0, sc: 0, nameC: '#7F6000' },
+        { who: 'Omar', t: 'Same. Somewhere near the Old Town please', me: 0, sc: 0, nameC: '#B8391C' },
+        { who: 'You', t: '@Superchat Thu to Sun for 3 of us, Old Town, under 2,500 each', me: 1, sc: 0, nameC: '#10306A' },
+        { who: 'Superchat', t: 'Found it. Thu 08:15 direct, 3 seats together. 2 rooms side by side in the Old Town. 2,340 AED each. Book for everyone?', me: 0, sc: 1, nameC: '#1B7236' },
+        { who: 'Aisha', t: 'Yes!!', me: 0, sc: 0, nameC: '#7F6000' }
+      ].map(g => ({ ...g, side: g.me ? 'flex-end' : 'flex-start', bg: g.me ? '#E2ECFD' : g.sc ? '#022B1A' : '#F7FDFB', fg: g.sc ? '#F7FDFB' : '#022B1A', radius: g.me ? '16px 16px 4px 16px' : '16px 16px 16px 4px' })),
+      voices: [
+        { q: 'Booked Manila for the whole family during my lunch break. Usually takes me a weekend of comparing.', n: 'Joan', r: 'Dubai, flies to Manila', code: 'MNL', bg: '#F5C400', rot: '-1deg' },
+        { q: 'My flight got moved and Superchat told me before the airline did. Rebooked in the same chat.', n: 'Rahul', r: 'Abu Dhabi, frequent flyer', code: 'BOM', bg: '#A9C4F7', rot: '1deg' },
+        { q: 'Asked for a weekend in Tbilisi. Got flights, a hotel and a plan for every day.', n: 'Sara', r: 'Dubai Marina', code: 'TBS', bg: '#00E385', rot: '-0.5deg' }
+      ],
+      faqs: [
+        { q: 'Which airlines and hotels can I book?', a: 'Superchat searches across major airlines and hotel partners, then shows you the few options that actually fit what you asked for.' },
+        { q: 'Do I pay extra for booking through Superchat?', a: 'You see the full price before you confirm. No surprise fees added at the end.' },
+        { q: 'What if my flight changes?', a: 'Delays, gate changes and schedule updates are sent straight to your chat, and you can rebook in the same thread.' },
+        { q: 'Can it plan the whole trip, not just flights?', a: 'Yes. Ask for a day by day plan and Superchat books the tables, pickups and tickets along the way.' },
+        { q: 'Can I plan a trip with friends?', a: 'Yes. Add your travel companions to the chat, agree on dates and budget, and Superchat books seats and rooms for the whole group.' },
+        { q: 'Where do my tickets live?', a: 'In your chat. Boarding passes, hotel confirmations and plans stay in one place, ready when you land.' }
+      ].map((f, i) => ({ ...f, open: this.state.faq === i, closed: !(this.state.faq === i), rows: (this.state.faq === i) ? '1fr' : '0fr', fop: (this.state.faq === i) ? 1 : 0, fty: (this.state.faq === i) ? 'none' : 'translateY(-6px)', rot: this.state.faq === i ? 'rotate(45deg)' : 'none', bg: this.state.faq === i ? '#FFFFFF' : '#F7FDFB', toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

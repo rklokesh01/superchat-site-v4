@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'PP Frama';src:url('assets/fonts/PPFrama-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'PP Frama Text';src:url('assets/fonts/PPFramaText-Regular.otf') format('opentype');font-weight:100 900;font-display:swap}
+h1,h2,h3{font-family:'PP Frama','Outfit',system-ui,sans-serif;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill}
+button,input{font-family:inherit}
+body{margin:0;background:#F7FDFB;color:#022B1A;font-family:'PP Frama Text','Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip;-webkit-tap-highlight-color:transparent}
+html{overflow-x:clip}
+a{color:#022B1A;text-decoration:none}
+a:hover{color:#1B7236}
+</style>
+</helmet>
+<section data-screen-label="01 Blog hero" style="position:relative;background:#F7FDFB;overflow:hidden;padding-bottom:clamp(48px,6vw,72px)">
+  <dc-import name="Nav" current="/blog" style="position:relative;z-index:50;display:block" hint-size="100%,92px"></dc-import>
+  <div style="max-width:1200px;margin:24px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:clamp(40px,5vw,64px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <span style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:0.08em;color:#1B7236"><span style="width:10px;height:10px;border-radius:50%;background:#00E385;border:1.5px solid #022B1A"></span>THE SUPERCHAT BLOG</span>
+      <h1 style="margin:0;font-weight:500;font-size:clamp(52px,7.2vw,104px);line-height:0.94;letter-spacing:-0.045em;max-width:8ch;text-wrap:balance">Learn it. Then just <span style="color:#1B7236">ask.</span></h1>
+      <p style="margin:0;font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:#2E5A46;max-width:34ch;text-wrap:pretty">{{ total }} short, practical guides to money, travel, bookings, shopping and everyday life in the UAE.</p>
+      <label style="display:flex;align-items:center;gap:12px;max-width:480px;padding:8px 8px 8px 20px;border-radius:999px;border:2px solid #022B1A;background:#FFFFFF;box-shadow:0 5px 0 #022B1A">
+        <svg viewBox="0 0 24 24" style="width:20px;flex:none" fill="none" stroke="#022B1A" stroke-width="2.2" stroke-linecap="round"><path d="M11 18a7 7 0 1 0 0-14a7 7 0 0 0 0 14zM20 20l-4-4"></path></svg>
+        <input type="search" value="{{ q }}" onChange="{{ setQ }}" placeholder="Try “flights” or “bills”" aria-label="Search guides" style="flex:1;min-width:0;border:none;outline:none;background:transparent;font-size:17px;color:#022B1A;padding:10px 0"></input>
+        <span style="font-size:15px;font-weight:600;padding:12px 20px;border-radius:999px;background:#00E385;border:2px solid #022B1A;flex:none">Search</span>
+      </label>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px;color:#2E5A46">
+        <span>Popular:</span>
+        <sc-for list="{{ popular }}" as="t" hint-placeholder-count="4">
+          <button onClick="{{ t.pick }}" style="font-size:14px;font-weight:600;padding:6px 12px;border-radius:999px;border:1.5px solid #CFE3DA;background:#FFFFFF;color:#022B1A;cursor:pointer" style-hover="border-color:#022B1A">{{ t.name }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="position:{{ fanPos }};width:min(530px,100%);height:{{ fanH }};margin:0 auto;display:flex;gap:16px;overflow-x:{{ fanOv }};scroll-snap-type:x mandatory;padding-bottom:{{ fanPad }};scrollbar-width:none">
+      <sc-for list="{{ fan }}" as="p" hint-placeholder-count="3">
+        <a href="{{ p.href }}" onMouseEnter="{{ p.enter }}" onMouseLeave="{{ p.leave }}" style="position:{{ p.pos }};left:{{ p.x }};top:{{ p.y }};z-index:{{ p.z }};flex:none;scroll-snap-align:start;width:{{ p.w }};display:flex;flex-direction:column;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 6px 0 #022B1A;overflow:hidden;color:#022B1A;transform:{{ p.tf }};transition:transform .5s cubic-bezier(.2,.8,.2,1)" style-hover="color:#022B1A">
+          <span style="display:block;position:relative;aspect-ratio:16/10;background:{{ p.tint }};border-bottom:2px solid #022B1A"><image-slot id="{{ p.coverId }}" shape="rect" placeholder="Cover photo"></image-slot></span>
+          <span style="display:flex;flex-direction:column;gap:8px;padding:14px 16px 16px">
+            <span style="align-self:flex-start;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:0.06em;padding:4px 10px 4px 6px;border-radius:999px;background:{{ p.tint }};border:1.5px solid #022B1A"><span style="width:10px;height:10px;border-radius:50%;background:{{ p.color }};border:1.5px solid #022B1A"></span>{{ p.vUp }}</span>
+            <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:19px;font-weight:500;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill">{{ p.title }}</span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.06em;color:#2E5A46">{{ p.read }} READ</span>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Topic picker" style="position:sticky;top:0;z-index:20;background:#F7FDFB;border-top:2px solid #022B1A;border-bottom:2px solid #022B1A">
+  <div role="tablist" aria-label="Topics" style="max-width:1200px;margin:0 auto;padding:12px 24px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="6">
+      <button role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="flex:none;display:flex;align-items:center;gap:8px;padding:9px 16px 9px 10px;border-radius:999px;border:2px solid #022B1A;background:{{ t.bg }};color:{{ t.ink }};font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s"><span style="width:18px;height:18px;border-radius:50%;background:{{ t.color }};border:1.5px solid {{ t.dotBd }}"></span>{{ t.name }}<span style="font-size:12px;font-weight:500;opacity:.7">{{ t.n }}</span></button>
+    </sc-for>
+  </div>
+</section>
+
+<sc-if value="{{ showShelves }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="03 Topic shelves" style="background:#F7FDFB;padding:clamp(40px,6vw,72px) 0 clamp(56px,8vw,96px)">
+  <div style="display:flex;flex-direction:column;gap:clamp(48px,6vw,72px)">
+    <sc-for list="{{ shelves }}" as="s" hint-placeholder-count="5">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="max-width:1200px;width:100%;box-sizing:border-box;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:52px;height:52px;border-radius:50%;background:{{ s.color }};border:2px solid #022B1A;display:flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" style="width:24px" fill="none" stroke="{{ s.fg }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ s.icon }}"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px"><h2 style="margin:0;font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-0.03em">{{ s.name }}</h2><span style="font-size:15px;color:#2E5A46">{{ s.blurb }}</span></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <button onClick="{{ s.pick }}" style="font-size:15px;font-weight:600;padding:10px 16px;border-radius:999px;border:2px solid #022B1A;background:#FFFFFF;color:#022B1A;cursor:pointer" style-hover="background:{{ s.tint }}">See all {{ s.n }}</button>
+            <a href="{{ s.blogHref }}" aria-label="Open the {{ s.name }} blog" style="width:44px;height:44px;border-radius:50%;background:#022B1A;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:18px" fill="none" stroke="{{ s.color }}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </div>
+        <div style="display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px max(24px,calc((100vw - 1152px) / 2)) 14px;scroll-padding:0 max(24px,calc((100vw - 1152px) / 2));scrollbar-width:none">
+          <sc-for list="{{ s.posts }}" as="p" hint-placeholder-count="4">
+            <a href="{{ p.href }}" style="flex:none;width:{{ p.w }};scroll-snap-align:start;display:flex;flex-direction:column;border-radius:28px;background:#FFFFFF;border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;overflow:hidden;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-4px);box-shadow:0 9px 0 #022B1A;color:#022B1A">
+              <span style="display:block;position:relative;aspect-ratio:{{ p.ratio }};background:{{ s.tint }};border-bottom:2px solid #022B1A"><image-slot id="{{ p.coverId }}" shape="rect" placeholder="Cover photo"></image-slot></span>
+              <span style="display:flex;flex-direction:column;gap:10px;padding:18px 20px 20px;flex:1">
+                <span style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.06em"><span style="padding:4px 10px;border-radius:999px;background:{{ s.tint }};border:1.5px solid #022B1A">{{ p.catUp }}</span><span style="color:#2E5A46">{{ p.read }} READ</span></span>
+                <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:{{ p.fs }};font-weight:500;letter-spacing:-0.025em;line-height:1.1;text-wrap:balance;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill">{{ p.title }}</span>
+                <span style="font-size:15px;line-height:1.45;color:#2E5A46">{{ p.dek }}</span>
+              </span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ showGrid }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="03 Guides grid" style="background:#F7FDFB;padding:clamp(40px,6vw,64px) clamp(18px,5vw,24px) clamp(56px,8vw,96px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+      <h2 style="margin:0;font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1;letter-spacing:-0.03em">{{ gridTitle }}</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ subs }}" as="c" hint-placeholder-count="3">
+          <button onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" style="font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;border:1.5px solid #022B1A;background:{{ c.bg }};color:#022B1A;cursor:pointer">{{ c.name }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));grid-auto-flow:dense;gap:20px">
+      <sc-for list="{{ grid }}" as="p" hint-placeholder-count="8">
+        <a href="{{ p.href }}" style="grid-column:{{ p.span }};display:flex;flex-direction:column;border-radius:28px;background:{{ p.cardBg }};border:2px solid #022B1A;box-shadow:0 5px 0 #022B1A;overflow:hidden;color:#022B1A;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-4px);box-shadow:0 9px 0 #022B1A;color:#022B1A">
+          <span style="display:block;position:relative;aspect-ratio:{{ p.ratio }};background:{{ p.tint }};border-bottom:2px solid #022B1A"><image-slot id="{{ p.coverId }}" shape="rect" placeholder="Cover photo"></image-slot></span>
+          <span style="display:flex;flex-direction:column;gap:10px;padding:18px 20px 20px;flex:1">
+            <span style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.06em"><span style="display:flex;align-items:center;gap:6px;padding:4px 10px 4px 6px;border-radius:999px;background:#FFFFFF;border:1.5px solid #022B1A"><span style="width:10px;height:10px;border-radius:50%;background:{{ p.color }};border:1.5px solid #022B1A"></span>{{ p.vUp }}</span><span style="color:#2E5A46">{{ p.catUp }} · {{ p.read }}</span></span>
+            <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:{{ p.fs }};font-weight:500;letter-spacing:-0.025em;line-height:1.1;text-wrap:balance;-webkit-text-stroke:0.022em currentColor;paint-order:stroke fill">{{ p.title }}</span>
+            <span style="font-size:15px;line-height:1.45;color:#2E5A46">{{ p.dek }}</span>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:28px;border-radius:28px;background:#FFFFFF;border:2px dashed #022B1A">
+        <span style="font-family:'PP Frama','Outfit',sans-serif;font-size:24px;font-weight:500;letter-spacing:-0.02em">Nothing on “{{ q }}” yet.</span>
+        <span style="font-size:16px;color:#2E5A46">Superchat can probably just do it for you, though.</span>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button onClick="{{ clearQ }}" style="font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;border:2px solid #022B1A;background:#FFFFFF;cursor:pointer;color:#022B1A">Clear search</button>
+          <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;border:2px solid #022B1A;background:#00E385;color:#022B1A">Ask Superchat</a>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+</sc-if>
+
+<section data-screen-label="04 Blog CTA" style="background:#F7FDFB;padding:0 clamp(18px,5vw,24px) clamp(72px,11vw,110px)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding:clamp(24px,3vw,36px);border-radius:32px;background:#022B1A;color:#F7FDFB;border:2px solid #022B1A;box-shadow:0 8px 0 #00E385">
+    <span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'PP Frama','Outfit',sans-serif;font-size:clamp(26px,2.8vw,36px);font-weight:500;letter-spacing:-0.025em;line-height:1.05">Read enough? Let Superchat do it.</span><span style="font-size:16px;color:#B0F5D8">Everything in these guides, done for you in one chat.</span></span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="https://apps.apple.com/us/app/superchat-daily-ai-assistant/id6746163922" style="font-size:16px;font-weight:600;padding:14px 24px;border-radius:999px;background:#00E385;color:#022B1A;border:2px solid #00E385" style-hover="background:#2BEB98;color:#022B1A">Get the app</a>
+      <a href="WhatsApp%20v2.dc.html" style="font-size:16px;font-weight:600;padding:14px 24px;border-radius:999px;background:transparent;color:#F7FDFB;border:2px solid #F7FDFB" style-hover="background:#0B4A2F;color:#F7FDFB">Try it on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" style="display:block" hint-size="100%,1100px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;layout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;shelves&quot;,&quot;bento&quot;],&quot;default&quot;:&quot;shelves&quot;,&quot;tsType&quot;:&quot;'shelves' | 'bento'&quot;}}">
+class Component extends DCLogic {
+  state = { posts: [], v: 'All', sub: null, q: '', fh: null, narrow: typeof window !== 'undefined' && window.innerWidth < 600 };
+  V = [
+    { name: 'Money', key: 'money', color: '#00E385', tint: '#D9F8EA', fg: '#022B1A', blog: 'Money%20Blog.dc.html', art: 'Money%20Article.dc.html?p=', blurb: 'Send money home, pay bills, keep more.', icon: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+    { name: 'Travel', key: 'travel', color: '#3071E8', tint: '#E2ECFD', fg: '#FFFFFF', blog: 'Travel%20Blog.dc.html', art: 'Travel%20Article.dc.html?p=', blurb: 'Cheaper flights, better stays, smoother trips.', icon: 'M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z' },
+    { name: 'Bookings', key: 'bookings', color: '#F24E2A', tint: '#FFE7DE', fg: '#FFFFFF', blog: 'Bookings%20Blog.dc.html', art: 'Bookings%20Article.dc.html?p=', blurb: 'Tables, parking and home services, sorted.', icon: 'M4 5h16v15H4zM4 10h16M9 3v4M15 3v4' },
+    { name: 'Shopping', key: 'shopping', color: '#F5C400', tint: '#FFF3C9', fg: '#022B1A', blog: 'Shopping%20Blog.dc.html', art: 'Shopping%20Article.dc.html?p=', blurb: 'Find it faster, pay less, skip the fakes.', icon: 'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0' },
+    { name: 'Everyday', key: 'everyday', color: '#A9C4F7', tint: '#EEF3FE', fg: '#022B1A', blog: 'Everyday%20Blog.dc.html', art: 'Everyday%20Article.dc.html?p=', blurb: 'Reminders, inbox and calendar on autopilot.', icon: 'M7.9 20A9 9 0 1 0 4 16.1L2 22z' }
+  ];
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); }
+  componentDidMount() {
+    this.onR = () => { const n = window.innerWidth < 600; if (n !== this.state.narrow) this.setState({ narrow: n }); };
+    window.addEventListener('resize', this.onR);
+    Promise.all(this.V.map(v => import(new URL('blog-' + v.key + '.js', location.href).href).then(m => m.POSTS.map(p => ({ ...p, v })) ).catch(() => [])))
+      .then(r => this.setState({ posts: r.flat().sort((a, b) => Date.parse(b.date) - Date.parse(a.date)) }));
+  }
+  renderVals() {
+    const S = this.state, all = S.posts, layout = this.props.layout ?? 'shelves', q = S.q.trim().toLowerCase();
+    const map = (p, extra = {}) => ({ ...p, catUp: p.cat.toUpperCase(), read: p.read.toUpperCase(), vUp: p.v.name.toUpperCase(), color: p.v.color, tint: p.v.tint, href: p.v.art + p.slug, coverId: p.v.key + '-cover-' + p.slug, ...extra });
+    const inV = S.v === 'All' ? all : all.filter(p => p.v.name === S.v);
+    const filtered = inV.filter(p => (!S.sub || p.cat === S.sub) && (!q || (p.title + ' ' + p.dek + ' ' + p.cat).toLowerCase().includes(q)));
+    const shelvesMode = layout === 'shelves' && S.v === 'All' && !q;
+    const vObj = this.V.find(v => v.name === S.v);
+    const bento = layout === 'bento';
+    return {
+      total: all.length || '',
+      q: S.q, setQ: e => this.setState({ q: e.target.value }), clearQ: () => this.setState({ q: '' }),
+      fan: this.V.map(v => all.find(p => p.v === v && p.featured) || all.find(p => p.v === v)).filter(Boolean).slice(0, 3).map((p, i) => { const on = S.fh === i, nr = S.narrow, pos = [['4px', '10px', -4, 2], ['272px', '84px', 4, 3], ['64px', '292px', -2, 1]][i]; return map(p, { pos: nr ? 'relative' : 'absolute', w: nr ? 'min(260px,74vw)' : '250px', x: nr ? 'auto' : pos[0], y: nr ? 'auto' : pos[1], z: on ? 10 : pos[3], tf: nr ? 'none' : on ? `translateY(-12px) rotate(${pos[2]}deg)` : `rotate(${pos[2]}deg)`, enter: () => this.setState({ fh: i }), leave: () => this.setState({ fh: null }) }); }),
+      fanPos: S.narrow ? 'static' : 'relative', fanH: S.narrow ? 'auto' : '580px', fanOv: S.narrow ? 'auto' : 'visible', fanPad: S.narrow ? '10px' : '0px',
+      popular: ['Flights', 'Bills', 'Deals', 'Reminders'].map(name => ({ name, pick: () => this.setState({ q: name }) })),
+      tabs: [{ name: 'All', color: '#022B1A', n: all.length }, ...this.V.map(v => ({ name: v.name, color: v.color, n: all.filter(p => p.v === v).length }))].map(t => { const on = t.name === S.v; return { ...t, on, bg: on ? '#022B1A' : '#FFFFFF', ink: on ? '#F7FDFB' : '#022B1A', dotBd: on ? '#F7FDFB' : '#022B1A', pick: () => this.setState({ v: t.name, sub: null }) }; }),
+      showShelves: shelvesMode, showGrid: !shelvesMode,
+      shelves: this.V.map(v => { const ps = all.filter(p => p.v === v); return { ...v, n: ps.length, blogHref: v.blog, pick: () => { this.setState({ v: v.name, sub: null }); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+        posts: ps.slice(0, 6).map((p, i) => map(p, { w: i === 0 ? 'min(440px, 82vw)' : 'min(300px, 76vw)', ratio: i === 0 ? '16/10' : '4/3', fs: i === 0 ? '30px' : '22px' })) }; }),
+      gridTitle: q ? `${filtered.length} result${filtered.length === 1 ? '' : 's'} for “${S.q.trim()}”` : (S.v === 'All' ? 'All guides' : S.v),
+      subs: vObj ? [null, ...[...new Set(inV.map(p => p.cat))]].map(c => ({ name: c || 'All ' + vObj.name, on: S.sub === c, bg: S.sub === c ? vObj.tint : '#FFFFFF', pick: () => this.setState({ sub: c }) })) : [],
+      grid: filtered.map((p, i) => { const big = bento && !q && (i % 7 === 0) && typeof window !== 'undefined' && window.innerWidth >= 720; return map(p, { span: big ? 'span 2' : 'auto', ratio: big ? '16/9' : '4/3', fs: big ? 'clamp(26px,2.6vw,34px)' : '22px', cardBg: bento && i % 7 === 3 ? p.v.tint : '#FFFFFF' }); }),
+      empty: all.length > 0 && !filtered.length
+    };
+  }
+}
+</script>
+</body>
+</html>
